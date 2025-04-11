@@ -1,22 +1,22 @@
-'use client'
-import ComponentContainerCard from '@/components/ComponentContainerCard'
-import useClipboard from '@/hooks/useClipboard'
-import { useRef, useState } from 'react'
-import { Button, Col, Row } from 'react-bootstrap'
-import { toast } from 'react-toastify'
+"use client"
+import ComponentContainerCard from "@/components/ComponentContainerCard"
+import useClipboard from "@/hooks/useClipboard"
+import { useRef, useState } from "react"
+import { Button, Col, Row } from "react-bootstrap"
+import { toast } from "react-toastify"
 
-import 'react-toastify/dist/ReactToastify.css'
+import "react-toastify/dist/ReactToastify.css"
 
 const CopyFromElement = () => {
   const inputRef = useRef<HTMLInputElement>(null)
-  const [inputText, setText] = useState<string>('name@example.com')
+  const [inputText, setText] = useState<string>("name@example.com")
   const [, copy] = useClipboard()
 
   const onCopy = (text: string) => {
     copy(text).then((copied) => {
       if (copied) {
-        toast.success('Copy To Clipboard', {
-          position: 'top-right',
+        toast.success("Copy To Clipboard", {
+          position: "top-right",
           autoClose: 2000,
         })
       }
@@ -26,7 +26,8 @@ const CopyFromElement = () => {
     <ComponentContainerCard
       id="copy-from-element"
       title="Copy text from another element"
-      description={<>The value you include on this attribute needs to match another&apos;s element selector.</>}>
+      description={<>The value you include on this attribute needs to match another&apos;s element selector.</>}
+    >
       <Row>
         <Col lg={6}>
           <div className="input-group">
@@ -39,7 +40,11 @@ const CopyFromElement = () => {
               className="form-control"
               placeholder="name@example.com"
             />
-            <Button variant="primary" className="btn-copy-clipboard" onClick={() => onCopy(inputRef.current?.value ?? '')}>
+            <Button
+              variant="primary"
+              className="btn-copy-clipboard"
+              onClick={() => onCopy(inputRef.current?.value ?? "")}
+            >
               Copy
             </Button>
           </div>
@@ -57,10 +62,10 @@ const CutFromElement = () => {
   const onCut = (text: string) => {
     copy(text).then((copied) => {
       if (copied) {
-        toast.success('Cut', { position: 'top-right', autoClose: 2000 })
+        toast.success("Cut", { position: "top-right", autoClose: 2000 })
       }
     })
-    setText('')
+    setText("")
   }
   return (
     <ComponentContainerCard
@@ -68,10 +73,11 @@ const CutFromElement = () => {
       title="Cut text from another element"
       description={
         <>
-          Additionally, you can define a <code>data-clipboard-action</code> attribute to specify if you want to either <code>copy</code> or{' '}
-          <code>cut</code> content.
+          Additionally, you can define a <code>data-clipboard-action</code> attribute to specify if you want to either{" "}
+          <code>copy</code> or <code>cut</code> content.
         </>
-      }>
+      }
+    >
       <Row>
         <Col lg={6}>
           <div className="d-flex gap-2 align-items-start mb-3">
@@ -84,10 +90,10 @@ const CutFromElement = () => {
               rows={6}
               value={inputText}
               defaultValue={
-                'Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga.'
+                "Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga."
               }
             />
-            <Button variant="primary" onClick={() => onCut(inputRef.current?.value ?? '')}>
+            <Button variant="primary" onClick={() => onCut(inputRef.current?.value ?? "")}>
               Cut
             </Button>
           </div>
@@ -102,7 +108,7 @@ const CopyFromAttribute = () => {
   const [, copy] = useClipboard()
 
   const handleCopy = () => {
-    const attributeValue = elementRef.current?.getAttribute('clipboard-text')
+    const attributeValue = elementRef.current?.getAttribute("clipboard-text")
     if (attributeValue) {
       onCopy(attributeValue)
     }
@@ -111,8 +117,8 @@ const CopyFromAttribute = () => {
   const onCopy = (text: string) => {
     copy(text).then((copied) => {
       if (copied) {
-        toast.success('Copy To Clipboard', {
-          position: 'top-right',
+        toast.success("Copy To Clipboard", {
+          position: "top-right",
           autoClose: 2000,
         })
       }
@@ -124,10 +130,11 @@ const CopyFromAttribute = () => {
       title="Copy text from attribute"
       description={
         <>
-          Truth is, you don&apos;t even need another element to copy its content from. You can just include a <code>data-clipboard-text</code>{' '}
-          attribute in your trigger element.
+          Truth is, you don&apos;t even need another element to copy its content from. You can just include a{" "}
+          <code>data-clipboard-text</code> attribute in your trigger element.
         </>
-      }>
+      }
+    >
       <Row>
         <Col lg={6}>
           <Button
@@ -135,7 +142,8 @@ const CopyFromAttribute = () => {
             ref={elementRef}
             onClick={handleCopy}
             id="clipboard_text"
-            clipboard-text="Just because you can doesn't mean dfdyou should — clipboard.js">
+            clipboard-text="Just because you can doesn't mean dfdyou should — clipboard.js"
+          >
             Copy to clipboard
           </Button>
         </Col>

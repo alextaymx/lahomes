@@ -1,15 +1,15 @@
-'use client'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import SimplebarReactClient from '@/components/wrappers/SimplebarReactClient'
-import { useEmailContext } from '@/context/useEmailContext'
-import { getAllUsers, getEmailsCategoryCount } from '@/helpers/data'
-import { useFetchData } from '@/hooks/useFetchData'
-import useToggle from '@/hooks/useToggle'
-import useViewPort from '@/hooks/useViewPort'
-import { EmailCountType } from '@/types/data'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useEffect, useState } from 'react'
+"use client"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import SimplebarReactClient from "@/components/wrappers/SimplebarReactClient"
+import { useEmailContext } from "@/context/useEmailContext"
+import { getAllUsers, getEmailsCategoryCount } from "@/helpers/data"
+import { useFetchData } from "@/hooks/useFetchData"
+import useToggle from "@/hooks/useToggle"
+import useViewPort from "@/hooks/useViewPort"
+import { EmailCountType } from "@/types/data"
+import Image from "next/image"
+import Link from "next/link"
+import { useEffect, useState } from "react"
 import {
   Button,
   CardBody,
@@ -22,13 +22,20 @@ import {
   ModalBody,
   ModalHeader,
   Offcanvas,
-} from 'react-bootstrap'
+} from "react-bootstrap"
 
 const NavBar = () => {
   const inboxUser = useFetchData(getAllUsers)
   const { activeLabel, changeActiveLabel } = useEmailContext()
 
-  const [emailsCount, setEmailsCount] = useState<EmailCountType>({ inbox: 0, starred: 0, draft: 0, sent: 0, deleted: 0, important: 0 })
+  const [emailsCount, setEmailsCount] = useState<EmailCountType>({
+    inbox: 0,
+    starred: 0,
+    draft: 0,
+    sent: 0,
+    deleted: 0,
+    important: 0,
+  })
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,7 +57,8 @@ const NavBar = () => {
             onClick={toggleCompase}
             className="btn btn-danger w-100 d-flex align-items-center  justify-content-center"
             data-bs-toggle="modal"
-            data-bs-target="#compose-modal">
+            data-bs-target="#compose-modal"
+          >
             <span className="fw-semibold">
               <IconifyIcon icon="solar:pen-new-square-broken" className="align-middle me-1 fs-16" />
               Compose
@@ -61,7 +69,8 @@ const NavBar = () => {
             className="btn btn-icon btn-soft-danger d-xl-none"
             data-bs-dismiss="offcanvas"
             data-bs-target="#offcanvasExample"
-            aria-label="Close">
+            aria-label="Close"
+          >
             <IconifyIcon icon="ri:close-line" className="fs-22" />
           </button>
         </div>
@@ -71,7 +80,13 @@ const NavBar = () => {
           <h5 className="modal-title text-white" id="compose-modalLabel">
             New Message
           </h5>
-          <button type="button" className="btn-close btn-close-white" onClick={toggleCompase} data-bs-dismiss="modal" aria-label="Close" />
+          <button
+            type="button"
+            className="btn-close btn-close-white"
+            onClick={toggleCompase}
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          />
         </ModalHeader>
         <ModalBody className="p-4">
           <div className="overflow-hidden">
@@ -108,10 +123,10 @@ const NavBar = () => {
           </div>
         </ModalBody>
       </Modal>
-      <SimplebarReactClient style={{ height: 'calc(100vh - 280px)' }}>
+      <SimplebarReactClient style={{ height: "calc(100vh - 280px)" }}>
         <CardBody className="pt-0">
           <div className="email-menu-list d-flex flex-column gap-2">
-            <Link href="" className="active" onClick={() => changeActiveLabel('Primary')}>
+            <Link href="" className="active" onClick={() => changeActiveLabel("Primary")}>
               <IconifyIcon icon="solar:inbox-broken" className="me-2 fs-18 text-muted" />
               <span>Your Inbox</span>
               <span className="fs-12 text-primary ms-auto">5</span>
@@ -157,7 +172,8 @@ const NavBar = () => {
             data-bs-toggle="collapse"
             data-bs-target="#labels"
             aria-expanded="false"
-            aria-controls="labels">
+            aria-controls="labels"
+          >
             Labels <IconifyIcon icon="ri:arrow-down-s-line" className="ms-auto" />
           </span>
           <Collapse in={isTrue}>
@@ -187,7 +203,8 @@ const NavBar = () => {
             data-bs-toggle="collapse"
             data-bs-target="#contacts"
             aria-expanded="false"
-            aria-controls="contacts">
+            aria-controls="contacts"
+          >
             Contacts <IconifyIcon icon="ri:arrow-down-s-line" className="ms-auto" />
           </Link>
           <Collapse in={isOpenContact}>

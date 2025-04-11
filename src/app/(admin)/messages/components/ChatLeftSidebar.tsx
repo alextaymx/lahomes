@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { useState } from "react"
 
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import { useChatContext } from '@/context/useChatContext'
-import type { UserType } from '@/types/data'
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import { useChatContext } from "@/context/useChatContext"
+import type { UserType } from "@/types/data"
 import {
   Accordion,
   AccordionBody,
@@ -15,17 +15,17 @@ import {
   OffcanvasHeader,
   Tab,
   Tabs,
-} from 'react-bootstrap'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import Chat from './Chat'
-import Contact from './Contact'
-import Group from './Group'
+} from "react-bootstrap"
+import { Swiper, SwiperSlide } from "swiper/react"
+import Chat from "./Chat"
+import Contact from "./Contact"
+import Group from "./Group"
 
-import avatar1 from '@/assets/images/users/avatar-1.jpg'
+import avatar1 from "@/assets/images/users/avatar-1.jpg"
 
-import Image from 'next/image'
-import Link from 'next/link'
-import 'swiper/css'
+import Image from "next/image"
+import Link from "next/link"
+import "swiper/css"
 
 type ChatUsersProps = {
   onUserSelect: (value: UserType) => void
@@ -45,7 +45,13 @@ const ChatLeftSidebar = ({ users, onUserSelect, selectedUser }: ChatUsersProps) 
       <CardHeader className="border-0 d-flex justify-content-between align-items-center gap-3">
         <form className="chat-search pb-0">
           <div className="chat-search-box">
-            <input className="form-control" type="text" onKeyUp={(e: any) => search(e.target.value)} name="search" placeholder="Search ..." />
+            <input
+              className="form-control"
+              type="text"
+              onKeyUp={(e: any) => search(e.target.value)}
+              name="search"
+              placeholder="Search ..."
+            />
             <button type="button" className="btn btn-sm btn-link search-icon p-0 fs-15">
               <IconifyIcon icon="ri:search-eye-line" />
             </button>
@@ -58,16 +64,17 @@ const ChatLeftSidebar = ({ users, onUserSelect, selectedUser }: ChatUsersProps) 
           type="button"
           data-bs-toggle="offcanvas"
           aria-haspopup="true"
-          aria-expanded="true">
+          aria-expanded="true"
+        >
           <IconifyIcon icon="ri:settings-2-line" />
         </a>
       </CardHeader>
-      <CardTitle as={'h4'} className="mb-3 mx-3">
+      <CardTitle as={"h4"} className="mb-3 mx-3">
         Active
       </CardTitle>
       <Swiper
-        pagination={{ el: '.swiper-pagination', clickable: true }}
-        slidesPerView={'auto'}
+        pagination={{ el: ".swiper-pagination", clickable: true }}
+        slidesPerView={"auto"}
         spaceBetween={8}
         breakpoints={{
           0: {
@@ -78,7 +85,8 @@ const ChatLeftSidebar = ({ users, onUserSelect, selectedUser }: ChatUsersProps) 
           },
         }}
         autoHeight
-        className="mySwiper mx-3">
+        className="mySwiper mx-3"
+      >
         {users.map((user) => (
           <SwiperSlide className="avatar" key={user.id}>
             <div className="chat-user-status-box">
@@ -89,17 +97,22 @@ const ChatLeftSidebar = ({ users, onUserSelect, selectedUser }: ChatUsersProps) 
           </SwiperSlide>
         ))}
       </Swiper>
-      <CardTitle as={'h4'} className="m-3">
+      <CardTitle as={"h4"} className="m-3">
         Message <span className="badge bg-danger badge-pill">5</span>
       </CardTitle>
-      <Tabs justify mountOnEnter className="nav nav-pills chat-tab-pills nav-justified p-1 rounded mx-1" defaultActiveKey={'chat-tab'}>
-        <Tab title="Chat" eventKey={'chat-tab'}>
+      <Tabs
+        justify
+        mountOnEnter
+        className="nav nav-pills chat-tab-pills nav-justified p-1 rounded mx-1"
+        defaultActiveKey={"chat-tab"}
+      >
+        <Tab title="Chat" eventKey={"chat-tab"}>
           <Chat onUserSelect={onUserSelect} users={user} selectedUser={selectedUser} />
         </Tab>
-        <Tab title="Group" eventKey={'group-tab'}>
+        <Tab title="Group" eventKey={"group-tab"}>
           <Group />
         </Tab>
-        <Tab title="Contact" eventKey={'contact-tab'}>
+        <Tab title="Contact" eventKey={"contact-tab"}>
           <Contact />
         </Tab>
       </Tabs>
@@ -112,7 +125,8 @@ const ChatLeftSidebar = ({ users, onUserSelect, selectedUser }: ChatUsersProps) 
         data-bs-backdrop="false"
         tabIndex={-1}
         id="user-setting"
-        aria-labelledby="user-settingLabel">
+        aria-labelledby="user-settingLabel"
+      >
         <OffcanvasHeader closeButton>
           <h5 className="offcanvas-title text-truncate w-50" id="user-settingLabel">
             Profile
@@ -137,7 +151,7 @@ const ChatLeftSidebar = ({ users, onUserSelect, selectedUser }: ChatUsersProps) 
           <div className="px-3 my-3 app-chat-setting">
             <Accordion className="custom-accordion" id="accordionSetting">
               <AccordionItem eventKey="1" className="border-0">
-                <AccordionHeader as={'h5'} className="my-0" id="headingAccount">
+                <AccordionHeader as={"h5"} className="my-0" id="headingAccount">
                   <span className="d-flex align-items-center">
                     <IconifyIcon icon="bx:key" className="me-3 fs-32" />
                     <span className="flex-grow-1">
@@ -190,7 +204,7 @@ const ChatLeftSidebar = ({ users, onUserSelect, selectedUser }: ChatUsersProps) 
               </AccordionItem>
 
               <AccordionItem eventKey="2" className="border-0">
-                <AccordionHeader as={'h5'} className="my-0" id="headingChats">
+                <AccordionHeader as={"h5"} className="my-0" id="headingChats">
                   <span className="d-flex align-items-center">
                     <IconifyIcon icon="bx:message-dots" className="me-3 fs-32" />
                     <span className="flex-grow-1">
@@ -271,7 +285,7 @@ const ChatLeftSidebar = ({ users, onUserSelect, selectedUser }: ChatUsersProps) 
               </AccordionItem>
 
               <AccordionItem eventKey="3" className="border-0">
-                <AccordionHeader as={'h5'} className="my-0" id="headingNotification">
+                <AccordionHeader as={"h5"} className="my-0" id="headingNotification">
                   <span className="d-flex align-items-center">
                     <IconifyIcon icon="bx:bell" className="me-3 fs-32" />
                     <span className="flex-grow-1">
@@ -340,7 +354,7 @@ const ChatLeftSidebar = ({ users, onUserSelect, selectedUser }: ChatUsersProps) 
               </AccordionItem>
 
               <AccordionItem eventKey="4" className="border-0">
-                <AccordionHeader as={'h5'} className="my-0" id="headingStorage">
+                <AccordionHeader as={"h5"} className="my-0" id="headingStorage">
                   <span className="d-flex align-items-center">
                     <IconifyIcon icon="bx:history" className="me-3 fs-32" />
                     <span className="flex-grow-1">
@@ -400,7 +414,7 @@ const ChatLeftSidebar = ({ users, onUserSelect, selectedUser }: ChatUsersProps) 
               </AccordionItem>
 
               <AccordionItem eventKey="5" className="border-0">
-                <AccordionHeader as={'h5'} className="my-0" id="headingHelp">
+                <AccordionHeader as={"h5"} className="my-0" id="headingHelp">
                   <span className="d-flex align-items-center">
                     <IconifyIcon icon="bx:info-circle" className="me-3 fs-32" />
                     <span className="flex-grow-1">

@@ -1,13 +1,23 @@
-'use client'
-import clsx from 'clsx'
-import { useState, type ChangeEvent, type FormEvent } from 'react'
-import { Button, Col, Form, FormCheck, FormControl, FormGroup, FormLabel, FormSelect, InputGroup } from 'react-bootstrap'
-import Feedback from 'react-bootstrap/esm/Feedback'
-import InputGroupText from 'react-bootstrap/esm/InputGroupText'
-import { ValidationError } from 'yup'
+"use client"
+import clsx from "clsx"
+import { useState, type ChangeEvent, type FormEvent } from "react"
+import {
+  Button,
+  Col,
+  Form,
+  FormCheck,
+  FormControl,
+  FormGroup,
+  FormLabel,
+  FormSelect,
+  InputGroup,
+} from "react-bootstrap"
+import Feedback from "react-bootstrap/esm/Feedback"
+import InputGroupText from "react-bootstrap/esm/InputGroupText"
+import { ValidationError } from "yup"
 
-import ComponentContainerCard from '@/components/ComponentContainerCard'
-import { serverSideFormValidate } from '@/helpers/data'
+import ComponentContainerCard from "@/components/ComponentContainerCard"
+import { serverSideFormValidate } from "@/helpers/data"
 
 type ValidationErrorType = {
   name?: string
@@ -19,7 +29,8 @@ const BrowserDefault = () => {
     <ComponentContainerCard
       id="browser-defaults"
       title="Browser Default"
-      description={<>Depending on your browser and OS, you’ll see a slightly different style of feedback.</>}>
+      description={<>Depending on your browser and OS, you’ll see a slightly different style of feedback.</>}
+    >
       <form className="row g-3">
         <Col md={4}>
           <FormLabel htmlFor="validationDefault01">First name</FormLabel>
@@ -84,11 +95,13 @@ const CustomStyles = () => {
       title="Custom styles"
       description={
         <>
-          For custom Bootstrap form validation messages, you’ll need to add the <code>novalidate</code> boolean attribute to your{' '}
-          <code>&lt;form&gt;</code>. This disables the browser default feedback tooltips, but still provides access to the form validation APIs in
-          JavaScript. When attempting to submit, you’ll see the <code>:invalid</code> and <code>:valid</code> styles applied to your form controls.
+          For custom Bootstrap form validation messages, you’ll need to add the <code>novalidate</code> boolean
+          attribute to your <code>&lt;form&gt;</code>. This disables the browser default feedback tooltips, but still
+          provides access to the form validation APIs in JavaScript. When attempting to submit, you’ll see the{" "}
+          <code>:invalid</code> and <code>:valid</code> styles applied to your form controls.
         </>
-      }>
+      }
+    >
       <Form className="row g-3 needs-validation" noValidate validated={validated} onSubmit={handleSubmit}>
         <FormGroup className="col-md-4">
           <FormLabel>First name</FormLabel>
@@ -147,12 +160,12 @@ const ServerSideValidation = () => {
   const [formErrors, setFormErrors] = useState<ValidationErrorType[]>([])
 
   const [formValue, setFormValue] = useState({
-    fName: 'Mark',
-    lName: 'Otto',
-    username: '',
-    city: '',
-    state: '',
-    zip: '',
+    fName: "Mark",
+    lName: "Otto",
+    username: "",
+    city: "",
+    state: "",
+    zip: "",
   })
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -184,10 +197,12 @@ const ServerSideValidation = () => {
       title="Server side"
       description={
         <>
-          We recommend using client-side validation, but in case you require server-side validation, you can indicate invalid and valid form fields
-          with <code>.is-invalid</code> and <code>.is-valid</code>. Note that <code>.invalid-feedback</code> is also supported with these classes.
+          We recommend using client-side validation, but in case you require server-side validation, you can indicate
+          invalid and valid form fields with <code>.is-invalid</code> and <code>.is-valid</code>. Note that{" "}
+          <code>.invalid-feedback</code> is also supported with these classes.
         </>
-      }>
+      }
+    >
       <Form className="row g-3" onSubmit={handleSubmit} noValidate>
         <FormGroup className="col-md-4" controlId="firstNameInput">
           <FormLabel>First name</FormLabel>
@@ -196,13 +211,13 @@ const ServerSideValidation = () => {
               type="text"
               placeholder="First name"
               name="fName"
-              isInvalid={!isValidInput('fName')}
+              isInvalid={!isValidInput("fName")}
               value={formValue.fName}
-              className={clsx({ 'is-valid': validated && isValidInput('fName') })}
+              className={clsx({ "is-valid": validated && isValidInput("fName") })}
               onChange={handleChange}
             />
-            <Feedback type={isValidInput('fName') ? 'valid' : 'invalid'}>
-              {isValidInput('fName') ? 'Looks good!' : formErrors.find((err) => err.name === 'fName')?.message}
+            <Feedback type={isValidInput("fName") ? "valid" : "invalid"}>
+              {isValidInput("fName") ? "Looks good!" : formErrors.find((err) => err.name === "fName")?.message}
             </Feedback>
           </InputGroup>
         </FormGroup>
@@ -215,11 +230,11 @@ const ServerSideValidation = () => {
               name="lName"
               value={formValue.lName}
               onChange={handleChange}
-              className={clsx({ 'is-valid': validated && isValidInput('lName') })}
-              isInvalid={!isValidInput('lName')}
+              className={clsx({ "is-valid": validated && isValidInput("lName") })}
+              isInvalid={!isValidInput("lName")}
             />
-            <Feedback type={isValidInput('lName') ? 'valid' : 'invalid'}>
-              {isValidInput('lName') ? 'Looks good!' : formErrors.find((err) => err.name === 'lName')?.message}
+            <Feedback type={isValidInput("lName") ? "valid" : "invalid"}>
+              {isValidInput("lName") ? "Looks good!" : formErrors.find((err) => err.name === "lName")?.message}
             </Feedback>
           </InputGroup>
         </FormGroup>
@@ -234,11 +249,11 @@ const ServerSideValidation = () => {
                 value={formValue.username}
                 onChange={handleChange}
                 name="username"
-                className={clsx({ 'is-valid': validated && isValidInput('username') })}
-                isInvalid={!isValidInput('username')}
+                className={clsx({ "is-valid": validated && isValidInput("username") })}
+                isInvalid={!isValidInput("username")}
               />
-              <Feedback type={isValidInput('username') ? 'valid' : 'invalid'}>
-                {isValidInput('username') ? 'Looks good!' : formErrors.find((err) => err.name === 'username')?.message}
+              <Feedback type={isValidInput("username") ? "valid" : "invalid"}>
+                {isValidInput("username") ? "Looks good!" : formErrors.find((err) => err.name === "username")?.message}
               </Feedback>
             </InputGroup>
           </InputGroup>
@@ -252,11 +267,11 @@ const ServerSideValidation = () => {
               name="city"
               value={formValue.city}
               onChange={handleChange}
-              className={clsx({ 'is-valid': validated && isValidInput('city') })}
-              isInvalid={!isValidInput('city')}
+              className={clsx({ "is-valid": validated && isValidInput("city") })}
+              isInvalid={!isValidInput("city")}
             />
-            <Feedback type={isValidInput('city') ? 'valid' : 'invalid'}>
-              {isValidInput('city') ? 'Looks good!' : formErrors.find((err) => err.name === 'city')?.message}
+            <Feedback type={isValidInput("city") ? "valid" : "invalid"}>
+              {isValidInput("city") ? "Looks good!" : formErrors.find((err) => err.name === "city")?.message}
             </Feedback>
           </InputGroup>
         </FormGroup>
@@ -269,11 +284,11 @@ const ServerSideValidation = () => {
               placeholder="State"
               value={formValue.state}
               onChange={handleChange}
-              className={clsx({ 'is-valid': validated && isValidInput('state') })}
-              isInvalid={!isValidInput('state')}
+              className={clsx({ "is-valid": validated && isValidInput("state") })}
+              isInvalid={!isValidInput("state")}
             />
-            <Feedback type={isValidInput('state') ? 'valid' : 'invalid'}>
-              {isValidInput('state') ? 'Looks good!' : formErrors.find((err) => err.name === 'state')?.message}
+            <Feedback type={isValidInput("state") ? "valid" : "invalid"}>
+              {isValidInput("state") ? "Looks good!" : formErrors.find((err) => err.name === "state")?.message}
             </Feedback>
           </InputGroup>
         </FormGroup>
@@ -285,11 +300,11 @@ const ServerSideValidation = () => {
             name="zip"
             value={formValue.zip}
             onChange={handleChange}
-            className={clsx({ 'is-valid': validated && isValidInput('zip') })}
-            isInvalid={!isValidInput('zip')}
+            className={clsx({ "is-valid": validated && isValidInput("zip") })}
+            isInvalid={!isValidInput("zip")}
           />
-          <Feedback type={isValidInput('zip') ? 'valid' : 'invalid'}>
-            {isValidInput('zip') ? 'Looks good!' : formErrors.find((err) => err.name === 'zip')?.message}
+          <Feedback type={isValidInput("zip") ? "valid" : "invalid"}>
+            {isValidInput("zip") ? "Looks good!" : formErrors.find((err) => err.name === "zip")?.message}
           </Feedback>
         </FormGroup>
         <FormGroup className="col-12">
@@ -323,18 +338,20 @@ const Tooltips = () => {
       title="Tooltips"
       description={
         <>
-          If your form layout allows it, you can swap the{' '}
+          If your form layout allows it, you can swap the{" "}
           <code>
-            .{'{'}valid|invalid{'}'}-feedback
-          </code>{' '}
-          classes for{' '}
+            .{"{"}valid|invalid{"}"}-feedback
+          </code>{" "}
+          classes for{" "}
           <code>
-            .{'{'}valid|invalid{'}'}-tooltip
-          </code>{' '}
-          classes to display validation feedbackin a styled tooltip. Be sure to have a parent with <code>position: relative</code> on it for tooltip
-          positioning. In the example below, our column classes have this already, but your project may require an alternative setup.{' '}
+            .{"{"}valid|invalid{"}"}-tooltip
+          </code>{" "}
+          classes to display validation feedbackin a styled tooltip. Be sure to have a parent with{" "}
+          <code>position: relative</code> on it for tooltip positioning. In the example below, our column classes have
+          this already, but your project may require an alternative setup.{" "}
         </>
-      }>
+      }
+    >
       <Form className="row g-3 needs-validation" noValidate validated={validated} onSubmit={handleSubmit}>
         <FormGroup className="position-relative col-md-4">
           <FormLabel>First name</FormLabel>
@@ -398,7 +415,8 @@ const SupportedElements = () => {
     <ComponentContainerCard
       id="supported-elements"
       title="Supported elements"
-      description={<>Validation styles are available for the following form controls and components:</>}>
+      description={<>Validation styles are available for the following form controls and components:</>}
+    >
       <ul>
         <li>
           <code>&lt;input&gt;</code>s and&nbsp;
@@ -418,7 +436,13 @@ const SupportedElements = () => {
       <form className="was-validated">
         <div className="mb-3">
           <FormLabel htmlFor="validationTextarea">Textarea</FormLabel>
-          <textarea className="form-control" id="validationTextarea" placeholder="Required example textarea" required defaultValue={''} />
+          <textarea
+            className="form-control"
+            id="validationTextarea"
+            placeholder="Required example textarea"
+            required
+            defaultValue={""}
+          />
           <Feedback type="invalid">Please enter a message in the textarea.</Feedback>
         </div>
         <div className="form-check mb-3">

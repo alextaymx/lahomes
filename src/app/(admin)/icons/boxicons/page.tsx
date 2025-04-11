@@ -1,10 +1,10 @@
-import PageTitle from '@/components/PageTitle'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import { Card, CardBody } from 'react-bootstrap'
+import PageTitle from "@/components/PageTitle"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import type { Metadata } from "next"
+import Link from "next/link"
+import { Card, CardBody } from "react-bootstrap"
 
-export const metadata: Metadata = { title: 'Box Icons' }
+export const metadata: Metadata = { title: "Box Icons" }
 
 const BoxIcons = () => {
   return (

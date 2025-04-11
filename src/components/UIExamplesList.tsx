@@ -1,16 +1,16 @@
-'use client'
-import { Card } from 'react-bootstrap'
-import Gumshoe from 'gumshoejs'
-import { useEffect, useRef } from 'react'
+"use client"
+import { Card } from "react-bootstrap"
+import Gumshoe from "gumshoejs"
+import { useEffect, useRef } from "react"
 
-import type { UIExamplesListProps } from '@/types/component-props'
-import Link from 'next/link'
+import type { UIExamplesListProps } from "@/types/component-props"
+import Link from "next/link"
 
 const UIExamplesList = ({ examples }: UIExamplesListProps) => {
   const navRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (navRef.current) new Gumshoe('.docs-nav a')
+    if (navRef.current) new Gumshoe(".docs-nav a")
   }, [])
 
   return (

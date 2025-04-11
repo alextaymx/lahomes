@@ -1,10 +1,19 @@
-import { Card, CardBody, CardHeader, CardTitle, Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'react-bootstrap'
+import {
+  Card,
+  CardBody,
+  CardHeader,
+  CardTitle,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+} from "react-bootstrap"
 
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import SimplebarReactClient from '@/components/wrappers/SimplebarReactClient'
-import { getAllFriends } from '@/helpers/data'
-import Image from 'next/image'
-import Link from 'next/link'
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import SimplebarReactClient from "@/components/wrappers/SimplebarReactClient"
+import { getAllFriends } from "@/helpers/data"
+import Image from "next/image"
+import Link from "next/link"
 
 const FriendsRequest = async () => {
   const friends = await getAllFriends()
@@ -18,7 +27,7 @@ const FriendsRequest = async () => {
         <SimplebarReactClient className="p-3" style={{ maxHeight: 400 }}>
           {friends &&
             friends.map((friend, idx) => (
-              <div className={`d-flex align-items-center ${friends.length - 1 === idx ? '' : 'mb-3'}`} key={idx}>
+              <div className={`d-flex align-items-center ${friends.length - 1 === idx ? "" : "mb-3"}`} key={idx}>
                 <div className="flex-shrink-0">
                   <Image src={friend.avatar} className="img-fluid avatar-sm rounded me-2" alt="avatar-5" />
                 </div>
@@ -29,7 +38,7 @@ const FriendsRequest = async () => {
                   <p className="mb-0">{friend.mutualCount} mutual friends</p>
                 </div>
                 <Dropdown>
-                  <DropdownToggle as={'a'} role="button" className="arrow-none text-dark">
+                  <DropdownToggle as={"a"} role="button" className="arrow-none text-dark">
                     <IconifyIcon icon="bx:dots-vertical-rounded" className="fs-18" />
                   </DropdownToggle>
                   <DropdownMenu className="dropdown-menu-end">

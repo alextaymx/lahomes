@@ -1,12 +1,12 @@
-import ComponentContainerCard from '@/components/ComponentContainerCard'
-import PageTitle from '@/components/PageTitle'
+import ComponentContainerCard from "@/components/ComponentContainerCard"
+import PageTitle from "@/components/PageTitle"
 
-import UIExamplesList from '@/components/UIExamplesList'
-import type { Metadata } from 'next'
-import { Button, Col, OverlayTrigger, Popover, PopoverBody, PopoverHeader, Row } from 'react-bootstrap'
-import type { Placement } from 'react-bootstrap/esm/types'
+import UIExamplesList from "@/components/UIExamplesList"
+import type { Metadata } from "next"
+import { Button, Col, OverlayTrigger, Popover, PopoverBody, PopoverHeader, Row } from "react-bootstrap"
+import type { Placement } from "react-bootstrap/esm/types"
 
-export const metadata: Metadata = { title: 'Popovers' }
+export const metadata: Metadata = { title: "Popovers" }
 
 const LiveDemo = () => {
   const basicPopover = (
@@ -21,12 +21,13 @@ const LiveDemo = () => {
       title="Live demo"
       description={
         <>
-          {' '}
-          We use JavaScript similar to the snippet above to render the following live popover. Titles are set via <code>data-bs-title</code> and body
-          content is set via <code>data-bs-content</code>.
+          {" "}
+          We use JavaScript similar to the snippet above to render the following live popover. Titles are set via{" "}
+          <code>data-bs-title</code> and body content is set via <code>data-bs-content</code>.
         </>
-      }>
-      <OverlayTrigger trigger={'click'} placement="right" overlay={basicPopover}>
+      }
+    >
+      <OverlayTrigger trigger={"click"} placement="right" overlay={basicPopover}>
         <Button type="button" variant="danger">
           Click to toggle popover
         </Button>
@@ -36,12 +37,13 @@ const LiveDemo = () => {
 }
 
 const PopoverDirection = () => {
-  const directions: Placement[] = ['top', 'bottom', 'left', 'right']
+  const directions: Placement[] = ["top", "bottom", "left", "right"]
   return (
     <ComponentContainerCard
       id="popover-directions"
       title="Popover Directions"
-      description={<>Four options are available: top, right, bottom, and left aligned.</>}>
+      description={<>Four options are available: top, right, bottom, and left aligned.</>}
+    >
       <div className="d-flex flex-wrap gap-2">
         {directions.map((direction, idx) => (
           <OverlayTrigger
@@ -52,7 +54,8 @@ const PopoverDirection = () => {
               <Popover id={`popover-positioned-${direction}`}>
                 <PopoverBody>Vivamus sagittis lacus vel augue laoreet rutrum faucibus.</PopoverBody>
               </Popover>
-            }>
+            }
+          >
             <Button variant="primary">Popover on {direction}</Button>
           </OverlayTrigger>
         ))}
@@ -74,10 +77,12 @@ const DismissOnNextClick = () => {
       title="Dismiss on Next Click"
       description={
         <>
-          {' '}
-          Use the <code>focus</code> trigger to dismiss popovers on the user’s next click of a different element than the toggle element.
+          {" "}
+          Use the <code>focus</code> trigger to dismiss popovers on the user’s next click of a different element than
+          the toggle element.
         </>
-      }>
+      }
+    >
       <OverlayTrigger trigger="focus" placement="right" overlay={dismissiblePopover}>
         <Button variant="success" tabIndex={0}>
           Dismissible popover
@@ -102,8 +107,9 @@ const HoverPopover = () => {
         <>
           Use the <code>data-bs-trigger=&quot;hover&quot;</code> trigger Hover to show popover.
         </>
-      }>
-      <OverlayTrigger trigger={['hover', 'focus']} placement="right" overlay={hoverPopover}>
+      }
+    >
+      <OverlayTrigger trigger={["hover", "focus"]} placement="right" overlay={hoverPopover}>
         <Button variant="dark"> Please Hover Me</Button>
       </OverlayTrigger>
     </ComponentContainerCard>
@@ -123,22 +129,23 @@ const CustomPopovers = () => {
       title="Custom Popovers"
       description={
         <>
-          ou can customize the appearance of popovers using CSS variables. We set a custom class with{' '}
-          <code>data-bs-custom-class=&quot;primary-popover&quot;</code> to scope our custom appearance and use it to override some of the local CSS
-          variables.
+          ou can customize the appearance of popovers using CSS variables. We set a custom class with{" "}
+          <code>data-bs-custom-class=&quot;primary-popover&quot;</code> to scope our custom appearance and use it to
+          override some of the local CSS variables.
         </>
-      }>
+      }
+    >
       <div className="button-list">
-        <OverlayTrigger trigger="click" placement="top" overlay={customPopover('primary')}>
+        <OverlayTrigger trigger="click" placement="top" overlay={customPopover("primary")}>
           <Button variant="primary">Primary popover</Button>
         </OverlayTrigger>
-        <OverlayTrigger trigger="click" placement="top" overlay={customPopover('success')}>
+        <OverlayTrigger trigger="click" placement="top" overlay={customPopover("success")}>
           <Button variant="success">Success popover</Button>
         </OverlayTrigger>
-        <OverlayTrigger trigger="click" placement="top" overlay={customPopover('danger')}>
+        <OverlayTrigger trigger="click" placement="top" overlay={customPopover("danger")}>
           <Button variant="danger">Danger popover</Button>
         </OverlayTrigger>
-        <OverlayTrigger trigger="click" placement="top" overlay={customPopover('info')}>
+        <OverlayTrigger trigger="click" placement="top" overlay={customPopover("info")}>
           <Button variant="info">Info popover</Button>
         </OverlayTrigger>
       </div>
@@ -159,14 +166,16 @@ const DisabledPopover = () => {
       id="disabled"
       description={
         <>
-          Elements with the <code>disabled</code> attribute aren’t interactive, meaning users cannot hover or click them to trigger a popover (or
-          tooltip). As a workaround, you’ll want to trigger the popover from a wrapper <code>&lt;div&gt;</code> or <code>&lt;span&gt;</code> and
-          override the <code>pointer-events</code> on the disabled element.
+          Elements with the <code>disabled</code> attribute aren’t interactive, meaning users cannot hover or click them
+          to trigger a popover (or tooltip). As a workaround, you’ll want to trigger the popover from a wrapper{" "}
+          <code>&lt;div&gt;</code> or <code>&lt;span&gt;</code> and override the <code>pointer-events</code> on the
+          disabled element.
         </>
-      }>
+      }
+    >
       <OverlayTrigger placement="right" overlay={disabledPopover}>
         <span className="d-inline-block">
-          <Button disabled style={{ pointerEvents: 'none' }}>
+          <Button disabled style={{ pointerEvents: "none" }}>
             Disabled button
           </Button>
         </span>
@@ -190,12 +199,12 @@ const Popovers = () => {
         <Col xl={3}>
           <UIExamplesList
             examples={[
-              { link: '#live-demo', label: 'Live demo' },
-              { link: '#popover-directions', label: 'Popover Directions' },
-              { link: '#dismiss', label: 'Dismiss on Next Click' },
-              { link: '#hover', label: 'Hover' },
-              { link: '#custom-popovers', label: 'Custom Popovers' },
-              { link: '#disabled', label: 'Disabled' },
+              { link: "#live-demo", label: "Live demo" },
+              { link: "#popover-directions", label: "Popover Directions" },
+              { link: "#dismiss", label: "Dismiss on Next Click" },
+              { link: "#hover", label: "Hover" },
+              { link: "#custom-popovers", label: "Custom Popovers" },
+              { link: "#disabled", label: "Disabled" },
             ]}
           />
         </Col>

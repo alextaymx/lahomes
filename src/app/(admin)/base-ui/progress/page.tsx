@@ -1,18 +1,19 @@
-import ComponentContainerCard from '@/components/ComponentContainerCard'
-import PageTitle from '@/components/PageTitle'
+import ComponentContainerCard from "@/components/ComponentContainerCard"
+import PageTitle from "@/components/PageTitle"
 
-import UIExamplesList from '@/components/UIExamplesList'
-import type { Metadata } from 'next'
-import { Col, ProgressBar, Row } from 'react-bootstrap'
+import UIExamplesList from "@/components/UIExamplesList"
+import type { Metadata } from "next"
+import { Col, ProgressBar, Row } from "react-bootstrap"
 
-export const metadata: Metadata = { title: 'Progress' }
+export const metadata: Metadata = { title: "Progress" }
 
 const ProgressBarWorks = () => {
   return (
     <ComponentContainerCard
       id="how-works"
       title="How it works"
-      description={<>A progress bar can be used to show a user how far along he/she is in a process.</>}>
+      description={<>A progress bar can be used to show a user how far along he/she is in a process.</>}
+    >
       <ProgressBar className="mb-2" now={0} />
       <ProgressBar className="mb-2" now={35} />
       <ProgressBar className="mb-2" now={50} />
@@ -27,7 +28,8 @@ const BackgroundProgressBar = () => {
     <ComponentContainerCard
       id="backgrounds-color"
       title="Backgrounds Color"
-      description={<>Use background utility classes to change the appearance of individual progress bars.</>}>
+      description={<>Use background utility classes to change the appearance of individual progress bars.</>}
+    >
       <ProgressBar now={25} variant="primary" className="mb-2" />
       <ProgressBar now={50} variant="secondary" className="mb-2" />
       <ProgressBar now={75} variant="success" className="mb-2" />
@@ -48,10 +50,11 @@ const StripedProgressBar = () => {
       title="Striped Progress Bar"
       description={
         <>
-          Add <code>.progress-bar-striped</code> to any <code>.progress-bar</code> to apply a stripe via CSS gradient over the progress bar’s
-          background color.
+          Add <code>.progress-bar-striped</code> to any <code>.progress-bar</code> to apply a stripe via CSS gradient
+          over the progress bar’s background color.
         </>
-      }>
+      }
+    >
       <ProgressBar now={25} striped className="mb-2" />
       <ProgressBar now={50} striped variant="secondary" className="mb-2" />
       <ProgressBar now={75} striped variant="success" className="mb-2" />
@@ -68,12 +71,14 @@ const HeightProgressBar = () => {
       title="Height"
       description={
         <>
-          {' '}
-          We only set a height value on the <code>.progress</code>, so if you change that value the inner <code>.progress-bar</code> will
-          automatically resize accordingly. Use <code>.progress-xs</code>, <code>.progress-sm</code>, <code>.progress-md</code>,{' '}
-          <code>.progress-lg</code> or <code>.progress-xl</code> classes.
+          {" "}
+          We only set a height value on the <code>.progress</code>, so if you change that value the inner{" "}
+          <code>.progress-bar</code> will automatically resize accordingly. Use <code>.progress-xs</code>,{" "}
+          <code>.progress-sm</code>, <code>.progress-md</code>, <code>.progress-lg</code> or <code>.progress-xl</code>{" "}
+          classes.
         </>
-      }>
+      }
+    >
       <ProgressBar now={25} variant="primary" className="mb-2 progress-xs" />
       <ProgressBar now={50} variant="secondary" className="mb-2 progress-sm" />
       <ProgressBar now={75} variant="success" className="mb-2 progress-md" />
@@ -97,10 +102,10 @@ const Progress = () => {
         <Col xl={3}>
           <UIExamplesList
             examples={[
-              { link: '#how-works', label: 'How it works' },
-              { link: '#backgrounds-color', label: 'Backgrounds Color' },
-              { link: '#progress-bar', label: 'Progress Bar' },
-              { link: '#height', label: 'Height' },
+              { link: "#how-works", label: "How it works" },
+              { link: "#backgrounds-color", label: "Backgrounds Color" },
+              { link: "#progress-bar", label: "Progress Bar" },
+              { link: "#height", label: "Height" },
             ]}
           />
         </Col>

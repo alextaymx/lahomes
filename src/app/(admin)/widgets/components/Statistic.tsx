@@ -1,8 +1,8 @@
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import Link from 'next/link'
-import { Card, CardBody, CardFooter, Col, Row } from 'react-bootstrap'
-import { statisticData } from '../data'
-import { StatisticType } from '../type'
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import Link from "next/link"
+import { Card, CardBody, CardFooter, Col, Row } from "react-bootstrap"
+import { statisticData } from "../data"
+import { StatisticType } from "../type"
 
 const StatCard = ({ stat }: { stat: StatisticType }) => {
   const { amount, change, changeColor, icon, iconColor, title } = stat
@@ -25,7 +25,7 @@ const StatCard = ({ stat }: { stat: StatisticType }) => {
         <div className="d-flex align-items-center justify-content-between">
           <div>
             <span className={`text-${changeColor} icons-center gap-1`}>
-              {changeColor === 'danger' ? (
+              {changeColor === "danger" ? (
                 <IconifyIcon icon="bxs:down-arrow" className="fs-12" />
               ) : (
                 <IconifyIcon icon="bxs:up-arrow" className="fs-12" />

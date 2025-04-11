@@ -1,17 +1,17 @@
-import useToggle from './useToggle'
-import { useState } from 'react'
+import useToggle from "./useToggle"
+import { useState } from "react"
 
 export default function useModal() {
   const { isTrue: isOpen, toggle: toggleModal } = useToggle()
 
-  const [size, setSize] = useState<'sm' | 'lg' | 'xl'>()
-  const [className, setClassName] = useState<string>('')
+  const [size, setSize] = useState<"sm" | "lg" | "xl">()
+  const [className, setClassName] = useState<string>("")
   const [scroll, setScroll] = useState<boolean>(false)
 
   // Opens large modal
-  const openModalWithSize = (size: 'sm' | 'lg' | 'xl') => {
+  const openModalWithSize = (size: "sm" | "lg" | "xl") => {
     setSize(size)
-    setClassName('')
+    setClassName("")
     setScroll(false)
     toggleModal()
   }
@@ -27,7 +27,7 @@ export default function useModal() {
   const openModalWithScroll = () => {
     setScroll(true)
     // setSize('sm');
-    setClassName('')
+    setClassName("")
     toggleModal()
   }
 

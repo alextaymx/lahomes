@@ -1,14 +1,14 @@
-'use client'
-import { useEffect, useState } from 'react'
-import { Col, Offcanvas } from 'react-bootstrap'
+"use client"
+import { useEffect, useState } from "react"
+import { Col, Offcanvas } from "react-bootstrap"
 
-import { getAllUsers, getUserById } from '@/helpers/data'
-import type { UserType } from '@/types/data'
-import ChatArea from './ChatArea'
-import ChatLeftSidebar from './ChatLeftSidebar'
-import { useChatContext } from '@/context/useChatContext'
+import { getAllUsers, getUserById } from "@/helpers/data"
+import type { UserType } from "@/types/data"
+import ChatArea from "./ChatArea"
+import ChatLeftSidebar from "./ChatLeftSidebar"
+import { useChatContext } from "@/context/useChatContext"
 
-const fetchSingleUser = async (id: UserType['id']) => {
+const fetchSingleUser = async (id: UserType["id"]) => {
   const data = await getUserById(id)
   if (data) return data
 }
@@ -25,7 +25,7 @@ const ChatApp = () => {
 
   useEffect(() => {
     const fetchInitial = async () => {
-      setSelectedUser(await fetchSingleUser('1'))
+      setSelectedUser(await fetchSingleUser("1"))
       setUsers(await fetchUsers())
     }
     fetchInitial()
@@ -46,7 +46,8 @@ const ChatApp = () => {
               className="offcanvas-xxl offcanvas-start h-100"
               tabIndex={-1}
               id="Contactoffcanvas"
-              aria-labelledby="ContactoffcanvasLabel">
+              aria-labelledby="ContactoffcanvasLabel"
+            >
               <ChatLeftSidebar users={users} onUserSelect={onUserChange} selectedUser={selectedUser} />
             </Offcanvas>
             <div className="d-none d-xxl-block">

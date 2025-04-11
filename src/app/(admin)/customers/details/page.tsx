@@ -1,17 +1,17 @@
-import PageTitle from '@/components/PageTitle'
-import { getAllProperty } from '@/helpers/data'
-import CustomerCard from './components/CustomerCard'
-import CustomersDetails from './components/CustomersDetails'
-import { customerData } from './data'
-import PropertyCard from './components/PropertyCard'
-import WeeklyInquiry from './components/WeeklyInquiry'
-import Transactions from './components/Transactions'
-import OwnProperty from './components/OwnProperty'
-import TransactionHistory from './components/TransactionHistory'
-import { Card, CardBody, CardHeader, CardTitle, Col, Row } from 'react-bootstrap'
-import { Metadata } from 'next'
+import PageTitle from "@/components/PageTitle"
+import { getAllProperty } from "@/helpers/data"
+import CustomerCard from "./components/CustomerCard"
+import CustomersDetails from "./components/CustomersDetails"
+import { customerData } from "./data"
+import PropertyCard from "./components/PropertyCard"
+import WeeklyInquiry from "./components/WeeklyInquiry"
+import Transactions from "./components/Transactions"
+import OwnProperty from "./components/OwnProperty"
+import TransactionHistory from "./components/TransactionHistory"
+import { Card, CardBody, CardHeader, CardTitle, Col, Row } from "react-bootstrap"
+import { Metadata } from "next"
 
-export const metadata: Metadata = { title: 'Customer Overview' }
+export const metadata: Metadata = { title: "Customer Overview" }
 
 const CustomerDetailsPage = async () => {
   const propertyData = await getAllProperty()
@@ -34,7 +34,7 @@ const CustomerDetailsPage = async () => {
           </Card>
           <Card>
             <CardHeader>
-              <CardTitle as={'h4'}>Interested Properties (3)</CardTitle>
+              <CardTitle as={"h4"}>Interested Properties (3)</CardTitle>
             </CardHeader>
           </Card>
           <Row className="mt-3">

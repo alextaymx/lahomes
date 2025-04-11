@@ -1,12 +1,12 @@
-import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardTitle, Col, Row } from 'react-bootstrap'
+import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardTitle, Col, Row } from "react-bootstrap"
 
-import UIExamplesList from '@/components/UIExamplesList'
-import type { Metadata } from 'next'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import PageTitle from '@/components/PageTitle'
-import Link from 'next/link'
+import UIExamplesList from "@/components/UIExamplesList"
+import type { Metadata } from "next"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import PageTitle from "@/components/PageTitle"
+import Link from "next/link"
 
-export const metadata: Metadata = { title: 'Breadcrumbs' }
+export const metadata: Metadata = { title: "Breadcrumbs" }
 
 const page = () => {
   return (
@@ -16,15 +16,15 @@ const page = () => {
         <Col xl={9}>
           <Card>
             <CardBody>
-              <CardTitle as={'h5'} className="mb-1 anchor" id="default">
+              <CardTitle as={"h5"} className="mb-1 anchor" id="default">
                 Default Example
                 <Link className="anchor-link" href="#default">
                   #
                 </Link>
               </CardTitle>
               <p className="text-muted">
-                Use an ordered or unordered list with linked list items to create a minimally styled breadcrumb. Use our utilities to add additional
-                styles as desired.
+                Use an ordered or unordered list with linked list items to create a minimally styled breadcrumb. Use our
+                utilities to add additional styles as desired.
               </p>
               <nav aria-label="breadcrumb">
                 <Breadcrumb className="py-0">
@@ -63,7 +63,7 @@ const page = () => {
           </Card>
           <Card>
             <CardBody>
-              <CardTitle as={'h5'} className="mb-1 anchor" id="dividers_breadcrumb">
+              <CardTitle as={"h5"} className="mb-1 anchor" id="dividers_breadcrumb">
                 Dividers Breadcrumb
                 <Link className="anchor-link" href="#dividers_breadcrumb">
                   #
@@ -81,7 +81,7 @@ const page = () => {
                 <Breadcrumb className="py-0">
                   <BreadcrumbItem>Home</BreadcrumbItem>
                   <div className="mx-1" style={{ height: 24 }}>
-                    {'>'}
+                    {">"}
                   </div>
                   <BreadcrumbItem active aria-current="page">
                     Library
@@ -92,11 +92,11 @@ const page = () => {
                 <Breadcrumb className="mb-0 py-0">
                   <BreadcrumbItem>Home</BreadcrumbItem>
                   <div className="mx-1" style={{ height: 24 }}>
-                    {'>'}
+                    {">"}
                   </div>
                   <BreadcrumbItem>Library</BreadcrumbItem>
                   <div className="mx-1" style={{ height: 24 }}>
-                    {'>'}
+                    {">"}
                   </div>
                   <BreadcrumbItem active aria-current="page">
                     Data
@@ -109,8 +109,8 @@ const page = () => {
         <Col xl={3}>
           <UIExamplesList
             examples={[
-              { link: '#default', label: 'Default Example' },
-              { link: '#dividers_breadcrumb', label: 'Dividers Breadcrumb' },
+              { link: "#default", label: "Default Example" },
+              { link: "#dividers_breadcrumb", label: "Dividers Breadcrumb" },
             ]}
           />
         </Col>

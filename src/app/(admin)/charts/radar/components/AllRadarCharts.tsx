@@ -1,9 +1,9 @@
-'use client'
-import ComponentContainerCard from '@/components/ComponentContainerCard'
-import { useState } from 'react'
-import ReactApexChart from 'react-apexcharts'
-import { Button } from 'react-bootstrap'
-import { basicRadarOpts, multipleSeriesOpts, polygonFillOpts } from '../data'
+"use client"
+import ComponentContainerCard from "@/components/ComponentContainerCard"
+import { useState } from "react"
+import ReactApexChart from "react-apexcharts"
+import { Button } from "react-bootstrap"
+import { basicRadarOpts, multipleSeriesOpts, polygonFillOpts } from "../data"
 
 const BasicChart = () => {
   return (
@@ -24,15 +24,15 @@ const PolygonFillChart = () => {
 const MultipleSeriesChart = () => {
   const [data, setData] = useState([
     {
-      name: 'Series 1',
+      name: "Series 1",
       data: [80, 50, 30, 40, 100, 20],
     },
     {
-      name: 'Series 2',
+      name: "Series 2",
       data: [20, 30, 40, 80, 20, 80],
     },
     {
-      name: 'Series 3',
+      name: "Series 3",
       data: [44, 76, 78, 13, 43, 10],
     },
   ])
@@ -48,15 +48,15 @@ const MultipleSeriesChart = () => {
 
     setData([
       {
-        name: 'Series 1',
+        name: "Series 1",
         data: randomSeries(),
       },
       {
-        name: 'Series 2',
+        name: "Series 2",
         data: randomSeries(),
       },
       {
-        name: 'Series 3',
+        name: "Series 3",
         data: randomSeries(),
       },
     ])

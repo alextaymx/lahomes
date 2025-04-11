@@ -1,12 +1,12 @@
-'use client'
-import avatar2 from '@/assets/images/users/avatar-2.jpg'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import { ApexOptions } from 'apexcharts'
-import Image from 'next/image'
-import Link from 'next/link'
-import ReactApexChart from 'react-apexcharts'
-import { Card, CardBody, CardTitle, Col, Row } from 'react-bootstrap'
-import { propertyFileData, propertyStatusData, PropertyStatusType, reviewData, ReviewType } from '../data'
+"use client"
+import avatar2 from "@/assets/images/users/avatar-2.jpg"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import { ApexOptions } from "apexcharts"
+import Image from "next/image"
+import Link from "next/link"
+import ReactApexChart from "react-apexcharts"
+import { Card, CardBody, CardTitle, Col, Row } from "react-bootstrap"
+import { propertyFileData, propertyStatusData, PropertyStatusType, reviewData, ReviewType } from "../data"
 
 const AgentStatCard = ({ count, icon, progress, title, variant }: PropertyStatusType) => {
   const AgentDetailsOptions: ApexOptions = {
@@ -14,7 +14,7 @@ const AgentStatCard = ({ count, icon, progress, title, variant }: PropertyStatus
     chart: {
       width: 90,
       height: 90,
-      type: 'radialBar',
+      type: "radialBar",
       sparkline: {
         enabled: true,
       },
@@ -23,7 +23,7 @@ const AgentStatCard = ({ count, icon, progress, title, variant }: PropertyStatus
       radialBar: {
         hollow: {
           margin: 0,
-          size: '50%',
+          size: "50%",
         },
         track: {
           margin: 0,
@@ -41,9 +41,9 @@ const AgentStatCard = ({ count, icon, progress, title, variant }: PropertyStatus
       },
     },
     stroke: {
-      lineCap: 'round',
+      lineCap: "round",
     },
-    labels: ['Cricket'],
+    labels: ["Cricket"],
     colors: [variant],
   }
   return (
@@ -58,7 +58,13 @@ const AgentStatCard = ({ count, icon, progress, title, variant }: PropertyStatus
             <p className="mb-0 fw-semibold text-dark fs-20">{count}</p>
           </Col>
           <Col lg={6}>
-            <ReactApexChart options={AgentDetailsOptions} series={AgentDetailsOptions.series} height={90} type="radialBar" className="apex-charts" />
+            <ReactApexChart
+              options={AgentDetailsOptions}
+              series={AgentDetailsOptions.series}
+              height={90}
+              type="radialBar"
+              className="apex-charts"
+            />
           </Col>
         </Row>
       </CardBody>
@@ -69,7 +75,7 @@ const AgentStatCard = ({ count, icon, progress, title, variant }: PropertyStatus
 const PropertyStatus = () => {
   return (
     <div className="mt-4">
-      <CardTitle as={'h4'} className="mb-3">
+      <CardTitle as={"h4"} className="mb-3">
         Property Status :
       </CardTitle>
       <Row className="g-2">
@@ -122,7 +128,7 @@ const Reviews = () => {
   }
   return (
     <div className="mt-4">
-      <CardTitle as={'h4'} className="mb-3">
+      <CardTitle as={"h4"} className="mb-3">
         Reviews :
       </CardTitle>
       <Row>
@@ -139,12 +145,15 @@ const Reviews = () => {
 const PropertyFile = () => {
   return (
     <>
-      <CardTitle as={'h4'} className="mt-4">
+      <CardTitle as={"h4"} className="mt-4">
         Property File :
       </CardTitle>
       <div className="mt-3 d-flex flex-wrap gap-2">
         {propertyFileData.map((item, idx) => (
-          <div className="d-flex p-2 gap-2 bg-light-subtle align-items-center text-start position-relative border rounded" key={idx}>
+          <div
+            className="d-flex p-2 gap-2 bg-light-subtle align-items-center text-start position-relative border rounded"
+            key={idx}
+          >
             <IconifyIcon icon={item.icon} className={`text-${item.variant} fs-24`} />
             <div>
               <h4 className="fs-14 mb-1">
@@ -169,7 +178,9 @@ const AgentDetailsCard = () => {
         <div className="d-flex flex-wrap align-items-center gap-3">
           <div className="position-relative">
             <Image src={avatar2} alt="avatar-2" className="avatar-xl user-img img-thumbnail rounded-circle" />
-            <div className="badge bg-success rounded-2 position-absolute bottom-0 start-50 translate-middle-x mb-n1 fs-11"># 1</div>
+            <div className="badge bg-success rounded-2 position-absolute bottom-0 start-50 translate-middle-x mb-n1 fs-11">
+              # 1
+            </div>
           </div>
           <div className="d-block">
             <Link href="" className="text-dark fw-medium fs-16">
@@ -196,46 +207,61 @@ const AgentDetailsCard = () => {
             <IconifyIcon icon="solar:outgoing-call-rounded-bold-duotone" className="fs-18 text-primary" />
             +123 864-357-7713
           </p>
-          <CardTitle as={'h4'} className="mb-2 mt-3">
+          <CardTitle as={"h4"} className="mb-2 mt-3">
             Social Media :
           </CardTitle>
           <ul className="list-inline d-flex gap-1 mb-0 mt-3 align-items-center">
             <li className="list-inline-item">
-              <Link href="" className="btn btn-soft-primary avatar-sm d-flex align-items-center justify-content-center fs-20">
+              <Link
+                href=""
+                className="btn btn-soft-primary avatar-sm d-flex align-items-center justify-content-center fs-20"
+              >
                 <span>
-                  {' '}
+                  {" "}
                   <IconifyIcon icon="ri:facebook-fill" />
                 </span>
               </Link>
             </li>
             <li className="list-inline-item">
-              <Link href="" className="btn btn-soft-danger avatar-sm d-flex align-items-center justify-content-center fs-20">
+              <Link
+                href=""
+                className="btn btn-soft-danger avatar-sm d-flex align-items-center justify-content-center fs-20"
+              >
                 <span>
-                  {' '}
+                  {" "}
                   <IconifyIcon icon="ri:instagram-line" />
                 </span>
               </Link>
             </li>
             <li className="list-inline-item">
-              <Link href="" className="btn btn-soft-info avatar-sm d-flex align-items-center justify-content-center  fs-20">
+              <Link
+                href=""
+                className="btn btn-soft-info avatar-sm d-flex align-items-center justify-content-center  fs-20"
+              >
                 <span>
-                  {' '}
+                  {" "}
                   <IconifyIcon icon="ri:twitter-line" />
                 </span>
               </Link>
             </li>
             <li className="list-inline-item">
-              <Link href="" className="btn btn-soft-success avatar-sm d-flex align-items-center justify-content-center fs-20">
+              <Link
+                href=""
+                className="btn btn-soft-success avatar-sm d-flex align-items-center justify-content-center fs-20"
+              >
                 <span>
-                  {' '}
+                  {" "}
                   <IconifyIcon icon="ri:whatsapp-line" />
                 </span>
               </Link>
             </li>
             <li className="list-inline-item">
-              <Link href="" className="btn btn-soft-warning avatar-sm d-flex align-items-center justify-content-center fs-20">
+              <Link
+                href=""
+                className="btn btn-soft-warning avatar-sm d-flex align-items-center justify-content-center fs-20"
+              >
                 <span>
-                  {' '}
+                  {" "}
                   <IconifyIcon icon="ri:mail-line" />
                 </span>
               </Link>
@@ -243,17 +269,19 @@ const AgentDetailsCard = () => {
           </ul>
         </div>
         <div className="mt-4">
-          <CardTitle as={'h4'} className="mb-2">
+          <CardTitle as={"h4"} className="mb-2">
             About Michael :
           </CardTitle>
           <p className="mb-2">
-            Meet Michael, a dedicated and experienced real estate agent who is committed to making your real estate journey smooth and successful.
-            With a passion for helping clients achieve their dreams, Michael brings a wealth of knowledge and expertise to every transaction.
+            Meet Michael, a dedicated and experienced real estate agent who is committed to making your real estate
+            journey smooth and successful. With a passion for helping clients achieve their dreams, Michael brings a
+            wealth of knowledge and expertise to every transaction.
           </p>
           <p className="mb-2">
-            Michael has been a prominent figure in the real estate industry for over a decade. His career began with a focus on residential
-            properties, quickly expanding to include commercial real estate and investment properties. Michael&apos;s extensive experience and deep
-            understanding of the market allow him to navigate even the most complex transactions with ease.
+            Michael has been a prominent figure in the real estate industry for over a decade. His career began with a
+            focus on residential properties, quickly expanding to include commercial real estate and investment
+            properties. Michael&apos;s extensive experience and deep understanding of the market allow him to navigate
+            even the most complex transactions with ease.
           </p>
           <p className="mb-2">
             <span className="fw-medium text-dark">Agency</span>

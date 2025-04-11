@@ -1,10 +1,10 @@
-import { Card, CardBody, CardTitle, Col, Row } from 'react-bootstrap'
-import UIExamplesList from '@/components/UIExamplesList'
-import AllRatings from './components/AllRatings'
-import type { Metadata } from 'next'
-import PageTitle from '@/components/PageTitle'
+import { Card, CardBody, CardTitle, Col, Row } from "react-bootstrap"
+import UIExamplesList from "@/components/UIExamplesList"
+import AllRatings from "./components/AllRatings"
+import type { Metadata } from "next"
+import PageTitle from "@/components/PageTitle"
 
-export const metadata: Metadata = { title: 'Ratings' }
+export const metadata: Metadata = { title: "Ratings" }
 
 const Ratings = () => {
   return (
@@ -14,12 +14,13 @@ const Ratings = () => {
         <Col xl={9}>
           <Card>
             <CardBody>
-              <CardTitle as={'h5'} className="mb-1 anchor" id="overview">
+              <CardTitle as={"h5"} className="mb-1 anchor" id="overview">
                 Overview
                 <a
                   className="btn btn-sm btn-outline-success rounded-2 float-end"
                   href="https://www.npmjs.com/package/@smastrom/react-rating"
-                  target="_blank">
+                  target="_blank"
+                >
                   Official Website
                 </a>
               </CardTitle>
@@ -33,12 +34,12 @@ const Ratings = () => {
         <Col xl={3}>
           <UIExamplesList
             examples={[
-              { link: '#overview', label: 'Default' },
-              { link: '#read_only', label: 'Read Only Example' },
-              { link: '#disable', label: 'Disable Example' },
-              { link: '#highlight', label: 'Highlight Only' },
-              { link: '#reset_example', label: 'Reset Rating Example' },
-              { link: '#rating_style', label: 'Rating Styles' },
+              { link: "#overview", label: "Default" },
+              { link: "#read_only", label: "Read Only Example" },
+              { link: "#disable", label: "Disable Example" },
+              { link: "#highlight", label: "Highlight Only" },
+              { link: "#reset_example", label: "Reset Rating Example" },
+              { link: "#rating_style", label: "Rating Styles" },
             ]}
           />
         </Col>

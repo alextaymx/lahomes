@@ -1,8 +1,8 @@
-'use client'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import { useLayoutContext } from '@/context/useLayoutContext'
-import useViewPort from '@/hooks/useViewPort'
-import { useEffect } from 'react'
+"use client"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import { useLayoutContext } from "@/context/useLayoutContext"
+import useViewPort from "@/hooks/useViewPort"
+import { useEffect } from "react"
 
 const HoverMenuToggle = () => {
   const {
@@ -13,13 +13,13 @@ const HoverMenuToggle = () => {
 
   useEffect(() => {
     if (width <= 1140) {
-      if (size !== 'hidden') changeMenuSize('hidden')
+      if (size !== "hidden") changeMenuSize("hidden")
     }
   }, [width])
 
   const handleHoverMenu = () => {
-    if (size === 'sm-hover-active') changeMenuSize('sm-hover')
-    else changeMenuSize('sm-hover-active')
+    if (size === "sm-hover-active") changeMenuSize("sm-hover")
+    else changeMenuSize("sm-hover-active")
   }
   return (
     <button type="button" onClick={handleHoverMenu} className="button-sm-hover" aria-label="Show Full Sidebar">

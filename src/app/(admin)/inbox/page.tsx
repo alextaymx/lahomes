@@ -1,10 +1,10 @@
-import PageTitle from '@/components/PageTitle'
-import React from 'react'
-import EmailView from './components/EmailView'
-import { Card, Row } from 'react-bootstrap'
-import { Metadata } from 'next'
+import PageTitle from "@/components/PageTitle"
+import React from "react"
+import EmailView from "./components/EmailView"
+import { Card, Row } from "react-bootstrap"
+import { Metadata } from "next"
 
-export const metadata: Metadata = { title: 'Inbox' }
+export const metadata: Metadata = { title: "Inbox" }
 
 const InboxPage = () => {
   return (

@@ -1,12 +1,12 @@
-import logoDark from '@/assets/images/logo-dark.png'
-import logoLight from '@/assets/images/logo-light.png'
-import PageTitle from '@/components/PageTitle'
-import { currency } from '@/context/constants'
-import { Metadata } from 'next'
-import Image from 'next/image'
-import { Button, Card, CardBody, CardTitle, Col, Row } from 'react-bootstrap'
+import logoDark from "@/assets/images/logo-dark.png"
+import logoLight from "@/assets/images/logo-light.png"
+import PageTitle from "@/components/PageTitle"
+import { currency } from "@/context/constants"
+import { Metadata } from "next"
+import Image from "next/image"
+import { Button, Card, CardBody, CardTitle, Col, Row } from "react-bootstrap"
 
-export const metadata: Metadata = { title: 'Invoice' }
+export const metadata: Metadata = { title: "Invoice" }
 
 const InvoicePage = () => {
   return (
@@ -30,7 +30,7 @@ const InvoicePage = () => {
                   </address>
                 </div>
                 <div className="float-sm-start">
-                  <CardTitle as={'h5'} className="mb-2">
+                  <CardTitle as={"h5"} className="mb-2">
                     Invoice: #RB89562
                   </CardTitle>
                   <p>10 May, 2024</p>
@@ -96,9 +96,9 @@ const InvoicePage = () => {
                   <div className="clearfix pt-xl-3 pt-0">
                     <h6 className="text-muted">Notes:</h6>
                     <small className="text-muted">
-                      All accounts are to be paid within 7 days from receipt of invoice. To be paid by cheque or credit card or direct payment online.
-                      If account is not paid within 7 days the credits details supplied as confirmation of work undertaken will be charged the agreed
-                      quoted fee noted above.
+                      All accounts are to be paid within 7 days from receipt of invoice. To be paid by cheque or credit
+                      card or direct payment online. If account is not paid within 7 days the credits details supplied
+                      as confirmation of work undertaken will be charged the agreed quoted fee noted above.
                     </small>
                   </div>
                 </Col>

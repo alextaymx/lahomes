@@ -1,10 +1,10 @@
-import PageTitle from '@/components/PageTitle'
-import OwnerDetails from './components/OwnerDetails'
-import PropertyDetails from './components/PropertyDetails'
-import { Col, Row } from 'react-bootstrap'
-import { Metadata } from 'next'
+import PageTitle from "@/components/PageTitle"
+import OwnerDetails from "./components/OwnerDetails"
+import PropertyDetails from "./components/PropertyDetails"
+import { Col, Row } from "react-bootstrap"
+import { Metadata } from "next"
 
-export const metadata: Metadata = { title: 'Property Overview' }
+export const metadata: Metadata = { title: "Property Overview" }
 
 const PropertyDetailsPage = () => {
   return (

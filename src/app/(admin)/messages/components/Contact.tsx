@@ -1,11 +1,11 @@
-import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import Link from "next/link"
+import { useEffect, useState } from "react"
 
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import SimplebarReactClient from '@/components/wrappers/SimplebarReactClient'
-import { getAllUsers } from '@/helpers/data'
-import type { UserType } from '@/types/data'
-import Image from 'next/image'
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import SimplebarReactClient from "@/components/wrappers/SimplebarReactClient"
+import { getAllUsers } from "@/helpers/data"
+import type { UserType } from "@/types/data"
+import Image from "next/image"
 
 const Contact = () => {
   const [allContacts, setAllContacts] = useState<UserType[]>()
@@ -39,7 +39,7 @@ const Contact = () => {
       </div>
 
       {allContacts?.map((contact, idx) => (
-        <div className={`d-flex flex-column h-100 ${allContacts.length - 1 != idx && 'border-bottom'} `} key={idx}>
+        <div className={`d-flex flex-column h-100 ${allContacts.length - 1 != idx && "border-bottom"} `} key={idx}>
           <Link href="" className="d-block">
             <div className="d-flex align-items-center p-2 mb-1 rounded">
               <div className="position-relative">

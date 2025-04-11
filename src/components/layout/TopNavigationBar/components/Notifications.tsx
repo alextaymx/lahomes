@@ -1,11 +1,11 @@
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import SimplebarReactClient from '@/components/wrappers/SimplebarReactClient'
-import { getNotifications } from '@/helpers/data'
-import { NotificationType } from '@/types/data'
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
-import { Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Row } from 'react-bootstrap'
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import SimplebarReactClient from "@/components/wrappers/SimplebarReactClient"
+import { getNotifications } from "@/helpers/data"
+import { NotificationType } from "@/types/data"
+import Image from "next/image"
+import Link from "next/link"
+import React from "react"
+import { Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Row } from "react-bootstrap"
 
 const NotificationItem = ({ from, content, icon }: NotificationType) => {
   return (
@@ -16,7 +16,9 @@ const NotificationItem = ({ from, content, icon }: NotificationType) => {
             <Image src={icon} className="img-fluid me-2 avatar-sm rounded-circle" alt="avatar-1" />
           ) : (
             <div className="avatar-sm me-2">
-              <span className="avatar-title bg-soft-info text-info fs-20 rounded-circle">{from.charAt(0).toUpperCase()}</span>
+              <span className="avatar-title bg-soft-info text-info fs-20 rounded-circle">
+                {from.charAt(0).toUpperCase()}
+              </span>
             </div>
           )}
         </div>
@@ -34,13 +36,14 @@ const Notifications = async () => {
   return (
     <Dropdown className="topbar-item ">
       <DropdownToggle
-        as={'a'}
+        as={"a"}
         type="button"
         className="topbar-button position-relative content-none"
         id="page-header-notifications-dropdown"
         data-bs-toggle="dropdown"
         aria-haspopup="true"
-        aria-expanded="false">
+        aria-expanded="false"
+      >
         <IconifyIcon icon="ri:notification-3-line" className="fs-24 align-middle " />
         <span className="position-absolute topbar-badge fs-10 translate-middle badge bg-danger rounded-pill">
           3<span className="visually-hidden">unread messages</span>
@@ -52,7 +55,7 @@ const Notifications = async () => {
             <Col>
               <h6 className="m-0 fs-16 fw-semibold"> Notifications</h6>
             </Col>
-            <Col xs={'auto'}>
+            <Col xs={"auto"}>
               <Link href="" className="text-dark text-decoration-underline">
                 <small>Clear All</small>
               </Link>

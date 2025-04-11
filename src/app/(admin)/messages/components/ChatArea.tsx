@@ -1,9 +1,9 @@
-import data from '@emoji-mart/data'
-import EmojiPicker from '@emoji-mart/react'
-import clsx from 'clsx'
+import data from "@emoji-mart/data"
+import EmojiPicker from "@emoji-mart/react"
+import clsx from "clsx"
 
-import { yupResolver } from '@hookform/resolvers/yup'
-import { Fragment, useCallback, useEffect, useRef, useState } from 'react'
+import { yupResolver } from "@hookform/resolvers/yup"
+import { Fragment, useCallback, useEffect, useRef, useState } from "react"
 import {
   Button,
   Card,
@@ -19,31 +19,31 @@ import {
   Offcanvas,
   OffcanvasHeader,
   Row,
-} from 'react-bootstrap'
-import { useForm } from 'react-hook-form'
-import * as yup from 'yup'
+} from "react-bootstrap"
+import { useForm } from "react-hook-form"
+import * as yup from "yup"
 
-import { messages } from '@/assets/data/social'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import SimplebarReactClient from '@/components/wrappers/SimplebarReactClient'
-import { useChatContext } from '@/context/useChatContext'
-import { useLayoutContext } from '@/context/useLayoutContext'
-import type { ChatMessageType, UserType } from '@/types/data'
-import { addOrSubtractMinutesFromDate } from '@/utils/date'
-import { getFileExtensionIcon } from '@/utils/get-icons'
+import { messages } from "@/assets/data/social"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import SimplebarReactClient from "@/components/wrappers/SimplebarReactClient"
+import { useChatContext } from "@/context/useChatContext"
+import { useLayoutContext } from "@/context/useLayoutContext"
+import type { ChatMessageType, UserType } from "@/types/data"
+import { addOrSubtractMinutesFromDate } from "@/utils/date"
+import { getFileExtensionIcon } from "@/utils/get-icons"
 
-import small1 from '@/assets/images/small/img-1.jpg'
-import small2 from '@/assets/images/small/img-2.jpg'
-import small3 from '@/assets/images/small/img-3.jpg'
-import avatar10 from '@/assets/images/users/avatar-10.jpg'
-import TextFormInput from '@/components/from/TextFormInput'
-import Image from 'next/image'
-import Link from 'next/link'
+import small1 from "@/assets/images/small/img-1.jpg"
+import small2 from "@/assets/images/small/img-2.jpg"
+import small3 from "@/assets/images/small/img-3.jpg"
+import avatar10 from "@/assets/images/users/avatar-10.jpg"
+import TextFormInput from "@/components/from/TextFormInput"
+import Image from "next/image"
+import Link from "next/link"
 
 const MessageDropdown = ({ message, toUser }: { message: ChatMessageType; toUser: UserType }) => {
   return (
-    <Dropdown drop={message.from.id === toUser.id ? 'end' : 'start'} className="chat-conversation-actions">
-      <DropdownToggle as={'a'} role="button" className="ps-1">
+    <Dropdown drop={message.from.id === toUser.id ? "end" : "start"} className="chat-conversation-actions">
+      <DropdownToggle as={"a"} role="button" className="ps-1">
         <IconifyIcon icon="bx:dots-vertical-rounded" className="fs-18" />
       </DropdownToggle>
       <DropdownMenu>
@@ -88,9 +88,10 @@ const VideoCall = ({ selectedUser }: { selectedUser: UserType }) => {
         <div
           role="button"
           className="btn btn-light avatar-sm d-flex align-items-center justify-content-center text-dark fs-20"
-          onClick={videoCall.toggle}>
+          onClick={videoCall.toggle}
+        >
           <span>
-            {' '}
+            {" "}
             <IconifyIcon icon="solar:videocamera-record-bold-duotone" />
           </span>
         </div>
@@ -103,7 +104,8 @@ const VideoCall = ({ selectedUser }: { selectedUser: UserType }) => {
         contentClassName="video-call"
         className="fade mx-auto d-flex"
         id="videocall"
-        aria-hidden="true">
+        aria-hidden="true"
+      >
         <ModalHeader className="border-0 mb-5 justify-content-end">
           <div className="video-call-head">
             <Image src={selectedUser.avatar} className="rounded" alt="avatar-4" />
@@ -133,7 +135,12 @@ const VideoCall = ({ selectedUser }: { selectedUser: UserType }) => {
                 </Link>
               </li>
               <li className="list-inline-item fw-bold" data-bs-dismiss="modal">
-                <Button variant="danger" size="sm" onClick={videoCall.toggle} className="rounded-pill d-flex icons-center">
+                <Button
+                  variant="danger"
+                  size="sm"
+                  onClick={videoCall.toggle}
+                  className="rounded-pill d-flex icons-center"
+                >
                   <IconifyIcon width={13} height={13} icon="ri:phone-line" className="me-1" />
                   10:02
                 </Button>
@@ -154,9 +161,10 @@ const VoiceCall = ({ selectedUser }: { selectedUser: UserType }) => {
         <div
           role="button"
           className="btn btn-light avatar-sm d-flex align-items-center justify-content-center text-dark fs-20"
-          onClick={voiceCall.toggle}>
+          onClick={voiceCall.toggle}
+        >
           <span>
-            {' '}
+            {" "}
             <IconifyIcon icon="solar:outgoing-call-rounded-bold-duotone" />
           </span>
         </div>
@@ -169,7 +177,8 @@ const VoiceCall = ({ selectedUser }: { selectedUser: UserType }) => {
         contentClassName="voice-call  mx-auto d-flex"
         className="fade"
         id="voicecall"
-        aria-hidden="true">
+        aria-hidden="true"
+      >
         <ModalHeader className="border-0 mt-5 justify-content-center">
           <div className="voice-call-head">
             <Image src={selectedUser.avatar} className="rounded-circle" alt="avatar-4" />
@@ -186,7 +195,11 @@ const VoiceCall = ({ selectedUser }: { selectedUser: UserType }) => {
                 </Link>
               </li>
               <li className="list-inline-item avatar-sm me-2" data-bs-dismiss="modal">
-                <Link href="" onClick={voiceCall.toggle} className="avatar-title rounded-circle bg-danger text-white fs-18">
+                <Link
+                  href=""
+                  onClick={voiceCall.toggle}
+                  className="avatar-title rounded-circle bg-danger text-white fs-18"
+                >
                   <IconifyIcon icon="solar:end-call-linear" />
                 </Link>
               </li>
@@ -212,9 +225,10 @@ const ProfileDetail = ({ selectedUser }: { selectedUser: UserType }) => {
         <div
           role="button"
           className="btn btn-light avatar-sm d-flex align-items-center justify-content-center text-dark fs-20"
-          onClick={chatProfile.toggle}>
+          onClick={chatProfile.toggle}
+        >
           <span>
-            {' '}
+            {" "}
             <IconifyIcon icon="solar:user-bold-duotone" />
           </span>
         </div>
@@ -226,7 +240,8 @@ const ProfileDetail = ({ selectedUser }: { selectedUser: UserType }) => {
         placement="end"
         className="shadow border-start"
         data-bs-scroll="true"
-        tabIndex={-1}>
+        tabIndex={-1}
+      >
         <OffcanvasHeader closeButton>
           <h5 className="offcanvas-title text-truncate w-50" id="user-profileLabel">
             Profile
@@ -243,7 +258,10 @@ const ProfileDetail = ({ selectedUser }: { selectedUser: UserType }) => {
               </Button>
               <p className="text-muted mt-2 fs-14">
                 Last Interacted:
-                <strong className={`text-${selectedUser.activityStatus === 'offline' ? 'danger' : 'success'}`}> {selectedUser.activityStatus}</strong>
+                <strong className={`text-${selectedUser.activityStatus === "offline" ? "danger" : "success"}`}>
+                  {" "}
+                  {selectedUser.activityStatus}
+                </strong>
               </p>
             </div>
             <div className="mt-3">
@@ -320,33 +338,47 @@ const ProfileDetail = ({ selectedUser }: { selectedUser: UserType }) => {
 
 const UserMessage = ({ message, toUser }: { message: ChatMessageType; toUser: UserType }) => {
   return (
-    <li className={clsx('clearfix gap-2 d-flex', { 'justify-content-end odd': message.from.id === toUser.id })}>
+    <li className={clsx("clearfix gap-2 d-flex", { "justify-content-end odd": message.from.id === toUser.id })}>
       {message.from.id != toUser.id && (
         <div className="chat-avatar text-center">
           <Image src={message.from.avatar} alt="avatar" className="avatar rounded-circle" />
         </div>
       )}
-      <div className={clsx('chat-conversation-text', { 'ms-0': message.from.id === toUser.id })}>
+      <div className={clsx("chat-conversation-text", { "ms-0": message.from.id === toUser.id })}>
         {message.from.id === toUser.id ? (
           <p className="mb-2  text-end">
-            08:30 <span className={`text-dark fw-medium me-1 `}>{message.from.id === toUser.id ? 'you' : message.from.name}</span>{' '}
+            08:30{" "}
+            <span className={`text-dark fw-medium me-1 `}>
+              {message.from.id === toUser.id ? "you" : message.from.name}
+            </span>{" "}
           </p>
         ) : (
           <p className="mb-2">
-            <span className={`text-dark fw-medium me-1 `}>{message.from.id === toUser.id ? 'you' : message.from.name}</span> 08:30
+            <span className={`text-dark fw-medium me-1 `}>
+              {message.from.id === toUser.id ? "you" : message.from.name}
+            </span>{" "}
+            08:30
           </p>
         )}
-        <div className={clsx('d-flex', { 'justify-content-end': message.from.id === toUser.id })}>
+        <div className={clsx("d-flex", { "justify-content-end": message.from.id === toUser.id })}>
           {message.from.id === toUser.id && <MessageDropdown message={message} toUser={toUser} />}
           <div className="chat-ctext-wrap d-flex ">
-            {message.message.type === 'text' && typeof message.message.value === 'string' && <p className="">{message.message.value}</p>}
-            {message.message.type === 'file' &&
-              typeof message.message.value === 'object' &&
+            {message.message.type === "text" && typeof message.message.value === "string" && (
+              <p className="">{message.message.value}</p>
+            )}
+            {message.message.type === "file" &&
+              typeof message.message.value === "object" &&
               message.message.value.map((item, idx) => (
                 <Fragment key={idx}>
                   {item.preview && (
                     <div role=" button" key={idx}>
-                      <Image src={item.preview} alt="attachment" height={84} width={121} className="img-thumbnail me-1" />
+                      <Image
+                        src={item.preview}
+                        alt="attachment"
+                        height={84}
+                        width={121}
+                        className="img-thumbnail me-1"
+                      />
                     </div>
                   )}
                   {item.name && (
@@ -381,34 +413,36 @@ const ChatArea = ({ selectedUser }: { selectedUser: UserType }) => {
   const [userMessages, setUserMessages] = useState<ChatMessageType[]>([])
 
   const messageSchema = yup.object({
-    newMessage: yup.string().required('Please enter message'),
+    newMessage: yup.string().required("Please enter message"),
   })
 
   const { reset, handleSubmit, control } = useForm({
     resolver: yupResolver(messageSchema),
   })
   const [toUser] = useState<UserType>({
-    id: '112',
+    id: "112",
     mutualCount: 56,
-    name: 'Gilbert Chicoine',
+    name: "Gilbert Chicoine",
     avatar: avatar10,
-    email: 'jamesbridge@teleworm.us',
-    message: 'Hey! Okay, thank you for letting me know. See you!',
+    email: "jamesbridge@teleworm.us",
+    message: "Hey! Okay, thank you for letting me know. See you!",
     time: addOrSubtractMinutesFromDate(650),
-    contact: '456 9595 9594',
-    emailMessage: '',
-    location: 'California, USA',
-    languages: ['English', 'German', 'Spanish'],
-    activityStatus: 'typing',
-    status: 'Active',
+    contact: "456 9595 9594",
+    emailMessage: "",
+    location: "California, USA",
+    languages: ["English", "German", "Spanish"],
+    activityStatus: "typing",
+    status: "Active",
   })
 
   const getMessagesForUser = useCallback(() => {
     if (selectedUser) {
       setUserMessages(
         [...messages].filter(
-          (m) => (m.to.id === toUser.id && m.from.id === selectedUser.id) || (toUser.id === m.from.id && m.to.id === selectedUser.id),
-        ),
+          (m) =>
+            (m.to.id === toUser.id && m.from.id === selectedUser.id) ||
+            (toUser.id === m.from.id && m.to.id === selectedUser.id)
+        )
       )
     }
   }, [selectedUser, toUser])
@@ -426,7 +460,7 @@ const ChatArea = ({ selectedUser }: { selectedUser: UserType }) => {
       id: (userMessages.length + 1).toString(),
       from: toUser,
       to: selectedUser,
-      message: { type: 'text', value: values.newMessage ?? '' },
+      message: { type: "text", value: values.newMessage ?? "" },
       sentOn: addOrSubtractMinutesFromDate(0.1),
     })
     setTimeout(() => {
@@ -435,7 +469,7 @@ const ChatArea = ({ selectedUser }: { selectedUser: UserType }) => {
         id: (userMessages.length + 1).toString(),
         from: selectedUser,
         to: toUser,
-        message: { type: 'text', value: values.newMessage ?? '' },
+        message: { type: "text", value: values.newMessage ?? "" },
         sentOn: addOrSubtractMinutesFromDate(0.1),
       })
       setUserMessages(otherNewMessages)
@@ -448,7 +482,7 @@ const ChatArea = ({ selectedUser }: { selectedUser: UserType }) => {
     const elementRef = useRef<HTMLDivElement>(null)
     useEffect(() => {
       if (elementRef && elementRef.current && elementRef.current.scrollIntoView) {
-        elementRef.current.scrollIntoView({ behavior: 'smooth' })
+        elementRef.current.scrollIntoView({ behavior: "smooth" })
       }
     })
     return <div ref={elementRef} />
@@ -461,7 +495,12 @@ const ChatArea = ({ selectedUser }: { selectedUser: UserType }) => {
   return (
     <Card className="position-relative overflow-hidden">
       <CardHeader className="d-flex align-items-center mh-100">
-        <Button variant="light" onClick={chatList.toggle} className="d-xxl-none d-flex align-items-center px-2 me-2" type="button">
+        <Button
+          variant="light"
+          onClick={chatList.toggle}
+          className="d-xxl-none d-flex align-items-center px-2 me-2"
+          type="button"
+        >
           <IconifyIcon icon="bx:menu" className="fs-18" />
         </Button>
         <div className="d-flex align-items-center">
@@ -472,10 +511,12 @@ const ChatArea = ({ selectedUser }: { selectedUser: UserType }) => {
                 {selectedUser.name}
               </span>
             </h5>
-            <p className={`mb-0 text-${selectedUser.activityStatus === 'offline' ? 'danger' : 'success'} fw-semibold fst-italic`}>
-              {selectedUser.activityStatus != 'typing' && <IconifyIcon icon="bxs:circle" className="fs-13" />}
+            <p
+              className={`mb-0 text-${selectedUser.activityStatus === "offline" ? "danger" : "success"} fw-semibold fst-italic`}
+            >
+              {selectedUser.activityStatus != "typing" && <IconifyIcon icon="bxs:circle" className="fs-13" />}
               {selectedUser.activityStatus}
-              {selectedUser.activityStatus === 'typing' && '...'}
+              {selectedUser.activityStatus === "typing" && "..."}
             </p>
           </div>
         </div>
@@ -488,7 +529,13 @@ const ChatArea = ({ selectedUser }: { selectedUser: UserType }) => {
             <ProfileDetail selectedUser={selectedUser} />
 
             <Dropdown className="list-inline-item fs-20 d-none d-md-flex">
-              <DropdownToggle as={'a'} role="button" className="arrow-none text-dark" data-bs-toggle="dropdown" aria-expanded="false">
+              <DropdownToggle
+                as={"a"}
+                role="button"
+                className="arrow-none text-dark"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
                 <IconifyIcon icon="bx:dots-vertical-rounded" />
               </DropdownToggle>
               <DropdownMenu className="dropdown-menu-end">
@@ -533,7 +580,8 @@ const ChatArea = ({ selectedUser }: { selectedUser: UserType }) => {
                   <Dropdown drop="up">
                     <DropdownToggle
                       type="button"
-                      className="btn btn-sm btn-primary rounded-start d-flex align-items-center input-group-text content-none">
+                      className="btn btn-sm btn-primary rounded-start d-flex align-items-center input-group-text content-none"
+                    >
                       <IconifyIcon width={18} height={27} icon="ri:emotion-line" className="fs-18" />
                     </DropdownToggle>
                     <DropdownMenu className="p-0 rounded-4">
@@ -550,7 +598,7 @@ const ChatArea = ({ selectedUser }: { selectedUser: UserType }) => {
                   />
                 </div>
               </Col>
-              <Col sm={'auto'}>
+              <Col sm={"auto"}>
                 <div className="d-flex gap-2">
                   <Button variant="soft-success" size="sm">
                     <IconifyIcon icon="ri:attachment-2" width={18} height={27} className="fs-18" />

@@ -1,12 +1,18 @@
-'use client'
-import ComponentContainerCard from '@/components/ComponentContainerCard'
-import ReactApexChart from 'react-apexcharts'
-import { candlestickWithLineOpts, categoryXAxisChartOpts, simpleChartOpts } from '../data'
+"use client"
+import ComponentContainerCard from "@/components/ComponentContainerCard"
+import ReactApexChart from "react-apexcharts"
+import { candlestickWithLineOpts, categoryXAxisChartOpts, simpleChartOpts } from "../data"
 
 const SimpleCandlestickChart = () => {
   return (
     <ComponentContainerCard id="simple" title="Simple Candlestick Chart">
-      <ReactApexChart height={400} options={simpleChartOpts} series={simpleChartOpts.series} type="candlestick" className="apex-charts" />
+      <ReactApexChart
+        height={400}
+        options={simpleChartOpts}
+        series={simpleChartOpts.series}
+        type="candlestick"
+        className="apex-charts"
+      />
     </ComponentContainerCard>
   )
 }

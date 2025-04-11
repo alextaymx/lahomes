@@ -1,7 +1,7 @@
-'use client'
-import ComponentContainerCard from '@/components/ComponentContainerCard'
-import ReactApexChart from 'react-apexcharts'
-import { basicBoxplotOpts, scatterBoxplotOpts } from '../data'
+"use client"
+import ComponentContainerCard from "@/components/ComponentContainerCard"
+import ReactApexChart from "react-apexcharts"
+import { basicBoxplotOpts, scatterBoxplotOpts } from "../data"
 
 const BasicChart = () => {
   return (

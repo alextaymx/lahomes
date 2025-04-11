@@ -1,7 +1,7 @@
-'use client'
-import ReactApexChart from 'react-apexcharts'
-import ComponentContainerCard from '@/components/ComponentContainerCard'
-import DynamicLoaded from './DynamicLoaded'
+"use client"
+import ReactApexChart from "react-apexcharts"
+import ComponentContainerCard from "@/components/ComponentContainerCard"
+import DynamicLoaded from "./DynamicLoaded"
 import {
   basicChartOpts,
   columnWithNegativeValueOpts,
@@ -13,7 +13,7 @@ import {
   markersChartOpts,
   rangeColumnOpts,
   stackedChartOpts,
-} from '../data'
+} from "../data"
 
 const BasicColumnChart = () => {
   return (
@@ -66,7 +66,12 @@ const ColumnWithGroupLabel = () => {
 const ColumnChartWithAnnotations = () => {
   return (
     <ComponentContainerCard id="rotate-labels" title="Column Chart with rotated labels & Annotations">
-      <ReactApexChart height={380} options={columnWithRotatedLabelsOpts} series={columnWithRotatedLabelsOpts.series} type="bar" />
+      <ReactApexChart
+        height={380}
+        options={columnWithRotatedLabelsOpts}
+        series={columnWithRotatedLabelsOpts.series}
+        type="bar"
+      />
     </ComponentContainerCard>
   )
 }
@@ -74,7 +79,12 @@ const ColumnChartWithAnnotations = () => {
 const NegativeValuesChart = () => {
   return (
     <ComponentContainerCard id="negative-value" title="Column Chart with negative values">
-      <ReactApexChart height={380} options={columnWithNegativeValueOpts} series={columnWithNegativeValueOpts.series} type="bar" />
+      <ReactApexChart
+        height={380}
+        options={columnWithNegativeValueOpts}
+        series={columnWithNegativeValueOpts.series}
+        type="bar"
+      />
     </ComponentContainerCard>
   )
 }

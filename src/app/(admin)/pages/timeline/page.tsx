@@ -1,11 +1,11 @@
-import PageTitle from "@/components/PageTitle";
-import { getAllTimeline } from "@/helpers/data";
-import type { TimelineType } from "@/types/data";
-import type { Metadata } from "next";
-import { Fragment } from "react";
-import { Card, CardBody, Col, Row } from "react-bootstrap";
+import PageTitle from "@/components/PageTitle"
+import { getAllTimeline } from "@/helpers/data"
+import type { TimelineType } from "@/types/data"
+import type { Metadata } from "next"
+import { Fragment } from "react"
+import { Card, CardBody, Col, Row } from "react-bootstrap"
 
-export const metadata: Metadata = { title: "Timeline" };
+export const metadata: Metadata = { title: "Timeline" }
 
 const CenteredTimeline = ({ timeline }: { timeline: TimelineType }) => {
   return (
@@ -30,14 +30,10 @@ const CenteredTimeline = ({ timeline }: { timeline: TimelineType }) => {
                             <h5 className="mt-0 fs-16">
                               {item.title}
                               {item.important && (
-                                <span className="badge bg-secondary ms-1 align-items-center">
-                                  important
-                                </span>
+                                <span className="badge bg-secondary ms-1 align-items-center">important</span>
                               )}
                             </h5>
-                            <p className="text-muted mb-0">
-                              {item.description}
-                            </p>
+                            <p className="text-muted mb-0">{item.description}</p>
                           </CardBody>
                         </Card>
                       </div>
@@ -54,32 +50,28 @@ const CenteredTimeline = ({ timeline }: { timeline: TimelineType }) => {
                           <CardBody>
                             <h5 className="mt-0 fs-16">
                               {item.important && (
-                                <span className="badge bg-secondary me-1 align-items-center">
-                                  important
-                                </span>
+                                <span className="badge bg-secondary me-1 align-items-center">important</span>
                               )}
                               {item.title}
                             </h5>
-                            <p className="text-muted mb-0">
-                              {item.description}
-                            </p>
+                            <p className="text-muted mb-0">{item.description}</p>
                           </CardBody>
                         </Card>
                       </div>
                     </div>
                   </div>
                 </article>
-              );
+              )
             })}
           </Fragment>
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}
 
 const Timeline = async () => {
-  const timelineData = await getAllTimeline();
+  const timelineData = await getAllTimeline()
   return (
     <>
       <PageTitle title="Timeline" subName="Pages" />
@@ -90,7 +82,7 @@ const Timeline = async () => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
-export default Timeline;
+export default Timeline

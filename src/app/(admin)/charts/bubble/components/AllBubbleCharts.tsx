@@ -1,7 +1,7 @@
-'use client'
-import ComponentContainerCard from '@/components/ComponentContainerCard'
-import ReactApexChart from 'react-apexcharts'
-import { bubbleChart3DOpts, simpleChartOpts } from '../data'
+"use client"
+import ComponentContainerCard from "@/components/ComponentContainerCard"
+import ReactApexChart from "react-apexcharts"
+import { bubbleChart3DOpts, simpleChartOpts } from "../data"
 
 const SimpleBubbleChart = () => {
   return (

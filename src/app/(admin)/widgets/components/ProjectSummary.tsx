@@ -1,9 +1,9 @@
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import SimplebarReactClient from '@/components/wrappers/SimplebarReactClient'
-import { getAllProjects } from '@/helpers/data'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Card, CardBody, CardTitle, ProgressBar } from 'react-bootstrap'
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import SimplebarReactClient from "@/components/wrappers/SimplebarReactClient"
+import { getAllProjects } from "@/helpers/data"
+import Image from "next/image"
+import Link from "next/link"
+import { Card, CardBody, CardTitle, ProgressBar } from "react-bootstrap"
 
 const ProjectSummary = async () => {
   const projectData = await getAllProjects()
@@ -18,7 +18,7 @@ const ProjectSummary = async () => {
               <IconifyIcon icon="bx:export" className="ms-1" />
             </Link>
           </div>
-          <CardTitle as={'h5'} className="mb-3">
+          <CardTitle as={"h5"} className="mb-3">
             Recent Project Summary
           </CardTitle>
         </div>
@@ -43,7 +43,11 @@ const ProjectSummary = async () => {
                       <td className="avatar-group">
                         {project.teamMembers.map((member, idx) => (
                           <Link href="" key={idx} className="avatar-group-item">
-                            <Image src={member} alt="avatar-2" className="img-fluid avatar-xs rounded-circle avatar-border" />
+                            <Image
+                              src={member}
+                              alt="avatar-2"
+                              className="img-fluid avatar-xs rounded-circle avatar-border"
+                            />
                           </Link>
                         ))}
                       </td>

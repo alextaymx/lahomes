@@ -1,26 +1,26 @@
-'use client'
-import ChoicesFormInput from '@/components/from/ChoicesFormInput'
-import TextAreaFormInput from '@/components/from/TextAreaFormInput'
-import TextFormInput from '@/components/from/TextFormInput'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import { yupResolver } from '@hookform/resolvers/yup'
-import { Button, Card, CardBody, CardHeader, CardTitle, Col, Row } from 'react-bootstrap'
-import { useForm } from 'react-hook-form'
-import * as yup from 'yup'
+"use client"
+import ChoicesFormInput from "@/components/from/ChoicesFormInput"
+import TextAreaFormInput from "@/components/from/TextAreaFormInput"
+import TextFormInput from "@/components/from/TextFormInput"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import { yupResolver } from "@hookform/resolvers/yup"
+import { Button, Card, CardBody, CardHeader, CardTitle, Col, Row } from "react-bootstrap"
+import { useForm } from "react-hook-form"
+import * as yup from "yup"
 
 const AddCustomer = () => {
   const messageSchema = yup.object({
-    name: yup.string().required('Please enter name'),
-    description: yup.string().required('Please enter description'),
-    zipCode: yup.string().required('Please enter Zip-Code'),
-    email: yup.string().email().required('Please enter email'),
-    number: yup.string().required('Please enter number'),
-    propertiesNumber: yup.string().required('Please enter Properties Number'),
-    facebookUrl: yup.string().required('Please enter Facebook Url'),
-    instagramUrl: yup.string().required('Please enter Instagram Url'),
-    twitterUrl: yup.string().required('Please enter Twitter Url'),
-    viewProperties: yup.string().required('Please enter view properties'),
-    ownProperties: yup.string().required('Please enter own Properties'),
+    name: yup.string().required("Please enter name"),
+    description: yup.string().required("Please enter description"),
+    zipCode: yup.string().required("Please enter Zip-Code"),
+    email: yup.string().email().required("Please enter email"),
+    number: yup.string().required("Please enter number"),
+    propertiesNumber: yup.string().required("Please enter Properties Number"),
+    facebookUrl: yup.string().required("Please enter Facebook Url"),
+    instagramUrl: yup.string().required("Please enter Instagram Url"),
+    twitterUrl: yup.string().required("Please enter Twitter Url"),
+    viewProperties: yup.string().required("Please enter view properties"),
+    ownProperties: yup.string().required("Please enter own Properties"),
   })
 
   const { handleSubmit, control } = useForm({
@@ -30,7 +30,7 @@ const AddCustomer = () => {
     <form onSubmit={handleSubmit(() => {})}>
       <Card>
         <CardHeader>
-          <CardTitle as={'h4'}>Customer Information</CardTitle>
+          <CardTitle as={"h4"}>Customer Information</CardTitle>
         </CardHeader>
         <CardBody>
           <Row>
@@ -46,17 +46,35 @@ const AddCustomer = () => {
             </Col>
             <Col lg={6}>
               <div className="mb-3">
-                <TextFormInput control={control} name="number" type="number" placeholder="Enter Number" label="Customer Number" />
+                <TextFormInput
+                  control={control}
+                  name="number"
+                  type="number"
+                  placeholder="Enter Number"
+                  label="Customer Number"
+                />
               </div>
             </Col>
             <Col lg={6}>
               <div className="mb-3">
-                <TextFormInput control={control} name="viewProperties" type="number" placeholder="Enter View Properties" label="View Properties" />
+                <TextFormInput
+                  control={control}
+                  name="viewProperties"
+                  type="number"
+                  placeholder="Enter View Properties"
+                  label="View Properties"
+                />
               </div>
             </Col>
             <Col lg={6}>
               <div className="mb-3">
-                <TextFormInput control={control} name="ownProperties" type="number" placeholder="Enter Own Properties" label="Own Properties" />
+                <TextFormInput
+                  control={control}
+                  name="ownProperties"
+                  type="number"
+                  placeholder="Enter Own Properties"
+                  label="Own Properties"
+                />
               </div>
             </Col>
             <Col lg={6}>
@@ -67,7 +85,7 @@ const AddCustomer = () => {
                 <span className="input-group-text fs-20 px-2 py-0">
                   <IconifyIcon icon="ri:money-dollar-circle-line" />
                 </span>
-                <input type="number" id="invest-property" className="form-control" placeholder={'000'} />
+                <input type="number" id="invest-property" className="form-control" placeholder={"000"} />
               </div>
             </Col>
             <Col lg={12}>
@@ -94,7 +112,13 @@ const AddCustomer = () => {
                 <label htmlFor="choices-city" className="form-label">
                   City
                 </label>
-                <ChoicesFormInput className="form-control" id="choices-city" data-choices data-choices-groups data-placeholder="Select City">
+                <ChoicesFormInput
+                  className="form-control"
+                  id="choices-city"
+                  data-choices
+                  data-choices-groups
+                  data-placeholder="Select City"
+                >
                   <option>Choose a city</option>
                   <optgroup label="UK">
                     <option value="London">London</option>
@@ -136,7 +160,13 @@ const AddCustomer = () => {
                 <label htmlFor="choices-country" className="form-label">
                   Country
                 </label>
-                <ChoicesFormInput className="form-control" id="choices-country" data-choices data-choices-groups data-placeholder="Select Country">
+                <ChoicesFormInput
+                  className="form-control"
+                  id="choices-country"
+                  data-choices
+                  data-choices-groups
+                  data-placeholder="Select Country"
+                >
                   <option>Choose a country</option>
                   <optgroup>
                     <option>United Kingdom</option>
@@ -174,7 +204,13 @@ const AddCustomer = () => {
                 <label htmlFor="choices-status" className="form-label">
                   Status
                 </label>
-                <ChoicesFormInput className="form-control" id="choices-status" data-choices data-choices-groups data-placeholder="Select status">
+                <ChoicesFormInput
+                  className="form-control"
+                  id="choices-status"
+                  data-choices
+                  data-choices-groups
+                  data-placeholder="Select status"
+                >
                   <option>Choose a Status</option>
                   <optgroup>
                     <option>Available</option>

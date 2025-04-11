@@ -1,8 +1,8 @@
-import React from 'react'
-import SignIn from './components/SignIn'
-import { Metadata } from 'next'
+import React from "react"
+import SignIn from "./components/SignIn"
+import { Metadata } from "next"
 
-export const metadata: Metadata = { title: 'Sign In' }
+export const metadata: Metadata = { title: "Sign In" }
 
 const SignInPage = () => {
   return <SignIn />

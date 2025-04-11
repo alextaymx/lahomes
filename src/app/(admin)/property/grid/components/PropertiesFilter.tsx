@@ -1,31 +1,22 @@
-"use client";
-import ChoicesFormInput from "@/components/from/ChoicesFormInput";
-import Nouislider from "nouislider-react";
-import { useState } from "react";
-import {
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-  Col,
-  Row,
-} from "react-bootstrap";
+"use client"
+import ChoicesFormInput from "@/components/from/ChoicesFormInput"
+import Nouislider from "nouislider-react"
+import { useState } from "react"
+import { Button, Card, CardBody, CardFooter, CardHeader, CardTitle, Col, Row } from "react-bootstrap"
 
 const PropertiesFilter = () => {
-  const [selectedValue, setSelectedValue] = useState([6000, 100000]);
+  const [selectedValue, setSelectedValue] = useState([6000, 100000])
   const handleSliderChange = (values: any) => {
-    setSelectedValue(values);
-  };
+    setSelectedValue(values)
+  }
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = Math.round(Number(event.target.value));
-    if (!Array.isArray(selectedValue)) return;
-    if (selectedValue[0] === undefined) return;
+    const newValue = Math.round(Number(event.target.value))
+    if (!Array.isArray(selectedValue)) return
+    if (selectedValue[0] === undefined) return
     if (selectedValue[0] <= newValue) {
-      setSelectedValue([selectedValue[0], newValue]);
+      setSelectedValue([selectedValue[0], newValue])
     }
-  };
+  }
   return (
     <Col xl={3} lg={12}>
       <Card>
@@ -40,11 +31,7 @@ const PropertiesFilter = () => {
             <label htmlFor="choices-single-groups" className="form-label">
               Properties Location
             </label>
-            <ChoicesFormInput
-              className="form-control"
-              id="choices-single-groups"
-              data-placeholder="Select City"
-            >
+            <ChoicesFormInput className="form-control" id="choices-single-groups" data-placeholder="Select City">
               <option>Choose a city</option>
               <optgroup label="UK">
                 <option value="London">London</option>
@@ -115,32 +102,18 @@ const PropertiesFilter = () => {
           <Row className="g-1">
             <Col lg={6}>
               <div className="mb-2">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  id="defaultCheck11"
-                />
+                <input className="form-check-input" type="checkbox" id="defaultCheck11" />
                 &nbsp;
-                <label
-                  className="form-check-label ms-1"
-                  htmlFor="defaultCheck11"
-                >
+                <label className="form-check-label ms-1" htmlFor="defaultCheck11">
                   For Rent
                 </label>
               </div>
             </Col>
             <Col lg={6}>
               <div className="mb-2">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  id="defaultCheck12"
-                />
+                <input className="form-check-input" type="checkbox" id="defaultCheck12" />
                 &nbsp;
-                <label
-                  className="form-check-label ms-1"
-                  htmlFor="defaultCheck12"
-                >
+                <label className="form-check-label ms-1" htmlFor="defaultCheck12">
                   For Sale
                 </label>
               </div>
@@ -150,12 +123,7 @@ const PropertiesFilter = () => {
           <Row className="g-1">
             <Col lg={6}>
               <div className="mb-2">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  id="defaultCheck"
-                  defaultChecked
-                />
+                <input className="form-check-input" type="checkbox" id="defaultCheck" defaultChecked />
                 &nbsp;
                 <label className="form-check-label ms-1" htmlFor="defaultCheck">
                   All Properties
@@ -164,64 +132,36 @@ const PropertiesFilter = () => {
             </Col>
             <Col lg={6}>
               <div className="mb-2">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  id="defaultCheck1"
-                />
+                <input className="form-check-input" type="checkbox" id="defaultCheck1" />
                 &nbsp;
-                <label
-                  className="form-check-label ms-1"
-                  htmlFor="defaultCheck1"
-                >
+                <label className="form-check-label ms-1" htmlFor="defaultCheck1">
                   Cottage
                 </label>
               </div>
             </Col>
             <Col lg={6}>
               <div className="mb-2">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  id="defaultCheck2"
-                />
+                <input className="form-check-input" type="checkbox" id="defaultCheck2" />
                 &nbsp;
-                <label
-                  className="form-check-label ms-1"
-                  htmlFor="defaultCheck1"
-                >
+                <label className="form-check-label ms-1" htmlFor="defaultCheck1">
                   Villas
                 </label>
               </div>
             </Col>
             <Col lg={6}>
               <div className="mb-2">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  id="defaultCheck3"
-                />
+                <input className="form-check-input" type="checkbox" id="defaultCheck3" />
                 &nbsp;
-                <label
-                  className="form-check-label ms-1"
-                  htmlFor="defaultCheck1"
-                >
+                <label className="form-check-label ms-1" htmlFor="defaultCheck1">
                   Apartment
                 </label>
               </div>
             </Col>
             <Col lg={6}>
               <div className="mb-2">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  id="defaultCheck4"
-                />
+                <input className="form-check-input" type="checkbox" id="defaultCheck4" />
                 &nbsp;
-                <label
-                  className="form-check-label ms-1"
-                  htmlFor="defaultCheck1"
-                >
+                <label className="form-check-label ms-1" htmlFor="defaultCheck1">
                   Duplex Bungalow
                 </label>
               </div>
@@ -237,12 +177,7 @@ const PropertiesFilter = () => {
             <label className="btn btn-outline-primary me-1" htmlFor="btncheck2">
               2 BHK
             </label>
-            <input
-              type="checkbox"
-              className="btn-check"
-              id="btncheck3"
-              defaultChecked
-            />
+            <input type="checkbox" className="btn-check" id="btncheck3" defaultChecked />
             <label className="btn btn-outline-primary me-1" htmlFor="btncheck3">
               3 BHK
             </label>
@@ -255,96 +190,54 @@ const PropertiesFilter = () => {
           <Row className="g-1">
             <Col lg={6}>
               <div className="mb-2">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  id="defaultCheck5"
-                />
+                <input className="form-check-input" type="checkbox" id="defaultCheck5" />
                 &nbsp;
-                <label
-                  className="form-check-label ms-1"
-                  htmlFor="defaultCheck1"
-                >
+                <label className="form-check-label ms-1" htmlFor="defaultCheck1">
                   Balcony
                 </label>
               </div>
             </Col>
             <Col lg={6}>
               <div className="mb-2">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  id="defaultCheck6"
-                />
+                <input className="form-check-input" type="checkbox" id="defaultCheck6" />
                 &nbsp;
-                <label
-                  className="form-check-label ms-1"
-                  htmlFor="defaultCheck1"
-                >
+                <label className="form-check-label ms-1" htmlFor="defaultCheck1">
                   Parking
                 </label>
               </div>
             </Col>
             <Col lg={6}>
               <div className="mb-2">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  id="defaultCheck7"
-                />
+                <input className="form-check-input" type="checkbox" id="defaultCheck7" />
                 &nbsp;
-                <label
-                  className="form-check-label ms-1"
-                  htmlFor="defaultCheck1"
-                >
+                <label className="form-check-label ms-1" htmlFor="defaultCheck1">
                   Spa
                 </label>
               </div>
             </Col>
             <Col lg={6}>
               <div className="mb-2">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  id="defaultCheck8"
-                />
+                <input className="form-check-input" type="checkbox" id="defaultCheck8" />
                 &nbsp;
-                <label
-                  className="form-check-label ms-1"
-                  htmlFor="defaultCheck1"
-                >
+                <label className="form-check-label ms-1" htmlFor="defaultCheck1">
                   Pool
                 </label>
               </div>
             </Col>
             <Col lg={6}>
               <div className="mb-2">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  id="defaultCheck9"
-                />
+                <input className="form-check-input" type="checkbox" id="defaultCheck9" />
                 &nbsp;
-                <label
-                  className="form-check-label ms-1"
-                  htmlFor="defaultCheck1"
-                >
+                <label className="form-check-label ms-1" htmlFor="defaultCheck1">
                   Restaurant
                 </label>
               </div>
             </Col>
             <Col lg={6}>
               <div className="mb-2">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  id="defaultCheck10"
-                />
+                <input className="form-check-input" type="checkbox" id="defaultCheck10" />
                 &nbsp;
-                <label
-                  className="form-check-label ms-1"
-                  htmlFor="defaultCheck1"
-                >
+                <label className="form-check-label ms-1" htmlFor="defaultCheck1">
                   Fitness Club
                 </label>
               </div>
@@ -358,7 +251,7 @@ const PropertiesFilter = () => {
         </CardFooter>
       </Card>
     </Col>
-  );
-};
+  )
+}
 
-export default PropertiesFilter;
+export default PropertiesFilter

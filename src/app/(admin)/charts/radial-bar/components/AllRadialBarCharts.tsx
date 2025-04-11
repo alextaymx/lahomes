@@ -1,6 +1,6 @@
-'use client'
-import ComponentContainerCard from '@/components/ComponentContainerCard'
-import ReactApexChart from 'react-apexcharts'
+"use client"
+import ComponentContainerCard from "@/components/ComponentContainerCard"
+import ReactApexChart from "react-apexcharts"
 import {
   basicRadialBarOpts,
   circleWithImageOpts,
@@ -9,7 +9,7 @@ import {
   multipleRadialBarsOpts,
   semiCircleGaugeOpts,
   strokedCircularGuageOpts,
-} from '../data'
+} from "../data"
 
 const BasicChart = () => {
   return (
@@ -22,7 +22,12 @@ const BasicChart = () => {
 const MultipleRadialBarsChart = () => {
   return (
     <ComponentContainerCard id="multiple" title="Multiple RadialBars">
-      <ReactApexChart height={320} options={multipleRadialBarsOpts} series={multipleRadialBarsOpts.series} type="radialBar" />
+      <ReactApexChart
+        height={320}
+        options={multipleRadialBarsOpts}
+        series={multipleRadialBarsOpts.series}
+        type="radialBar"
+      />
     </ComponentContainerCard>
   )
 }
@@ -46,7 +51,12 @@ const CircleChartWithImage = () => {
 const StrokedCircularGaugeChart = () => {
   return (
     <ComponentContainerCard id="stroked-guage" title="Stroked Circular Gauge">
-      <ReactApexChart height={380} options={strokedCircularGuageOpts} series={strokedCircularGuageOpts.series} type="radialBar" />
+      <ReactApexChart
+        height={380}
+        options={strokedCircularGuageOpts}
+        series={strokedCircularGuageOpts.series}
+        type="radialBar"
+      />
     </ComponentContainerCard>
   )
 }
@@ -54,7 +64,12 @@ const StrokedCircularGaugeChart = () => {
 const GradientCircularChart = () => {
   return (
     <ComponentContainerCard id="gradient" title="Gradient Circular Chart">
-      <ReactApexChart height={330} options={gradientCircularOpts} series={gradientCircularOpts.series} type="radialBar" />
+      <ReactApexChart
+        height={330}
+        options={gradientCircularOpts}
+        series={gradientCircularOpts.series}
+        type="radialBar"
+      />
     </ComponentContainerCard>
   )
 }

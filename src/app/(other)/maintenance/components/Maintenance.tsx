@@ -1,17 +1,17 @@
-'use client'
-import logoDark from '@/assets/images/logo-dark.png'
-import logoLight from '@/assets/images/logo-light.png'
-import maintenanceImg from '@/assets/images/maintenance.svg'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useEffect } from 'react'
-import { Button, Card, CardBody, Col, Container, Row } from 'react-bootstrap'
+"use client"
+import logoDark from "@/assets/images/logo-dark.png"
+import logoLight from "@/assets/images/logo-light.png"
+import maintenanceImg from "@/assets/images/maintenance.svg"
+import Image from "next/image"
+import Link from "next/link"
+import { useEffect } from "react"
+import { Button, Card, CardBody, Col, Container, Row } from "react-bootstrap"
 
 const Maintenance = () => {
   useEffect(() => {
-    document.body.classList.add('authentication-bg')
+    document.body.classList.add("authentication-bg")
     return () => {
-      document.body.classList.remove('authentication-bg')
+      document.body.classList.remove("authentication-bg")
     }
   }, [])
   return (
@@ -38,7 +38,9 @@ const Maintenance = () => {
                         </Link>
                       </div>
                       <h2 className="fw-bold text-center lh-base">We are currently performing maintenance</h2>
-                      <p className="text-muted text-center mt-1 mb-4">We&apos;re making the system more awesome. We&apos;ll be back shortly.</p>
+                      <p className="text-muted text-center mt-1 mb-4">
+                        We&apos;re making the system more awesome. We&apos;ll be back shortly.
+                      </p>
                       <div className="text-center">
                         <Button variant="danger">Contact Us</Button>
                       </div>

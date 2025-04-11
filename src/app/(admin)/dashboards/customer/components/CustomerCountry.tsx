@@ -1,7 +1,7 @@
-import Image from 'next/image'
-import { customersCountryData, CustomersCountryType } from '../data'
-import { Card, CardBody, Col, ProgressBar, Row } from 'react-bootstrap'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
+import Image from "next/image"
+import { customersCountryData, CustomersCountryType } from "../data"
+import { Card, CardBody, Col, ProgressBar, Row } from "react-bootstrap"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
 
 const CountryCard = ({ amount, change, country, image, progress, totalCustomers }: CustomersCountryType) => {
   return (
@@ -23,7 +23,7 @@ const CountryCard = ({ amount, change, country, image, progress, totalCustomers 
           <div className="text-end">
             <p className="mb-1 fw-semibold text-dark">Today</p>
             <h4 className="text-success mb-0 fw-semibold icons-center">
-              <IconifyIcon width={'20'} height={'20'} icon="ri-arrow-drop-up-fill" />+{change}
+              <IconifyIcon width={"20"} height={"20"} icon="ri-arrow-drop-up-fill" />+{change}
             </h4>
           </div>
         </div>

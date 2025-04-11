@@ -1,8 +1,8 @@
-'use client'
-import ComponentContainerCard from '@/components/ComponentContainerCard'
-import useRangeSlider from '@/hooks/useRangeSlider'
-import Nouislider from 'nouislider-react'
-import { useState } from 'react'
+"use client"
+import ComponentContainerCard from "@/components/ComponentContainerCard"
+import useRangeSlider from "@/hooks/useRangeSlider"
+import Nouislider from "nouislider-react"
+import { useState } from "react"
 
 const BasicSlider = () => {
   return (
@@ -15,7 +15,13 @@ const BasicSlider = () => {
 const VerticalRangeSlider = () => {
   return (
     <ComponentContainerCard id="vertical-range" title="Vertical Range Slider" titleClass="mb-3">
-      <Nouislider style={{ height: '150px' }} range={{ min: 0, max: 200 }} start={[60, 160]} connect orientation="vertical" />
+      <Nouislider
+        style={{ height: "150px" }}
+        range={{ min: 0, max: 200 }}
+        start={[60, 160]}
+        connect
+        orientation="vertical"
+      />
     </ComponentContainerCard>
   )
 }
@@ -29,13 +35,13 @@ const MultiElementsSlider = () => {
 }
 
 const ColorPicker = () => {
-  const colors = ['red', 'green', 'blue']
+  const colors = ["red", "green", "blue"]
 
-  const [state, setState] = useState('rgb(127, 127, 127)')
+  const [state, setState] = useState("rgb(127, 127, 127)")
 
   const onUpdate = (index: any) => (value: any) => {
     colors[index] = value[0]
-    setState(`rgb(${colors.join(',')})`)
+    setState(`rgb(${colors.join(",")})`)
   }
 
   return (
@@ -47,7 +53,7 @@ const ColorPicker = () => {
           connect={[true, false]}
           onUpdate={onUpdate(idx)}
           orientation="vertical"
-          style={{ height: '200px' }}
+          style={{ height: "200px" }}
           range={{ min: 0, max: 255 }}
           start={[125]}
         />
@@ -62,7 +68,14 @@ const ValueRangeSlider = () => {
 
   return (
     <ComponentContainerCard id="value-range" title="Value Range Slider" titleClass="mb-3">
-      <Nouislider behaviour="tap" step={350} range={{ min: 0, max: 10000 }} start={[500, 4000]} connect onSlide={(value) => onSlide3(1, value)} />
+      <Nouislider
+        behaviour="tap"
+        step={350}
+        range={{ min: 0, max: 10000 }}
+        start={[500, 4000]}
+        connect
+        onSlide={(value) => onSlide3(1, value)}
+      />
       <div className="d-flex justify-content-between mt-3">
         <p>value: {selectedRanges2 ? <span>{selectedRanges2[1]}</span> : null}</p>
       </div>
@@ -88,7 +101,7 @@ const SoftLimitSlider = () => {
           range={{ min: 0, max: 100 }}
           start={50}
           pips={{
-            mode: 'values',
+            mode: "values",
             values: [20, 80],
             density: 4,
           }}

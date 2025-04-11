@@ -1,8 +1,8 @@
-import { Metadata } from 'next'
-import Link from 'next/link'
-import { Card, CardBody, Col, Row } from 'react-bootstrap'
+import { Metadata } from "next"
+import Link from "next/link"
+import { Card, CardBody, Col, Row } from "react-bootstrap"
 
-export const metadata: Metadata = { title: '404' }
+export const metadata: Metadata = { title: "404" }
 
 const Error404AltPage = () => {
   return (

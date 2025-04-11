@@ -1,6 +1,6 @@
-'use client'
-import ComponentContainerCard from '@/components/ComponentContainerCard'
-import ReactApexChart from 'react-apexcharts'
+"use client"
+import ComponentContainerCard from "@/components/ComponentContainerCard"
+import ReactApexChart from "react-apexcharts"
 import {
   brushChartOpts,
   brushChartOpts2,
@@ -14,7 +14,7 @@ import {
   syncingChartOpts,
   syncingChartOpts2,
   zoomableTimeseriesOpts,
-} from '../data'
+} from "../data"
 
 const SimpleChart = () => {
   return (
@@ -35,7 +35,12 @@ const LineWithDataLabels = () => {
 const ZoomableChart = () => {
   return (
     <ComponentContainerCard id="zoomable" title="Zoomable Timeseries">
-      <ReactApexChart height={380} options={zoomableTimeseriesOpts} series={zoomableTimeseriesOpts.series} type="area" />
+      <ReactApexChart
+        height={380}
+        options={zoomableTimeseriesOpts}
+        series={zoomableTimeseriesOpts.series}
+        type="area"
+      />
     </ComponentContainerCard>
   )
 }
@@ -43,7 +48,12 @@ const ZoomableChart = () => {
 const LineChartWithAnnotations = () => {
   return (
     <ComponentContainerCard id="annotations" title="Line Chart with Annotations">
-      <ReactApexChart height={380} options={lineChartWithAnnotationOpts} series={lineChartWithAnnotationOpts.series} type="line" />
+      <ReactApexChart
+        height={380}
+        options={lineChartWithAnnotationOpts}
+        series={lineChartWithAnnotationOpts.series}
+        type="line"
+      />
     </ComponentContainerCard>
   )
 }

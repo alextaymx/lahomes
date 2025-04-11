@@ -1,12 +1,12 @@
-import { Col, FormCheck, Row } from 'react-bootstrap'
-import ComponentContainerCard from '@/components/ComponentContainerCard'
-import UIExamplesList from '@/components/UIExamplesList'
-import { colorVariants } from '@/context/constants'
-import { toSentenceCase } from '@/utils/change-casing'
-import type { Metadata } from 'next'
-import PageTitle from '@/components/PageTitle'
+import { Col, FormCheck, Row } from "react-bootstrap"
+import ComponentContainerCard from "@/components/ComponentContainerCard"
+import UIExamplesList from "@/components/UIExamplesList"
+import { colorVariants } from "@/context/constants"
+import { toSentenceCase } from "@/utils/change-casing"
+import type { Metadata } from "next"
+import PageTitle from "@/components/PageTitle"
 
-export const metadata: Metadata = { title: 'Checkboxes' }
+export const metadata: Metadata = { title: "Checkboxes" }
 
 const Checkbox = () => {
   return (
@@ -15,11 +15,13 @@ const Checkbox = () => {
       title="Checkbox"
       description={
         <>
-          {' '}
-          Each checkbox and radio <code>&lt;input&gt;</code> and <code>&lt;label&gt;</code> pairing is wrapped in a <code>&lt;div&gt;</code> to create
-          our custom control. Structurally, this is the same approach as our default <code>.form-check</code>.
+          {" "}
+          Each checkbox and radio <code>&lt;input&gt;</code> and <code>&lt;label&gt;</code> pairing is wrapped in a{" "}
+          <code>&lt;div&gt;</code> to create our custom control. Structurally, this is the same approach as our default{" "}
+          <code>.form-check</code>.
         </>
-      }>
+      }
+    >
       <FormCheck label="Check this custom checkbox" id="customCheck1" />
       <FormCheck label="Check this custom checkbox" id="customCheck2" />
     </ComponentContainerCard>
@@ -49,7 +51,10 @@ const ColorsCheckbox = () => {
     <ComponentContainerCard id="colors-checkbox" title="Colors Checkbox" titleClass="mb-3">
       <div className="mt-2">
         {colorVariants.slice(0, 7).map((color, idx) => (
-          <div className={`form-check form-checkbox-${color} ${colorVariants.length - 1 === idx ? '' : 'mb-2'}`} key={idx}>
+          <div
+            className={`form-check form-checkbox-${color} ${colorVariants.length - 1 === idx ? "" : "mb-2"}`}
+            key={idx}
+          >
             <input type="checkbox" className="form-check-input" id={`customCheckColor${idx}`} defaultChecked />
             <label className="form-check-label" htmlFor={`customCheckColor${idx}`}>
               {toSentenceCase(color)} Checkbox
@@ -68,10 +73,12 @@ const DefaultRadio = () => {
       title="Radio"
       description={
         <>
-          Each Radio <code>&lt;input&gt;</code> and <code>&lt;label&gt;</code> pairing is wrapped in a <code>&lt;div&gt;</code> to create our custom
-          control. Structurally,this is the same approach as our default <code>.form-check</code>.
+          Each Radio <code>&lt;input&gt;</code> and <code>&lt;label&gt;</code> pairing is wrapped in a{" "}
+          <code>&lt;div&gt;</code> to create our custom control. Structurally,this is the same approach as our default{" "}
+          <code>.form-check</code>.
         </>
-      }>
+      }
+    >
       <FormCheck type="radio" name="radio1" label="Default radio" id="flexRadioDefault1" />
       <FormCheck type="radio" name="radio1" label="Default checked radio" id="flexRadioDefault2" defaultChecked />
     </ComponentContainerCard>
@@ -90,7 +97,15 @@ const InlineRadio = () => {
 const DisabledRadio = () => {
   return (
     <ComponentContainerCard id="disabled-radio" title="Disabled Radio" titleClass="mb-3">
-      <FormCheck type="radio" name="radio3" label="Check this custom radio" id="flexRadioDefault5" inline defaultChecked disabled />
+      <FormCheck
+        type="radio"
+        name="radio3"
+        label="Check this custom radio"
+        id="flexRadioDefault5"
+        inline
+        defaultChecked
+        disabled
+      />
       <FormCheck type="radio" name="radio3" label="Check this custom radio" id="flexRadioDefault6" inline disabled />
     </ComponentContainerCard>
   )
@@ -100,8 +115,14 @@ const ColorsRadio = () => {
   return (
     <ComponentContainerCard id="colors-radio" title="Colors Radio" titleClass="mb-3">
       {colorVariants.slice(0, 7).map((color, idx) => (
-        <div className={`form-check form-radio-${color} ${colorVariants.length - 1 === idx ? '' : 'mb-2'}`} key={idx}>
-          <input type="radio" id={`customRadioColor${idx}`} name={`customRadioColor${idx}`} className="form-check-input" defaultChecked />
+        <div className={`form-check form-radio-${color} ${colorVariants.length - 1 === idx ? "" : "mb-2"}`} key={idx}>
+          <input
+            type="radio"
+            id={`customRadioColor${idx}`}
+            name={`customRadioColor${idx}`}
+            className="form-check-input"
+            defaultChecked
+          />
           <label className="form-check-label" htmlFor={`customRadioColor${idx}`}>
             {toSentenceCase(color)} Radio
           </label>
@@ -118,10 +139,11 @@ const Switches = () => {
       title="Switch"
       description={
         <>
-          A switch has the markup of a custom checkbox but uses the <code>.form-switch</code> class to render a toggle switch. Switches alsosupport
-          the <code>disabled</code> attribute.
+          A switch has the markup of a custom checkbox but uses the <code>.form-switch</code> class to render a toggle
+          switch. Switches alsosupport the <code>disabled</code> attribute.
         </>
-      }>
+      }
+    >
       <FormCheck type="switch" label="Default switch checkbox input" id="switch1" />
       <FormCheck type="switch" label="Checked switch checkbox input" id="switch2" defaultChecked />
       <FormCheck type="switch" label="Disabled switch checkbox input" id="switch3" disabled />
@@ -149,15 +171,15 @@ const CheckboxAndRadio = () => {
         <Col xl={3}>
           <UIExamplesList
             examples={[
-              { link: '#checkbox-basic', label: 'Checkbox' },
-              { link: '#inline-checkbox', label: 'Inline Checkbox' },
-              { link: '#disabled-checkbox', label: 'Disabled Checkbox' },
-              { link: '#colors-checkbox', label: 'Colors Checkbox' },
-              { link: '#radio-basic', label: 'Radio' },
-              { link: '#inline-radio', label: 'Inline Radio' },
-              { link: '#disabled-radio', label: 'Disabled Radio' },
-              { link: '#colors-radio', label: 'Colors Radio' },
-              { link: '#switch-basic', label: 'Switch' },
+              { link: "#checkbox-basic", label: "Checkbox" },
+              { link: "#inline-checkbox", label: "Inline Checkbox" },
+              { link: "#disabled-checkbox", label: "Disabled Checkbox" },
+              { link: "#colors-checkbox", label: "Colors Checkbox" },
+              { link: "#radio-basic", label: "Radio" },
+              { link: "#inline-radio", label: "Inline Radio" },
+              { link: "#disabled-radio", label: "Disabled Radio" },
+              { link: "#colors-radio", label: "Colors Radio" },
+              { link: "#switch-basic", label: "Switch" },
             ]}
           />
         </Col>

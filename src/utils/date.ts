@@ -11,13 +11,13 @@ export const addOrSubtractMinutesFromDate: AddOrSubtractFromDate = (minutes, add
 }
 
 export const timeSince = (date: Date) => {
-  if (typeof date !== 'object') {
+  if (typeof date !== "object") {
     date = new Date(date)
   }
 
   const seconds = Math.floor((new Date().valueOf() - date.valueOf()) / 1000)
   let interval: number = 0
-  let intervalType: string = ''
+  let intervalType: string = ""
 
   const intervals = {
     year: 31536000,
@@ -37,7 +37,7 @@ export const timeSince = (date: Date) => {
   }
 
   if (interval > 1 || interval === 0) {
-    intervalType += 's'
+    intervalType += "s"
   }
 
   return `${interval} ${intervalType} ago`

@@ -1,8 +1,8 @@
-'use client'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import React, { useEffect, useRef } from 'react'
-import { usePathname } from 'next/navigation'
-import { useLayoutContext } from '@/context/useLayoutContext'
+"use client"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import React, { useEffect, useRef } from "react"
+import { usePathname } from "next/navigation"
+import { useLayoutContext } from "@/context/useLayoutContext"
 
 const LeftSideBarToggle = () => {
   const {
@@ -14,15 +14,15 @@ const LeftSideBarToggle = () => {
   const isFirstRender = useRef(true)
 
   const handleMenuSize = () => {
-    if (size === 'hidden') toggleBackdrop()
-    if (size === 'condensed') changeMenuSize('default')
-    else if (size === 'default') changeMenuSize('condensed')
+    if (size === "hidden") toggleBackdrop()
+    if (size === "condensed") changeMenuSize("default")
+    else if (size === "default") changeMenuSize("condensed")
   }
 
   useEffect(() => {
     if (isFirstRender.current) {
       isFirstRender.current = false
-    } else if (size === 'hidden') {
+    } else if (size === "hidden") {
       toggleBackdrop()
     }
   }, [pathname])

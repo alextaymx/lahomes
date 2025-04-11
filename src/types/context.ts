@@ -1,8 +1,8 @@
 // import type { EmailLabelType, EmailType, UserType } from './data'
 
-import { EmailLabelType, EmailType, UserType } from './data'
+import { EmailLabelType, EmailType, UserType } from "./data"
 
-export type ThemeType = 'light' | 'dark'
+export type ThemeType = "light" | "dark"
 
 export type OffcanvasControlType = {
   open: boolean
@@ -11,7 +11,7 @@ export type OffcanvasControlType = {
 
 export type MenuType = {
   theme: ThemeType
-  size: 'default' | 'condensed' | 'hidden' | 'sm-hover-active' | 'sm-hover'
+  size: "default" | "condensed" | "hidden" | "sm-hover-active" | "sm-hover"
 }
 
 export type LayoutState = {
@@ -31,8 +31,8 @@ export type LayoutType = LayoutState & {
   changeTheme: (theme: ThemeType) => void
   changeTopbarTheme: (theme: ThemeType) => void
   changeMenu: {
-    theme: (theme: MenuType['theme']) => void
-    size: (size: MenuType['size']) => void
+    theme: (theme: MenuType["theme"]) => void
+    size: (size: MenuType["size"]) => void
   }
   themeCustomizer: OffcanvasControlType
   activityStream: OffcanvasControlType
@@ -56,7 +56,7 @@ export type EmailOffcanvasStatesType = {
 
 export type ChatContextType = {
   activeChat?: UserType
-  changeActiveChat: (userId: UserType['id']) => Promise<void>
+  changeActiveChat: (userId: UserType["id"]) => Promise<void>
   voiceCall: OffcanvasControlType
   videoCall: OffcanvasControlType
   chatList: OffcanvasControlType
@@ -67,8 +67,8 @@ export type ChatContextType = {
 export type EmailContextType = {
   activeLabel: EmailLabelType
   changeActiveLabel: (label: EmailLabelType) => void
-  activeMail: EmailType['id']
-  changeActiveMail: (newMail: EmailType['id']) => void
+  activeMail: EmailType["id"]
+  changeActiveMail: (newMail: EmailType["id"]) => void
   navigationBar: OffcanvasControlType
   emailDetails: OffcanvasControlType
   composeEmail: OffcanvasControlType

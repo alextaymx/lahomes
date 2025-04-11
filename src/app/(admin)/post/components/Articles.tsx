@@ -1,10 +1,10 @@
-import smallImg from '@/assets/images/small/img-3.jpg'
-import avatar1 from '@/assets/images/users/avatar-8.jpg'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Card, CardBody, Col, Row } from 'react-bootstrap'
-import { articleData } from '../data'
+import smallImg from "@/assets/images/small/img-3.jpg"
+import avatar1 from "@/assets/images/users/avatar-8.jpg"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import Image from "next/image"
+import Link from "next/link"
+import { Card, CardBody, Col, Row } from "react-bootstrap"
+import { articleData } from "../data"
 
 const Articles = () => {
   return (
@@ -12,7 +12,7 @@ const Articles = () => {
       <Card>
         <CardBody>
           {articleData.map((item, idx) => (
-            <div className={`border-bottom pb-3 ${idx != 0 && 'py-3'} `} key={idx}>
+            <div className={`border-bottom pb-3 ${idx != 0 && "py-3"} `} key={idx}>
               <span className="text-dark">
                 <Link href="" className="text-dark fs-18 fw-medium">
                   {item.title}
@@ -22,8 +22,9 @@ const Articles = () => {
                 {item.tags.map((tag, idx) => (
                   <>
                     <span
-                      className={`badge px-2 py-1 bg-${tag == 'Tutorials' ? 'success' : tag == 'Blog' ? 'danger' : 'primary'}-subtle text-${tag == 'Tutorials' ? 'success' : tag == 'Blog' ? 'danger' : 'primary'} ms-1`}
-                      key={idx}>
+                      className={`badge px-2 py-1 bg-${tag == "Tutorials" ? "success" : tag == "Blog" ? "danger" : "primary"}-subtle text-${tag == "Tutorials" ? "success" : tag == "Blog" ? "danger" : "primary"} ms-1`}
+                      key={idx}
+                    >
                       {tag}
                     </span>
                     &nbsp;
@@ -43,16 +44,17 @@ const Articles = () => {
                   </span>
                   <p className="text-muted mb-0">
                     <IconifyIcon icon="ti:calendar-due" />
-                    {item.date.toLocaleString('en-us', { month: 'short', day: '2-digit', year: 'numeric' })}
+                    {item.date.toLocaleString("en-us", { month: "short", day: "2-digit", year: "numeric" })}
                   </p>
                 </div>
                 <div className="ms-auto">
                   <span>
                     <button
                       type="button"
-                      className="btn btn-soft-danger avatar-sm d-inline-flex align-items-center justify-content-center fs-20 rounded-circle">
+                      className="btn btn-soft-danger avatar-sm d-inline-flex align-items-center justify-content-center fs-20 rounded-circle"
+                    >
                       <span>
-                        {' '}
+                        {" "}
                         <IconifyIcon icon="solar:heart-broken" />
                       </span>
                     </button>
@@ -76,13 +78,13 @@ const Articles = () => {
               </Col>
               <Col lg={9}>
                 <p className="my-2 text-muted">
-                  The concept of smart homes has evolved rapidly over the past few years, driven by advancements in technology and an increasing
-                  demand for convenience, security, and energy efficiency.{' '}
+                  The concept of smart homes has evolved rapidly over the past few years, driven by advancements in
+                  technology and an increasing demand for convenience, security, and energy efficiency.{" "}
                 </p>
                 <p className="mb-3 text-muted">
-                  <span className="text-dark fw-semibold mb-0">Seamless Integration : </span>The Internet of Things (IoT) is the backbone of smart
-                  home technology, enabling devices and systems to communicate and work together seamlessly. In the future, the integration of IoT
-                  will become more sophisticated.
+                  <span className="text-dark fw-semibold mb-0">Seamless Integration : </span>The Internet of Things
+                  (IoT) is the backbone of smart home technology, enabling devices and systems to communicate and work
+                  together seamlessly. In the future, the integration of IoT will become more sophisticated.
                 </p>
                 <Link href="" className="link-primary">
                   View More
@@ -107,10 +109,11 @@ const Articles = () => {
                 <span>
                   <button
                     type="button"
-                    className="btn btn-soft-danger avatar-sm d-inline-flex align-items-center justify-content-center fs-20 rounded-circle">
-                    {' '}
+                    className="btn btn-soft-danger avatar-sm d-inline-flex align-items-center justify-content-center fs-20 rounded-circle"
+                  >
+                    {" "}
                     <span>
-                      {' '}
+                      {" "}
                       <IconifyIcon icon="solar:heart-broken" />
                     </span>
                   </button>

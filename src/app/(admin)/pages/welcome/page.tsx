@@ -1,7 +1,7 @@
-import PageTitle from '@/components/PageTitle'
-import { Metadata } from 'next'
+import PageTitle from "@/components/PageTitle"
+import { Metadata } from "next"
 
-export const metadata: Metadata = { title: 'Welcome' }
+export const metadata: Metadata = { title: "Welcome" }
 
 const WelcomePage = () => {
   return (

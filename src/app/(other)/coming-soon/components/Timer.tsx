@@ -1,6 +1,6 @@
-'use client'
-import useCountdown from '@/hooks/useCountdown'
-import { Col, Row } from 'react-bootstrap'
+"use client"
+import useCountdown from "@/hooks/useCountdown"
+import { Col, Row } from "react-bootstrap"
 
 const Timer = () => {
   const { days, hours, minutes, seconds } = useCountdown()

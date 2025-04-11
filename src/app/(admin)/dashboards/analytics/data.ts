@@ -1,5 +1,5 @@
-import { currency } from '@/context/constants'
-import { ApexOptions } from 'apexcharts'
+import { currency } from "@/context/constants"
+import { ApexOptions } from "apexcharts"
 
 export type StatisticType = {
   icon: string
@@ -19,27 +19,27 @@ export type PropertyType = {
 
 export const statisticData: StatisticType[] = [
   {
-    icon: 'solar:buildings-2-broken',
-    title: 'No. of Properties',
-    amount: '2,854',
+    icon: "solar:buildings-2-broken",
+    title: "No. of Properties",
+    amount: "2,854",
     change: 7.34,
   },
   {
-    icon: 'solar:users-group-two-rounded-broken',
-    title: 'Regi. Agents',
-    amount: '705',
+    icon: "solar:users-group-two-rounded-broken",
+    title: "Regi. Agents",
+    amount: "705",
     change: 76.89,
   },
   {
-    icon: 'solar:shield-user-broken',
-    title: 'Customers',
-    amount: '9,431',
+    icon: "solar:shield-user-broken",
+    title: "Customers",
+    amount: "9,431",
     change: 45.0,
-    variant: 'danger',
+    variant: "danger",
   },
   {
-    icon: 'solar:money-bag-broken',
-    title: 'Revenue',
+    icon: "solar:money-bag-broken",
+    title: "Revenue",
     amount: `${currency}78.3M`,
     change: 8.76,
   },
@@ -47,18 +47,18 @@ export const statisticData: StatisticType[] = [
 
 export const propertyData: PropertyType[] = [
   {
-    title: 'Property',
-    icon: 'solar:home-bold-duotone',
-    amount: '15,780',
+    title: "Property",
+    icon: "solar:home-bold-duotone",
+    amount: "15,780",
     progress: 60,
-    variant: 'primary',
+    variant: "primary",
   },
   {
-    title: 'Revenue',
-    icon: 'solar:money-bag-bold-duotone',
+    title: "Revenue",
+    icon: "solar:money-bag-bold-duotone",
     amount: `${currency}78.3M`,
     progress: 80,
-    variant: 'success',
+    variant: "success",
   },
 ]
 
@@ -66,15 +66,15 @@ export const chartOptions: ApexOptions = {
   chart: {
     height: 95,
     parentHeightOffset: 0,
-    type: 'bar',
+    type: "bar",
     toolbar: {
       show: !1,
     },
   },
   plotOptions: {
     bar: {
-      barHeight: '100%',
-      columnWidth: '40%',
+      barHeight: "100%",
+      columnWidth: "40%",
       borderRadius: 4,
       distributed: !0,
     },
@@ -88,13 +88,13 @@ export const chartOptions: ApexOptions = {
       right: 0,
     },
   },
-  colors: ['#eef2f7', '#eef2f7', '#604ae3', '#eef2f7'],
+  colors: ["#eef2f7", "#eef2f7", "#604ae3", "#eef2f7"],
   dataLabels: {
     enabled: !1,
   },
   series: [
     {
-      name: 'New Agents',
+      name: "New Agents",
       data: [40, 50, 65, 40, 40, 65, 40],
     },
   ],
@@ -102,7 +102,7 @@ export const chartOptions: ApexOptions = {
     show: !1,
   },
   xaxis: {
-    categories: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+    categories: ["S", "M", "T", "W", "T", "F", "S"],
     axisBorder: {
       show: !1,
     },
@@ -133,7 +133,7 @@ export const chartOptions: ApexOptions = {
 export const salesChart: ApexOptions = {
   chart: {
     height: 341,
-    type: 'area',
+    type: "area",
 
     dropShadow: {
       enabled: true,
@@ -146,28 +146,28 @@ export const salesChart: ApexOptions = {
       show: false,
     },
   },
-  colors: ['#47ad94', '#604ae3'],
+  colors: ["#47ad94", "#604ae3"],
   dataLabels: {
     enabled: false,
   },
 
   stroke: {
     show: true,
-    curve: 'smooth',
+    curve: "smooth",
     width: 2,
-    lineCap: 'square',
+    lineCap: "square",
   },
   series: [
     {
-      name: 'Expenses',
+      name: "Expenses",
       data: [16800, 16800, 15500, 17000, 14800, 15500, 19000, 16000, 15000, 17000, 14000, 17000],
     },
     {
-      name: 'Income',
+      name: "Income",
       data: [16500, 17500, 16200, 21500, 17300, 16000, 16000, 17000, 16000, 19000, 18000, 19000],
     },
   ],
-  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
   xaxis: {
     axisBorder: {
       show: false,
@@ -182,26 +182,26 @@ export const salesChart: ApexOptions = {
       offsetX: 0,
       offsetY: 5,
       style: {
-        fontSize: '12px',
-        cssClass: 'apexcharts-xaxis-title',
+        fontSize: "12px",
+        cssClass: "apexcharts-xaxis-title",
       },
     },
   },
   yaxis: {
     labels: {
       formatter: function (value, index) {
-        return value / 1000 + 'K'
+        return value / 1000 + "K"
       },
       offsetX: -15,
       offsetY: 0,
       style: {
-        fontSize: '12px',
-        cssClass: 'apexcharts-yaxis-title',
+        fontSize: "12px",
+        cssClass: "apexcharts-yaxis-title",
       },
     },
   },
   grid: {
-    borderColor: '#191e3a',
+    borderColor: "#191e3a",
     strokeDashArray: 5,
     xaxis: {
       lines: {
@@ -225,9 +225,9 @@ export const salesChart: ApexOptions = {
   },
 
   fill: {
-    type: 'gradient',
+    type: "gradient",
     gradient: {
-      type: 'vertical',
+      type: "vertical",
       shadeIntensity: 1,
       inverseColors: !1,
       opacityFrom: 0.12,
@@ -250,7 +250,7 @@ export const salesChart: ApexOptions = {
 export const socialOptions: ApexOptions = {
   chart: {
     height: 349,
-    type: 'radialBar',
+    type: "radialBar",
     toolbar: {
       show: false,
     },
@@ -261,12 +261,12 @@ export const socialOptions: ApexOptions = {
       endAngle: 225,
       hollow: {
         margin: 0,
-        size: '70%',
-        background: 'transparent',
+        size: "70%",
+        background: "transparent",
         image: undefined,
         imageOffsetX: 0,
         imageOffsetY: 0,
-        position: 'front',
+        position: "front",
         dropShadow: {
           enabled: true,
           top: 3,
@@ -276,8 +276,8 @@ export const socialOptions: ApexOptions = {
         },
       },
       track: {
-        background: 'rgba(170,184,197, 0.4)',
-        strokeWidth: '67%',
+        background: "rgba(170,184,197, 0.4)",
+        strokeWidth: "67%",
         margin: 0,
       },
 
@@ -286,28 +286,28 @@ export const socialOptions: ApexOptions = {
         name: {
           offsetY: -10,
           show: true,
-          color: '#888',
-          fontSize: '17px',
+          color: "#888",
+          fontSize: "17px",
         },
 
         value: {
           // formatter: function (val) {
           //   return parseInt(val);
           // },
-          color: '#111',
-          fontSize: '36px',
+          color: "#111",
+          fontSize: "36px",
           show: true,
         },
       },
     },
   },
   fill: {
-    type: 'gradient',
+    type: "gradient",
     gradient: {
-      shade: 'dark',
-      type: 'horizontal',
+      shade: "dark",
+      type: "horizontal",
       shadeIntensity: 0.5,
-      gradientToColors: ['#7f56da', '#4697ce'],
+      gradientToColors: ["#7f56da", "#4697ce"],
       inverseColors: true,
       opacityFrom: 1,
       opacityTo: 1,
@@ -316,24 +316,24 @@ export const socialOptions: ApexOptions = {
   },
   series: [70],
   stroke: {
-    lineCap: 'round',
+    lineCap: "round",
   },
-  labels: ['Total Buyer'],
+  labels: ["Total Buyer"],
 }
 
 export const salesOptions: ApexOptions = {
   chart: {
     height: 120,
     parentHeightOffset: 0,
-    type: 'bar',
+    type: "bar",
     toolbar: {
       show: !1,
     },
   },
   plotOptions: {
     bar: {
-      barHeight: '100%',
-      columnWidth: '40%',
+      barHeight: "100%",
+      columnWidth: "40%",
       // startingShape: "rounded",
       // endingShape: "rounded",
       borderRadius: 4,
@@ -349,13 +349,13 @@ export const salesOptions: ApexOptions = {
       right: 0,
     },
   },
-  colors: ['#604ae3', '#604ae3', '#604ae3', '#604ae3'],
+  colors: ["#604ae3", "#604ae3", "#604ae3", "#604ae3"],
   dataLabels: {
     enabled: !1,
   },
   series: [
     {
-      name: 'Property Sales',
+      name: "Property Sales",
       data: [40, 50, 65, 45, 40, 70, 40],
     },
   ],
@@ -363,7 +363,7 @@ export const salesOptions: ApexOptions = {
     show: !1,
   },
   xaxis: {
-    categories: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+    categories: ["S", "M", "T", "W", "T", "F", "S"],
     axisBorder: {
       show: !1,
     },

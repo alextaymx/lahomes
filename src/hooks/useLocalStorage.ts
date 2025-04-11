@@ -1,5 +1,5 @@
-'use client'
-import { useEffect, useState } from 'react'
+"use client"
+import { useEffect, useState } from "react"
 
 export default function useLocalStorage<T>(key: string, initialValue: T, override: boolean = false) {
   const [storedValue, setStoredValue] = useState<T>(() => {
@@ -27,8 +27,8 @@ export default function useLocalStorage<T>(key: string, initialValue: T, overrid
   }
 
   useEffect(() => {
-    window.addEventListener('storage', getStoredItem, false)
-    return () => window.removeEventListener('storage', getStoredItem)
+    window.addEventListener("storage", getStoredItem, false)
+    return () => window.removeEventListener("storage", getStoredItem)
   }, [])
 
   const setValue = (value: T | ((val: T) => T)) => {

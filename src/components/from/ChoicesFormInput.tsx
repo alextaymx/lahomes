@@ -1,6 +1,6 @@
-'use client'
-import Choices, { type Options as ChoiceOption } from 'choices.js'
-import { type HTMLAttributes, type ReactElement, useEffect, useRef } from 'react'
+"use client"
+import Choices, { type Options as ChoiceOption } from "choices.js"
+import { type HTMLAttributes, type ReactElement, useEffect, useRef } from "react"
 
 export type ChoiceProps = HTMLAttributes<HTMLInputElement> &
   HTMLAttributes<HTMLSelectElement> & {
@@ -27,7 +27,7 @@ const ChoicesFormInput = ({ children, multiple, className, onChange, allowInput,
         allowHTML: true,
         shouldSort: false,
       })
-      choices.passedElement.element.addEventListener('change', (e: Event) => {
+      choices.passedElement.element.addEventListener("change", (e: Event) => {
         if (!(e.target instanceof HTMLSelectElement)) return
         if (onChange) {
           onChange(e.target.value)

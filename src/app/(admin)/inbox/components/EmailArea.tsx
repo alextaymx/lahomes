@@ -1,12 +1,22 @@
-import avatar1 from '@/assets/images/users/avatar-1.jpg'
-import avatar3 from '@/assets/images/users/avatar-3.jpg'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import SimplebarReactClient from '@/components/wrappers/SimplebarReactClient'
-import { useEmailContext } from '@/context/useEmailContext'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Button, CardFooter, CardHeader, Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Row } from 'react-bootstrap'
-import { emailBodyFileData, emailBodyImageData } from '../data'
+import avatar1 from "@/assets/images/users/avatar-1.jpg"
+import avatar3 from "@/assets/images/users/avatar-3.jpg"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import SimplebarReactClient from "@/components/wrappers/SimplebarReactClient"
+import { useEmailContext } from "@/context/useEmailContext"
+import Image from "next/image"
+import Link from "next/link"
+import {
+  Button,
+  CardFooter,
+  CardHeader,
+  Col,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  Row,
+} from "react-bootstrap"
+import { emailBodyFileData, emailBodyImageData } from "../data"
 
 const EmailHeader = () => {
   const { composeEmail } = useEmailContext()
@@ -19,7 +29,8 @@ const EmailHeader = () => {
         type="button"
         data-bs-toggle="offcanvas"
         data-bs-target="#offcanvasExample"
-        aria-controls="offcanvasExample">
+        aria-controls="offcanvasExample"
+      >
         <IconifyIcon icon="ri:menu-line" className="fs-18" />
       </button>
       <form className="app-search d-none d-md-block w-50 me-auto">
@@ -34,22 +45,24 @@ const EmailHeader = () => {
             <a
               data-bs-toggle="offcanvas"
               href="#user-profile"
-              className="btn btn-light avatar-sm d-flex align-items-center justify-content-center text-warning fs-20">
+              className="btn btn-light avatar-sm d-flex align-items-center justify-content-center text-warning fs-20"
+            >
               <span>
-                {' '}
+                {" "}
                 <IconifyIcon icon="solar:star-bold-duotone" />
               </span>
             </a>
           </li>
           <Dropdown className="list-inline-item d-none d-md-flex">
             <DropdownToggle
-              as={'a'}
+              as={"a"}
               className="btn btn-light avatar-sm d-flex align-items-center justify-content-center fs-20 arrow-none text-dark fs-20"
               data-bs-toggle="dropdown"
-              aria-expanded="false">
+              aria-expanded="false"
+            >
               <span>
-                {' '}
-                <IconifyIcon icon="ri:more-2-fill" />{' '}
+                {" "}
+                <IconifyIcon icon="ri:more-2-fill" />{" "}
               </span>
             </DropdownToggle>
             <DropdownMenu className="dropdown-menu-end">
@@ -88,7 +101,8 @@ const EmailHeader = () => {
         type="button"
         data-bs-toggle="offcanvas"
         data-bs-target="#emaillist"
-        aria-controls="emaillist">
+        aria-controls="emaillist"
+      >
         <IconifyIcon icon="ri:menu-unfold-line" className="fs-18" />
       </button>
     </CardHeader>
@@ -97,7 +111,7 @@ const EmailHeader = () => {
 
 const EmailBody = () => {
   return (
-    <SimplebarReactClient className="card-body" style={{ height: 'calc(100vh - 442px)' }}>
+    <SimplebarReactClient className="card-body" style={{ height: "calc(100vh - 442px)" }}>
       <div className="d-flex flex-column h-100">
         <div className="d-block">
           <div className="d-flex rounded gap-2">
@@ -122,13 +136,14 @@ const EmailBody = () => {
                   Hey : <span className="badge bg-primary-subtle fs-13 text-primary p-1">@Gaston Lapierre</span>
                 </p>
                 <p>
-                  Thank you all for your hard work and dedication to this project. Your contributions are invaluable, and I am confident that together
-                  we will achieve our goals successfully. After reviewing the current progress and considering various factors, I would like to share
-                  some observations and next steps.
+                  Thank you all for your hard work and dedication to this project. Your contributions are invaluable,
+                  and I am confident that together we will achieve our goals successfully. After reviewing the current
+                  progress and considering various factors, I would like to share some observations and next steps.
                 </p>
                 <p>
-                  Additionally, I would like to remind everyone of our upcoming team meeting scheduled for this week. During this meeting, we will
-                  discuss the revised timeline in detail and address any concerns or questions you may have ...
+                  Additionally, I would like to remind everyone of our upcoming team meeting scheduled for this week.
+                  During this meeting, we will discuss the revised timeline in detail and address any concerns or
+                  questions you may have ...
                 </p>
                 <div className="my-4 bg-light rounded p-2">
                   <Row className="g-2">
@@ -175,7 +190,10 @@ const EmailBody = () => {
                   </Row>
                 </div>
                 <div className="mt-4">
-                  <p>We&apos;d like to thank you for being an exceptional author and encourage you to continue creating great work!</p>
+                  <p>
+                    We&apos;d like to thank you for being an exceptional author and encourage you to continue creating
+                    great work!
+                  </p>
                   <p className="mb-1 mt-3">Best Regards ,</p>
                   <p className="mb-0 text-dark fw-medium">Dianna Blair</p>
                 </div>
@@ -200,7 +218,13 @@ const EmailArea = () => {
             <p className="mb-2">
               <span className="text-dark fw-medium">To : </span>diannablair46skl@dayrep.com
             </p>
-            <textarea className="form-control" id="property-address" rows={3} placeholder="Type Message...." defaultValue={''} />
+            <textarea
+              className="form-control"
+              id="property-address"
+              rows={3}
+              placeholder="Type Message...."
+              defaultValue={""}
+            />
             <div className="d-flex flex-wrap justify-content-between mt-2 align-items-center">
               <div className="d-flex gap-3">
                 <form>

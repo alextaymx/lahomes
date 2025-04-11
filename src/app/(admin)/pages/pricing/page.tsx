@@ -1,11 +1,11 @@
-import PageTitle from '@/components/PageTitle'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import { getAllPricingPlans } from '@/helpers/data'
-import { PricingType } from '@/types/data'
-import { Metadata } from 'next'
-import { Card, CardBody, Col, Row } from 'react-bootstrap'
+import PageTitle from "@/components/PageTitle"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import { getAllPricingPlans } from "@/helpers/data"
+import { PricingType } from "@/types/data"
+import { Metadata } from "next"
+import { Card, CardBody, Col, Row } from "react-bootstrap"
 
-export const metadata: Metadata = { title: 'Pricing' }
+export const metadata: Metadata = { title: "Pricing" }
 
 const PricingCard = ({ plan }: { plan: PricingType }) => {
   const { features, name, price, isPopular, subscribed } = plan
@@ -23,7 +23,12 @@ const PricingCard = ({ plan }: { plan: PricingType }) => {
           {features.map((feature, idx) => (
             <li className="text-dark d-flex" key={idx}>
               <span className="icons-center">
-                <IconifyIcon icon="solar:check-circle-bold-duotone" height={20} width={20} className="text-primary align-middle me-2" />
+                <IconifyIcon
+                  icon="solar:check-circle-bold-duotone"
+                  height={20}
+                  width={20}
+                  className="text-primary align-middle me-2"
+                />
                 {feature}
               </span>
             </li>
@@ -50,7 +55,9 @@ const PricingPage = async () => {
         <Col xxl={11}>
           <div className="text-center my-4">
             <h3>Simple Pricing Plans</h3>
-            <p className="text-muted text-center">Get the power and control you need to manage your organization&apos;s technical documentation</p>
+            <p className="text-muted text-center">
+              Get the power and control you need to manage your organization&apos;s technical documentation
+            </p>
           </div>
           <Row className="justify-content-center pt-3">
             {pricingPlans &&

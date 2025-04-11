@@ -1,6 +1,6 @@
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import { Card, CardBody, Col } from 'react-bootstrap'
-import { statData, StatType } from '../data'
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import { Card, CardBody, Col } from "react-bootstrap"
+import { statData, StatType } from "../data"
 
 const StatCard = ({ amount, icon, title, change, variant }: StatType) => {
   return (
@@ -9,13 +9,13 @@ const StatCard = ({ amount, icon, title, change, variant }: StatType) => {
         <div className="d-flex align-items-center justify-content-between">
           <div>
             <p className="mb-2 fs-15 fw-medium">
-              {title} &nbsp;{' '}
+              {title} &nbsp;{" "}
               {change && (
                 <span className="badge text-success bg-success-subtle fs-11 icons-center">
                   <IconifyIcon width={11} height={11} icon="ri:arrow-up-line" />
                   {change}%
                 </span>
-              )}{' '}
+              )}{" "}
             </p>
             <h3 className="text-dark fw-bold d-flex align-items-center gap-2 mb-0">{amount}</h3>
           </div>

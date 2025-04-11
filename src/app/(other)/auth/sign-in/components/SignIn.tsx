@@ -1,22 +1,22 @@
-'use client'
-import logoDark from '@/assets/images/logo-dark.png'
-import LogoLight from '@/assets/images/logo-light.png'
-import TextFormInput from '@/components/from/TextFormInput'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import { yupResolver } from '@hookform/resolvers/yup'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useEffect } from 'react'
-import { Button, Card, CardBody, Col, Container, Row } from 'react-bootstrap'
-import { useForm } from 'react-hook-form'
-import * as yup from 'yup'
-import useSignIn from './useSignIn'
+"use client"
+import logoDark from "@/assets/images/logo-dark.png"
+import LogoLight from "@/assets/images/logo-light.png"
+import TextFormInput from "@/components/from/TextFormInput"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import { yupResolver } from "@hookform/resolvers/yup"
+import Image from "next/image"
+import Link from "next/link"
+import { useEffect } from "react"
+import { Button, Card, CardBody, Col, Container, Row } from "react-bootstrap"
+import { useForm } from "react-hook-form"
+import * as yup from "yup"
+import useSignIn from "./useSignIn"
 
 const SignIn = () => {
   useEffect(() => {
-    document.body.classList.add('authentication-bg')
+    document.body.classList.add("authentication-bg")
     return () => {
-      document.body.classList.remove('authentication-bg')
+      document.body.classList.remove("authentication-bg")
     }
   }, [])
 
@@ -46,7 +46,9 @@ const SignIn = () => {
                   </Link>
                 </div>
                 <h2 className="fw-bold text-uppercase text-center fs-18">Sign In</h2>
-                <p className="text-muted text-center mt-1 mb-4">Enter your email address and password to access admin panel.</p>
+                <p className="text-muted text-center mt-1 mb-4">
+                  Enter your email address and password to access admin panel.
+                </p>
                 <div className="px-4">
                   <form className="authentication-form" onSubmit={login}>
                     <div className="mb-3">
@@ -102,7 +104,7 @@ const SignIn = () => {
               </CardBody>
             </Card>
             <p className="mb-0 text-center text-white">
-              New here?{' '}
+              New here?{" "}
               <Link href="/auth/sign-up" className="text-reset text-unline-dashed fw-bold ms-1">
                 Sign Up
               </Link>

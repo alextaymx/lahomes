@@ -1,26 +1,35 @@
-'use client'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import { Autoplay, EffectCreative, EffectFade, EffectFlip, Mousewheel, Navigation, Pagination, Scrollbar } from 'swiper/modules'
-import { Swiper, SwiperSlide } from 'swiper/react'
+"use client"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import {
+  Autoplay,
+  EffectCreative,
+  EffectFade,
+  EffectFlip,
+  Mousewheel,
+  Navigation,
+  Pagination,
+  Scrollbar,
+} from "swiper/modules"
+import { Swiper, SwiperSlide } from "swiper/react"
 
-import smallImg1 from '@/assets/images/small/img-1.jpg'
-import smallImg2 from '@/assets/images/small/img-2.jpg'
-import smallImg3 from '@/assets/images/small/img-3.jpg'
-import smallImg4 from '@/assets/images/small/img-4.jpg'
-import smallImg5 from '@/assets/images/small/img-5.jpg'
-import smallImg6 from '@/assets/images/small/img-6.jpg'
+import smallImg1 from "@/assets/images/small/img-1.jpg"
+import smallImg2 from "@/assets/images/small/img-2.jpg"
+import smallImg3 from "@/assets/images/small/img-3.jpg"
+import smallImg4 from "@/assets/images/small/img-4.jpg"
+import smallImg5 from "@/assets/images/small/img-5.jpg"
+import smallImg6 from "@/assets/images/small/img-6.jpg"
 
 // styles
-import 'swiper/css'
-import 'swiper/css/effect-fade'
-import 'swiper/css/effect-flip'
-import 'swiper/css/mousewheel'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-import 'swiper/css/scrollbar'
-import ComponentContainerCard from '@/components/ComponentContainerCard'
-import { Col, Row } from 'react-bootstrap'
-import Image from 'next/image'
+import "swiper/css"
+import "swiper/css/effect-fade"
+import "swiper/css/effect-flip"
+import "swiper/css/mousewheel"
+import "swiper/css/navigation"
+import "swiper/css/pagination"
+import "swiper/css/scrollbar"
+import ComponentContainerCard from "@/components/ComponentContainerCard"
+import { Col, Row } from "react-bootstrap"
+import Image from "next/image"
 
 const DefaultSwiper = () => {
   return (
@@ -31,7 +40,8 @@ const DefaultSwiper = () => {
         <>
           Use <code>data-swiper=&quot;default&quot;</code> attribute to set a default swiper.
         </>
-      }>
+      }
+    >
       <Row>
         <Col lg={6}>
           <Swiper loop autoplay={{ delay: 2500, disableOnInteraction: false }} className="rounded" modules={[Autoplay]}>
@@ -60,7 +70,8 @@ const NavigationSwiper = () => {
         <>
           Use <code>data-swiper=&quot;navigation&quot;</code> attribute to set a swiper with navigation and pagination.
         </>
-      }>
+      }
+    >
       <Row>
         <Col lg={6}>
           <Swiper
@@ -72,14 +83,15 @@ const NavigationSwiper = () => {
               disableOnInteraction: false,
             }}
             navigation={{
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
             }}
             pagination={{
-              type: 'bullets',
+              type: "bullets",
               clickable: true,
-              el: '.swiper-pagination',
-            }}>
+              el: ".swiper-pagination",
+            }}
+          >
             <SwiperSlide>
               <Image src={smallImg4} alt="swiper-img" className="img-fluid" />
             </SwiperSlide>
@@ -110,10 +122,11 @@ const DynamicPaginationSwiper = () => {
       title="Pagination Dynamic Swiper"
       description={
         <>
-          {' '}
+          {" "}
           Use <code>data-swiper=&quot;dynamic&quot;</code> attribute to set a swiper with dynamic and pagination.
         </>
-      }>
+      }
+    >
       <Row>
         <Col lg={6}>
           <Swiper
@@ -127,9 +140,10 @@ const DynamicPaginationSwiper = () => {
             }}
             pagination={{
               clickable: true,
-              el: '.swiper-pagination',
+              el: ".swiper-pagination",
               dynamicBullets: true,
-            }}>
+            }}
+          >
             <SwiperSlide>
               <Image src={smallImg4} alt="swiper-img" className="img-fluid" />
             </SwiperSlide>
@@ -156,7 +170,8 @@ const SwiperWithFadeEffect = () => {
         <>
           Use <code>data-swiper=&quot;effect-fade&quot;</code> attribute to set a swiper with fade effect.
         </>
-      }>
+      }
+    >
       <Row>
         <Col lg={6}>
           <Swiper
@@ -169,9 +184,10 @@ const SwiperWithFadeEffect = () => {
               disableOnInteraction: false,
             }}
             pagination={{
-              el: '.swiper-pagination',
+              el: ".swiper-pagination",
               clickable: true,
-            }}>
+            }}
+          >
             <SwiperSlide>
               <Image src={smallImg3} alt="swiper-img" className="img-fluid" />
             </SwiperSlide>
@@ -198,7 +214,8 @@ const CreativeEffectSwiper = () => {
         <>
           Use <code>data-swiper=&quot;creative&quot;</code> attribute to set a swiper with creative custom effect.
         </>
-      }>
+      }
+    >
       <Row>
         <Col lg={6}>
           <Swiper
@@ -212,7 +229,7 @@ const CreativeEffectSwiper = () => {
                 translate: [0, 0, -400],
               },
               next: {
-                translate: ['100%', 0, 0],
+                translate: ["100%", 0, 0],
               },
             }}
             autoplay={{
@@ -220,9 +237,10 @@ const CreativeEffectSwiper = () => {
               disableOnInteraction: false,
             }}
             pagination={{
-              el: '.swiper-pagination',
+              el: ".swiper-pagination",
               clickable: true,
-            }}>
+            }}
+          >
             <SwiperSlide>
               <Image src={smallImg3} alt="swiper-img" className="img-fluid rounded" />
             </SwiperSlide>
@@ -249,7 +267,8 @@ const FlipEffectSwiper = () => {
         <>
           Use <code>data-swiper=&quot;flip&quot;</code> attribute to set a swiper with flip custom effect.
         </>
-      }>
+      }
+    >
       <Row>
         <Col lg={6}>
           <Swiper
@@ -262,9 +281,10 @@ const FlipEffectSwiper = () => {
               disableOnInteraction: false,
             }}
             pagination={{
-              el: '.swiper-pagination',
+              el: ".swiper-pagination",
               clickable: true,
-            }}>
+            }}
+          >
             <SwiperSlide>
               <Image src={smallImg3} alt="swiper-img" className="img-fluid rounded" />
             </SwiperSlide>
@@ -291,7 +311,8 @@ const ScrollbarSwiper = () => {
         <>
           Use <code>data-swiper=&quot;scrollbar&quot;</code> attribute to set a swiper with scrollbar pagination.
         </>
-      }>
+      }
+    >
       <Row>
         <Col lg={6}>
           <Swiper
@@ -302,13 +323,14 @@ const ScrollbarSwiper = () => {
               disableOnInteraction: false,
             }}
             scrollbar={{
-              el: '.swiper-scrollbar',
+              el: ".swiper-scrollbar",
               hide: true,
             }}
             navigation={{
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
-            }}>
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
+          >
             <SwiperSlide>
               <Image src={smallImg3} alt="swiper-img" className="img-fluid rounded" />
             </SwiperSlide>
@@ -341,7 +363,8 @@ const VerticalSwiper = () => {
         <>
           Use <code>data-swiper=&quot;vertical&quot;</code> attribute to set a swiper with vertical pagination.
         </>
-      }>
+      }
+    >
       <Row>
         <Col lg={6}>
           <Swiper
@@ -353,10 +376,11 @@ const VerticalSwiper = () => {
               disableOnInteraction: false,
             }}
             pagination={{
-              el: '.swiper-pagination',
+              el: ".swiper-pagination",
               clickable: true,
             }}
-            style={{ height: 320 }}>
+            style={{ height: 320 }}
+          >
             <SwiperSlide>
               <Image src={smallImg3} alt="swiper-img" className="img-fluid rounded" />
             </SwiperSlide>
@@ -383,7 +407,8 @@ const MousewheelControlSwiper = () => {
         <>
           Use <code>data-swiper=&quot;mousewheel&quot;</code> attribute to set a swiper with mousewheel scroll.
         </>
-      }>
+      }
+    >
       <Row>
         <Col lg={6} className="mb-3">
           <Swiper
@@ -396,11 +421,12 @@ const MousewheelControlSwiper = () => {
               disableOnInteraction: false,
             }}
             pagination={{
-              el: '.swiper-pagination',
+              el: ".swiper-pagination",
               clickable: true,
             }}
             className="rounded"
-            style={{ height: 324 }}>
+            style={{ height: 324 }}
+          >
             <SwiperSlide>
               <Image src={smallImg3} alt="swiper-img" className="img-fluid rounded" />
             </SwiperSlide>
@@ -427,14 +453,15 @@ const ResponsiveBreakpointsSwiper = () => {
         <>
           Use <code>data-swiper=&quot;responsive&quot;</code> attribute to set a responsive swiper.
         </>
-      }>
+      }
+    >
       <Swiper
         modules={[Autoplay, Pagination]}
         loop
         slidesPerView={1}
         spaceBetween={10}
         pagination={{
-          el: '.swiper-pagination',
+          el: ".swiper-pagination",
           clickable: true,
         }}
         breakpoints={{
@@ -447,7 +474,8 @@ const ResponsiveBreakpointsSwiper = () => {
             spaceBetween: 50,
           },
         }}
-        className="rounded gallery-light pb-4">
+        className="rounded gallery-light pb-4"
+      >
         <SwiperSlide>
           <Image src={smallImg1} alt="swiper-img" className="img-fluid rounded" />
         </SwiperSlide>

@@ -1,7 +1,7 @@
-'use client'
-import ComponentContainerCard from '@/components/ComponentContainerCard'
-import ReactApexChart from 'react-apexcharts'
-import { dateTimeOpts, scatterWithImagesOpts, scatterXYOpts } from '../data'
+"use client"
+import ComponentContainerCard from "@/components/ComponentContainerCard"
+import ReactApexChart from "react-apexcharts"
+import { dateTimeOpts, scatterWithImagesOpts, scatterXYOpts } from "../data"
 
 const ScatterXYChart = () => {
   return (
@@ -22,7 +22,12 @@ const DatetimeScatterChart = () => {
 const ImagesChart = () => {
   return (
     <ComponentContainerCard id="images" title=" Scatter - Images">
-      <ReactApexChart height={380} options={scatterWithImagesOpts} series={scatterWithImagesOpts.series} type="scatter" />
+      <ReactApexChart
+        height={380}
+        options={scatterWithImagesOpts}
+        series={scatterWithImagesOpts.series}
+        type="scatter"
+      />
     </ComponentContainerCard>
   )
 }

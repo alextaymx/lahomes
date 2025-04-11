@@ -1,9 +1,9 @@
-import { createContext, useContext, useState } from 'react'
-import { ToastBody, ToastHeader } from 'react-bootstrap'
-import Toast from 'react-bootstrap/Toast'
-import ToastContainer from 'react-bootstrap/ToastContainer'
+import { createContext, useContext, useState } from "react"
+import { ToastBody, ToastHeader } from "react-bootstrap"
+import Toast from "react-bootstrap/Toast"
+import ToastContainer from "react-bootstrap/ToastContainer"
 
-import type { BootstrapVariantType, ChildrenType } from '@/types/component-props'
+import type { BootstrapVariantType, ChildrenType } from "@/types/component-props"
 
 type ShowNotificationType = {
   title?: string
@@ -23,7 +23,7 @@ type NotificationContextType = {
 
 const NotificationContext = createContext<NotificationContextType | undefined>(undefined)
 
-function Toastr({ show, title, message, onClose, variant = 'light', delay }: Readonly<ToastrProps>) {
+function Toastr({ show, title, message, onClose, variant = "light", delay }: Readonly<ToastrProps>) {
   return (
     <ToastContainer className="m-3 position-fixed" position="top-end">
       <Toast bg={variant} delay={delay} show={show} onClose={onClose} autohide>
@@ -32,7 +32,9 @@ function Toastr({ show, title, message, onClose, variant = 'light', delay }: Rea
             <strong className="me-auto">{title}</strong>
           </ToastHeader>
         )}
-        <ToastBody className={['dark', 'danger', 'success', 'primary'].includes(variant) ? 'text-white' : ''}>{message}</ToastBody>
+        <ToastBody className={["dark", "danger", "success", "primary"].includes(variant) ? "text-white" : ""}>
+          {message}
+        </ToastBody>
       </Toast>
     </ToastContainer>
   )
@@ -41,7 +43,7 @@ function Toastr({ show, title, message, onClose, variant = 'light', delay }: Rea
 export function useNotificationContext() {
   const context = useContext(NotificationContext)
   if (!context) {
-    throw new Error('useNotificationContext must be used within an NotificationProvider')
+    throw new Error("useNotificationContext must be used within an NotificationProvider")
   }
   return context
 }
@@ -49,14 +51,14 @@ export function useNotificationContext() {
 export function NotificationProvider({ children }: ChildrenType) {
   const defaultConfig = {
     show: false,
-    message: '',
-    title: '',
+    message: "",
+    title: "",
     delay: 2000,
   }
 
   const [config, setConfig] = useState<ToastrProps>(defaultConfig)
   const hideNotification = () => {
-    setConfig({ show: false, message: '', title: '' })
+    setConfig({ show: false, message: "", title: "" })
   }
 
   const showNotification = ({ title, message, variant, delay = 2000 }: ShowNotificationType) => {
@@ -64,7 +66,7 @@ export function NotificationProvider({ children }: ChildrenType) {
       show: true,
       title,
       message,
-      variant: variant ?? 'light',
+      variant: variant ?? "light",
       onClose: hideNotification,
       delay,
     })

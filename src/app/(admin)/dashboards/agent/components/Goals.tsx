@@ -1,16 +1,16 @@
-'use client'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import Link from 'next/link'
-import ReactApexChart from 'react-apexcharts'
-import { Card, CardBody, CardHeader, CardTitle, Col, Row } from 'react-bootstrap'
-import { goalsOptions } from '../data'
-import { currency } from '@/context/constants'
+"use client"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import Link from "next/link"
+import ReactApexChart from "react-apexcharts"
+import { Card, CardBody, CardHeader, CardTitle, Col, Row } from "react-bootstrap"
+import { goalsOptions } from "../data"
+import { currency } from "@/context/constants"
 
 const Goals = () => {
   return (
     <Card>
       <CardHeader className="d-flex align-items-center justify-content-between pb-0">
-        <CardTitle as={'h4'}>Goals</CardTitle>
+        <CardTitle as={"h4"}>Goals</CardTitle>
         <div>
           <Link href="" className="link-dark fs-20">
             <IconifyIcon icon="ri-settings-4-line" />
@@ -18,7 +18,13 @@ const Goals = () => {
         </div>
       </CardHeader>
       <CardBody className="pt-0">
-        <ReactApexChart options={goalsOptions} series={goalsOptions.series} height={300} type="radialBar" className="apex-charts mb-4" />
+        <ReactApexChart
+          options={goalsOptions}
+          series={goalsOptions.series}
+          height={300}
+          type="radialBar"
+          className="apex-charts mb-4"
+        />
         <h5>Income Statistic</h5>
         <Row className="align-items-center justify-content-center mt-3 ">
           <Col lg={6} xs={6}>

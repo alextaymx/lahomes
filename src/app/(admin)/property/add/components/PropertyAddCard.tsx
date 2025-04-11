@@ -1,8 +1,8 @@
-import properties1 from '@/assets/images/properties/p-1.jpg'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import { currency } from '@/context/constants'
-import Image from 'next/image'
-import { Button, Card, CardBody, CardFooter, Col, Row } from 'react-bootstrap'
+import properties1 from "@/assets/images/properties/p-1.jpg"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import { currency } from "@/context/constants"
+import Image from "next/image"
+import { Button, Card, CardBody, CardFooter, Col, Row } from "react-bootstrap"
 
 const PropertyAddCard = () => {
   return (

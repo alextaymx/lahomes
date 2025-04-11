@@ -1,6 +1,6 @@
-'use client'
-import ComponentContainerCard from '@/components/ComponentContainerCard'
-import ReactApexChart from 'react-apexcharts'
+"use client"
+import ComponentContainerCard from "@/components/ComponentContainerCard"
+import ReactApexChart from "react-apexcharts"
 import {
   areaNullValueChartOpts,
   basicChartOpts,
@@ -9,13 +9,19 @@ import {
   negativeValuesChartOpts,
   spilineChart,
   stackedChartOpts,
-} from '../data'
-import { Button } from 'react-bootstrap'
+} from "../data"
+import { Button } from "react-bootstrap"
 
 const BasicAreaChart = () => {
   return (
     <ComponentContainerCard id="basic" title="Basic Area Chart">
-      <ReactApexChart height={380} options={basicChartOpts} series={basicChartOpts.series} type="area" className="apex-charts" />
+      <ReactApexChart
+        height={380}
+        options={basicChartOpts}
+        series={basicChartOpts.series}
+        type="area"
+        className="apex-charts"
+      />
     </ComponentContainerCard>
   )
 }
@@ -23,7 +29,13 @@ const BasicAreaChart = () => {
 const SplineAreaChart = () => {
   return (
     <ComponentContainerCard id="spline" title="Spline Area">
-      <ReactApexChart height={380} options={spilineChart} series={spilineChart.series} type="area" className="apex-charts" />
+      <ReactApexChart
+        height={380}
+        options={spilineChart}
+        series={spilineChart.series}
+        type="area"
+        className="apex-charts"
+      />
     </ComponentContainerCard>
   )
 }
@@ -56,7 +68,13 @@ const DateTimeAreaChart = () => {
 const NegativeValuesChart = () => {
   return (
     <ComponentContainerCard id="negative" title="Area with Negative Values">
-      <ReactApexChart height={380} options={negativeValuesChartOpts} series={negativeValuesChartOpts.series} type="area" className="apex-charts" />
+      <ReactApexChart
+        height={380}
+        options={negativeValuesChartOpts}
+        series={negativeValuesChartOpts.series}
+        type="area"
+        className="apex-charts"
+      />
     </ComponentContainerCard>
   )
 }
@@ -64,7 +82,13 @@ const NegativeValuesChart = () => {
 const StackedChart = () => {
   return (
     <ComponentContainerCard id="stacked" title="Stacked Area">
-      <ReactApexChart height={422} options={stackedChartOpts} series={stackedChartOpts.series} type="area" className="apex-charts" />
+      <ReactApexChart
+        height={422}
+        options={stackedChartOpts}
+        series={stackedChartOpts.series}
+        type="area"
+        className="apex-charts"
+      />
     </ComponentContainerCard>
   )
 }
@@ -72,7 +96,13 @@ const StackedChart = () => {
 const IrregularTimeSeriesChart = () => {
   return (
     <ComponentContainerCard id="timeSeries" title="Irregular TimeSeries">
-      <ReactApexChart height={380} options={irregularTimeSeriesOpts} series={irregularTimeSeriesOpts.series} type="area" className="apex-charts" />
+      <ReactApexChart
+        height={380}
+        options={irregularTimeSeriesOpts}
+        series={irregularTimeSeriesOpts.series}
+        type="area"
+        className="apex-charts"
+      />
     </ComponentContainerCard>
   )
 }
@@ -80,7 +110,13 @@ const IrregularTimeSeriesChart = () => {
 const AreaChartWithNullValues = () => {
   return (
     <ComponentContainerCard id="chart-nullvalues" title="Area Chart with Null values">
-      <ReactApexChart height={380} options={areaNullValueChartOpts} series={areaNullValueChartOpts.series} type="area" className="apex-charts" />
+      <ReactApexChart
+        height={380}
+        options={areaNullValueChartOpts}
+        series={areaNullValueChartOpts.series}
+        type="area"
+        className="apex-charts"
+      />
     </ComponentContainerCard>
   )
 }

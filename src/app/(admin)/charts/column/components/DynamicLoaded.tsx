@@ -1,6 +1,6 @@
-import ComponentContainerCard from '@/components/ComponentContainerCard'
-import ApexCharts from 'apexcharts'
-import { useEffect } from 'react'
+import ComponentContainerCard from "@/components/ComponentContainerCard"
+import ApexCharts from "apexcharts"
+import { useEffect } from "react"
 
 const DynamicLoaded = () => {
   useEffect(() => {
@@ -23,19 +23,19 @@ const DynamicLoaded = () => {
         y: 400,
         quarters: [
           {
-            x: 'Q1',
+            x: "Q1",
             y: 120,
           },
           {
-            x: 'Q2',
+            x: "Q2",
             y: 90,
           },
           {
-            x: 'Q3',
+            x: "Q3",
             y: 100,
           },
           {
-            x: 'Q4',
+            x: "Q4",
             y: 90,
           },
         ],
@@ -44,19 +44,19 @@ const DynamicLoaded = () => {
         y: 430,
         quarters: [
           {
-            x: 'Q1',
+            x: "Q1",
             y: 120,
           },
           {
-            x: 'Q2',
+            x: "Q2",
             y: 110,
           },
           {
-            x: 'Q3',
+            x: "Q3",
             y: 90,
           },
           {
-            x: 'Q4',
+            x: "Q4",
             y: 110,
           },
         ],
@@ -65,19 +65,19 @@ const DynamicLoaded = () => {
         y: 448,
         quarters: [
           {
-            x: 'Q1',
+            x: "Q1",
             y: 70,
           },
           {
-            x: 'Q2',
+            x: "Q2",
             y: 100,
           },
           {
-            x: 'Q3',
+            x: "Q3",
             y: 140,
           },
           {
-            x: 'Q4',
+            x: "Q4",
             y: 138,
           },
         ],
@@ -86,19 +86,19 @@ const DynamicLoaded = () => {
         y: 470,
         quarters: [
           {
-            x: 'Q1',
+            x: "Q1",
             y: 150,
           },
           {
-            x: 'Q2',
+            x: "Q2",
             y: 60,
           },
           {
-            x: 'Q3',
+            x: "Q3",
             y: 190,
           },
           {
-            x: 'Q4',
+            x: "Q4",
             y: 70,
           },
         ],
@@ -107,19 +107,19 @@ const DynamicLoaded = () => {
         y: 540,
         quarters: [
           {
-            x: 'Q1',
+            x: "Q1",
             y: 120,
           },
           {
-            x: 'Q2',
+            x: "Q2",
             y: 120,
           },
           {
-            x: 'Q3',
+            x: "Q3",
             y: 130,
           },
           {
-            x: 'Q4',
+            x: "Q4",
             y: 170,
           },
         ],
@@ -128,19 +128,19 @@ const DynamicLoaded = () => {
         y: 580,
         quarters: [
           {
-            x: 'Q1',
+            x: "Q1",
             y: 170,
           },
           {
-            x: 'Q2',
+            x: "Q2",
             y: 130,
           },
           {
-            x: 'Q3',
+            x: "Q3",
             y: 120,
           },
           {
-            x: 'Q4',
+            x: "Q4",
             y: 160,
           },
         ],
@@ -151,39 +151,39 @@ const DynamicLoaded = () => {
 
       const dataYearSeries = [
         {
-          x: '2011',
+          x: "2011",
           y: dataSet[0].y,
-          color: '#4697ce',
+          color: "#4697ce",
           quarters: dataSet[0].quarters,
         },
         {
-          x: '2012',
+          x: "2012",
           y: dataSet[1].y,
-          color: '#53389f',
+          color: "#53389f",
           quarters: dataSet[1].quarters,
         },
         {
-          x: '2013',
+          x: "2013",
           y: dataSet[2].y,
-          color: '#7f56da',
+          color: "#7f56da",
           quarters: dataSet[2].quarters,
         },
         {
-          x: '2014',
+          x: "2014",
           y: dataSet[3].y,
-          color: '#ff86c8',
+          color: "#ff86c8",
           quarters: dataSet[3].quarters,
         },
         {
-          x: '2015',
+          x: "2015",
           y: dataSet[4].y,
-          color: '#e06d94',
+          color: "#e06d94",
           quarters: dataSet[4].quarters,
         },
         {
-          x: '2016',
+          x: "2016",
           y: dataSet[5].y,
-          color: '#63b7e6',
+          color: "#63b7e6",
           quarters: dataSet[5].quarters,
         },
       ]
@@ -215,7 +215,7 @@ const DynamicLoaded = () => {
             },
           ]
 
-        return ApexCharts.exec(destChartIDToUpdate, 'updateOptions', {
+        return ApexCharts.exec(destChartIDToUpdate, "updateOptions", {
           series: series,
           colors: colors,
           fill: {
@@ -232,37 +232,37 @@ const DynamicLoaded = () => {
         },
       ],
       chart: {
-        id: 'barYear',
+        id: "barYear",
         height: 400,
-        width: '100%',
-        type: 'bar',
+        width: "100%",
+        type: "bar",
         toolbar: {
           show: false,
         },
         events: {
           dataPointSelection: function (_e: any, chart: any, opts: any) {
-            const quarterChartEl = document.querySelector('#chart-quarter')
-            const yearChartEl = document.querySelector('#chart-year')
+            const quarterChartEl = document.querySelector("#chart-quarter")
+            const yearChartEl = document.querySelector("#chart-year")
 
             if (opts.selectedDataPoints[0].length === 1) {
-              if (quarterChartEl?.classList.contains('active')) {
-                updateQuarterChart(chart, 'barQuarter')
+              if (quarterChartEl?.classList.contains("active")) {
+                updateQuarterChart(chart, "barQuarter")
               } else {
-                yearChartEl?.classList.add('chart-quarter-activated')
-                quarterChartEl?.classList.add('active')
-                updateQuarterChart(chart, 'barQuarter')
+                yearChartEl?.classList.add("chart-quarter-activated")
+                quarterChartEl?.classList.add("active")
+                updateQuarterChart(chart, "barQuarter")
               }
             } else {
-              updateQuarterChart(chart, 'barQuarter')
+              updateQuarterChart(chart, "barQuarter")
             }
 
             if (opts.selectedDataPoints[0].length === 0) {
-              yearChartEl?.classList.remove('chart-quarter-activated')
-              quarterChartEl?.classList.remove('active')
+              yearChartEl?.classList.remove("chart-quarter-activated")
+              quarterChartEl?.classList.remove("active")
             }
           },
           updated: function (chart: any) {
-            updateQuarterChart(chart, 'barQuarter')
+            updateQuarterChart(chart, "barQuarter")
           },
         },
       },
@@ -270,17 +270,17 @@ const DynamicLoaded = () => {
         bar: {
           distributed: true,
           horizontal: true,
-          barHeight: '75%',
+          barHeight: "75%",
           dataLabels: {
-            position: 'bottom',
+            position: "bottom",
           },
         },
       },
       dataLabels: {
         enabled: true,
-        textAnchor: 'start',
+        textAnchor: "start",
         style: {
-          colors: ['#fff'],
+          colors: ["#fff"],
         },
         formatter: function (_val: any, opt: any) {
           return opt.w.globals.labels[opt.dataPointIndex]
@@ -291,18 +291,18 @@ const DynamicLoaded = () => {
         },
       },
 
-      colors: ['#4697ce', '#53389f', '#7f56da', '#ff86c8', '#e06d94', '#63b7e6'],
+      colors: ["#4697ce", "#53389f", "#7f56da", "#ff86c8", "#e06d94", "#63b7e6"],
 
       states: {
         normal: {
           filter: {
-            type: 'desaturate',
+            type: "desaturate",
           },
         },
         active: {
           allowMultipleDataPointsSelection: true,
           filter: {
-            type: 'darken',
+            type: "darken",
             value: 1,
           },
         },
@@ -320,11 +320,11 @@ const DynamicLoaded = () => {
         },
       },
       title: {
-        text: 'Yearly Results',
+        text: "Yearly Results",
         offsetX: 15,
       },
       subtitle: {
-        text: '(Click on bar to see details)',
+        text: "(Click on bar to see details)",
         offsetX: 15,
       },
       yaxis: {
@@ -334,7 +334,7 @@ const DynamicLoaded = () => {
       },
     }
 
-    const chart = new ApexCharts(document.querySelector('#chart-year'), options)
+    const chart = new ApexCharts(document.querySelector("#chart-year"), options)
     chart.render()
 
     const optionsQuarter = {
@@ -344,10 +344,10 @@ const DynamicLoaded = () => {
         },
       ],
       chart: {
-        id: 'barQuarter',
+        id: "barQuarter",
         height: 400,
-        width: '100%',
-        type: 'bar',
+        width: "100%",
+        type: "bar",
         stacked: true,
         toolbar: {
           show: false,
@@ -355,7 +355,7 @@ const DynamicLoaded = () => {
       },
       plotOptions: {
         bar: {
-          columnWidth: '50%',
+          columnWidth: "50%",
           horizontal: false,
         },
       },
@@ -380,7 +380,7 @@ const DynamicLoaded = () => {
         },
       },
       title: {
-        text: 'Quarterly Results',
+        text: "Quarterly Results",
         offsetX: 10,
       },
       tooltip: {
@@ -399,10 +399,10 @@ const DynamicLoaded = () => {
       },
     }
 
-    const chartQuarter = new ApexCharts(document.querySelector('#chart-quarter'), optionsQuarter)
+    const chartQuarter = new ApexCharts(document.querySelector("#chart-quarter"), optionsQuarter)
     chartQuarter.render()
 
-    document.querySelector('#phoneModel')?.addEventListener('change', function () {
+    document.querySelector("#phoneModel")?.addEventListener("change", function () {
       chart.updateSeries([
         {
           data: makeData(),

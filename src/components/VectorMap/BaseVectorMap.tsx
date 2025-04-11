@@ -1,5 +1,5 @@
-'use client'
-import { useEffect, useState } from 'react'
+"use client"
+import { useEffect, useState } from "react"
 
 interface BaseVectorMapProps {
   width?: string
@@ -15,8 +15,8 @@ const BaseVectorMap = ({ width, height, options, type }: BaseVectorMapProps) => 
   useEffect(() => {
     if (!map) {
       // create jsvectormap
-      const map = new (window as any)['jsVectorMap']({
-        selector: '#' + selectorId,
+      const map = new (window as any)["jsVectorMap"]({
+        selector: "#" + selectorId,
         map: type,
         ...options,
       })

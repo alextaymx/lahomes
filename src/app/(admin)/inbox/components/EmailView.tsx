@@ -1,9 +1,9 @@
-'use client'
-import { EmailProvider } from '@/context/useEmailContext'
-import { Col, TabContainer } from 'react-bootstrap'
-import EmailArea from './EmailArea'
-import EmailNavigationMenu from './EmailNavigationMenu'
-import InboxMail from './InboxMail'
+"use client"
+import { EmailProvider } from "@/context/useEmailContext"
+import { Col, TabContainer } from "react-bootstrap"
+import EmailArea from "./EmailArea"
+import EmailNavigationMenu from "./EmailNavigationMenu"
+import InboxMail from "./InboxMail"
 
 const EmailView = () => {
   return (

@@ -1,4 +1,4 @@
-import { MenuItemType } from "@/types/menu";
+import { MenuItemType } from "@/types/menu"
 
 export const MENU_ITEMS: MenuItemType[] = [
   {
@@ -735,4 +735,4 @@ export const MENU_ITEMS: MenuItemType[] = [
     label: " Disable Item",
     icon: "ri:prohibited-2-line",
   },
-];
+]

@@ -1,9 +1,17 @@
-'use client'
-import ComponentContainerCard from '@/components/ComponentContainerCard'
-import { useState } from 'react'
-import ReactApexChart from 'react-apexcharts'
-import { Button } from 'react-bootstrap'
-import { donutUpdateOpts, gradientDonutOpts, imageFillOpts, monochromePieOpts, patternedDonutOpts, simpleDonutOpts, simplePieOpts } from '../data'
+"use client"
+import ComponentContainerCard from "@/components/ComponentContainerCard"
+import { useState } from "react"
+import ReactApexChart from "react-apexcharts"
+import { Button } from "react-bootstrap"
+import {
+  donutUpdateOpts,
+  gradientDonutOpts,
+  imageFillOpts,
+  monochromePieOpts,
+  patternedDonutOpts,
+  simpleDonutOpts,
+  simplePieOpts,
+} from "../data"
 
 const SimpleChart = () => {
   return (
@@ -76,7 +84,7 @@ const DonutUpdateChart = () => {
     return setData(
       data.map(function () {
         return Math.floor(Math.random() * (100 - 1 + 1)) + 1
-      }),
+      })
     )
   }
 

@@ -1,11 +1,11 @@
-import ComponentContainerCard from '@/components/ComponentContainerCard'
-import { Button, Card, CardBody, CardTitle, Col, Row } from 'react-bootstrap'
-import ChoicesFormInput from '@/components/from/ChoicesFormInput'
-import PageTitle from '@/components/PageTitle'
-import UIExamplesList from '@/components/UIExamplesList'
-import type { Metadata } from 'next'
+import ComponentContainerCard from "@/components/ComponentContainerCard"
+import { Button, Card, CardBody, CardTitle, Col, Row } from "react-bootstrap"
+import ChoicesFormInput from "@/components/from/ChoicesFormInput"
+import PageTitle from "@/components/PageTitle"
+import UIExamplesList from "@/components/UIExamplesList"
+import type { Metadata } from "next"
 
-export const metadata: Metadata = { title: 'Form Select' }
+export const metadata: Metadata = { title: "Form Select" }
 
 const BasicExample = () => {
   return (
@@ -72,7 +72,11 @@ const OptionGroups = () => {
 
 const OptionWithNoSearch = () => {
   return (
-    <ComponentContainerCard id="options-add-no-search" title="Options added via config with no search" titleClass="mb-3">
+    <ComponentContainerCard
+      id="options-add-no-search"
+      title="Options added via config with no search"
+      titleClass="mb-3"
+    >
       <Row>
         <Col lg={6}>
           <ChoicesFormInput options={{ removeItemButton: true, searchEnabled: false }}>
@@ -92,7 +96,11 @@ const OptionWithNoSearch = () => {
 
 const OptionWithNoSorting = () => {
   return (
-    <ComponentContainerCard id="options-add-no-sorting" title=" Options added via config with no sorting" titleClass="mb-3">
+    <ComponentContainerCard
+      id="options-add-no-sorting"
+      title=" Options added via config with no sorting"
+      titleClass="mb-3"
+    >
       <Row>
         <Col lg={6}>
           <ChoicesFormInput options={{ shouldSort: false }}>
@@ -146,7 +154,11 @@ const MultipleSelect = () => {
 
 const MultipleSelectWithRemoveButton = () => {
   return (
-    <ComponentContainerCard id="multiple-select-remove" title="Multiple select With remove button input" titleClass="mb-3">
+    <ComponentContainerCard
+      id="multiple-select-remove"
+      title="Multiple select With remove button input"
+      titleClass="mb-3"
+    >
       <Row>
         <Col lg={6}>
           <ChoicesFormInput options={{ removeItemButton: true }} multiple>
@@ -166,7 +178,7 @@ const MultipleSelectOptionGroups = () => {
     <ComponentContainerCard id="multiple-groups" title="Multiple select With Option groups" titleClass="mb-3">
       <Row>
         <Col lg={6}>
-          <ChoicesFormInput options={{ placeholderValue: 'choose a city' }} multiple>
+          <ChoicesFormInput options={{ placeholderValue: "choose a city" }} multiple>
             <option>Choose a city</option>
             <optgroup label="UK">
               <option value="London">London</option>
@@ -216,7 +228,8 @@ const TextInputs = () => {
         <>
           Set <code>data-choices data-choices-limit=&quot;Required Limit&quot; data-choices-removeItem</code> attribute.
         </>
-      }>
+      }
+    >
       <Row>
         <Col lg={6}>
           <label htmlFor="choices-text-remove-button" className="form-label text-muted">
@@ -246,7 +259,8 @@ const TextInputsWithUniqueValue = () => {
         <>
           Set <code>data-choices data-choices-text-unique-true</code> attribute.
         </>
-      }>
+      }
+    >
       <Row>
         <Col lg={6}>
           <label htmlFor="choices-text-unique-values" className="form-label text-muted">
@@ -276,7 +290,8 @@ const DisabledInput = () => {
         <>
           Set <code>data-choices data-choices-text-disabled-true</code> attribute.
         </>
-      }>
+      }
+    >
       <div className="w-50 mb-3">
         <label htmlFor="choices-text-disabled" className="form-label text-muted">
           Disabled
@@ -303,20 +318,21 @@ const Select = () => {
         <Col xl={9}>
           <Card>
             <CardBody>
-              <CardTitle as={'h5'} className="mb-1 anchor" id="overview">
+              <CardTitle as={"h5"} className="mb-1 anchor" id="overview">
                 Overview
                 <Button
                   variant="outline-success"
                   size="sm"
                   className="rounded-2 float-end"
                   href="https://github.com/Choices-js/Choices"
-                  target="_blank">
+                  target="_blank"
+                >
                   Official Website
                 </Button>
               </CardTitle>
               <p className="text-muted mb-3">
-                Choices.js is a A vanilla, lightweight, configurable select box/text input plugin. Similar to Select2 and Selectize but without the
-                jQuery dependency.
+                Choices.js is a A vanilla, lightweight, configurable select box/text input plugin. Similar to Select2
+                and Selectize but without the jQuery dependency.
               </p>
             </CardBody>
           </Card>
@@ -334,15 +350,15 @@ const Select = () => {
         <Col xl={3}>
           <UIExamplesList
             examples={[
-              { link: '#basic', label: 'Basic Example' },
-              { link: '#options-group', label: 'Option Groups Example' },
-              { link: '#options-add-no-search', label: 'Options added via config with no search' },
-              { link: '#options-add-no-sorting', label: 'Options added via config with no sorting' },
-              { link: '#multiple-select', label: 'Multiple select input' },
-              { link: '#multiple-select-remove', label: 'Multiple select With remove button input' },
-              { link: '#multiple-groups', label: 'Multiple select With Option groups' },
-              { link: '#text-input', label: 'Text inputs' },
-              { link: '#unique-values', label: 'Text inputs in Unique values only,no pasting' },
+              { link: "#basic", label: "Basic Example" },
+              { link: "#options-group", label: "Option Groups Example" },
+              { link: "#options-add-no-search", label: "Options added via config with no search" },
+              { link: "#options-add-no-sorting", label: "Options added via config with no sorting" },
+              { link: "#multiple-select", label: "Multiple select input" },
+              { link: "#multiple-select-remove", label: "Multiple select With remove button input" },
+              { link: "#multiple-groups", label: "Multiple select With Option groups" },
+              { link: "#text-input", label: "Text inputs" },
+              { link: "#unique-values", label: "Text inputs in Unique values only,no pasting" },
             ]}
           />
         </Col>

@@ -1,6 +1,6 @@
-'use client'
-import ComponentContainerCard from '@/components/ComponentContainerCard'
-import ReactApexChart from 'react-apexcharts'
+"use client"
+import ComponentContainerCard from "@/components/ComponentContainerCard"
+import ReactApexChart from "react-apexcharts"
 import {
   basicChartOpts,
   chartWithMarkerOpts,
@@ -12,7 +12,7 @@ import {
   patternChartOpts,
   reversedChartOpts,
   stackedChartOpts,
-} from '../data'
+} from "../data"
 
 const BasicBarChart = () => {
   return (
@@ -73,7 +73,12 @@ const BarWithImage = () => {
 const CustomDataLabelsChart = () => {
   return (
     <ComponentContainerCard id="datalables" title="Custom DataLabels Bar">
-      <ReactApexChart height={450} options={customDataLabelsChartOpts} series={customDataLabelsChartOpts.series} type="bar" />
+      <ReactApexChart
+        height={450}
+        options={customDataLabelsChartOpts}
+        series={customDataLabelsChartOpts.series}
+        type="bar"
+      />
     </ComponentContainerCard>
   )
 }

@@ -1,6 +1,6 @@
-'use client'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import ReactApexChart from 'react-apexcharts'
+"use client"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import ReactApexChart from "react-apexcharts"
 import {
   Button,
   Card,
@@ -14,8 +14,8 @@ import {
   DropdownMenu,
   DropdownToggle,
   Row,
-} from 'react-bootstrap'
-import { customerVisit } from '../data'
+} from "react-bootstrap"
+import { customerVisit } from "../data"
 
 const CustomerVisit = () => {
   return (
@@ -25,13 +25,14 @@ const CustomerVisit = () => {
           <CardTitle>Customer Visit by Device</CardTitle>
           <Dropdown>
             <DropdownToggle
-              as={'a'}
+              as={"a"}
               className="btn btn-sm btn-outline-light rounded icons-center content-none"
               data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Today{' '}
+              aria-expanded="false"
+            >
+              Today{" "}
               <span>
-                {' '}
+                {" "}
                 <IconifyIcon className="ms-1" width={16} height={16} icon="ri:arrow-down-s-line" />
               </span>
             </DropdownToggle>
@@ -59,7 +60,13 @@ const CustomerVisit = () => {
             </div>
           </div>
           <div className="mx-n3">
-            <ReactApexChart options={customerVisit} series={customerVisit.series} height={150} type="area" className="apex-charts my-3" />
+            <ReactApexChart
+              options={customerVisit}
+              series={customerVisit.series}
+              height={150}
+              type="area"
+              className="apex-charts my-3"
+            />
           </div>
           <Row className="mt-4 mb-1">
             <Col lg={6}>
@@ -80,9 +87,16 @@ const CustomerVisit = () => {
                     <p className="mb-0">487</p>
                   </div>
                 </div>
-                <div className="progress progress-lg rounded-0 gap-1 overflow-visible mt-3 bg-light-subtle" style={{ height: 10 }}>
-                  <div className="progress-bar bg-success rounded-pill" role="progressbar" style={{ width: '70%' }}></div>
-                  <div className="progress-bar bg-dark rounded-pill" role="progressbar" style={{ width: '30%' }}></div>
+                <div
+                  className="progress progress-lg rounded-0 gap-1 overflow-visible mt-3 bg-light-subtle"
+                  style={{ height: 10 }}
+                >
+                  <div
+                    className="progress-bar bg-success rounded-pill"
+                    role="progressbar"
+                    style={{ width: "70%" }}
+                  ></div>
+                  <div className="progress-bar bg-dark rounded-pill" role="progressbar" style={{ width: "30%" }}></div>
                 </div>
               </div>
             </Col>
@@ -104,9 +118,16 @@ const CustomerVisit = () => {
                     <p className="mb-0">876</p>
                   </div>
                 </div>
-                <div className="progress progress-lg rounded-0 gap-1 overflow-visible mt-3 bg-light-subtle" style={{ height: 10 }}>
-                  <div className="progress-bar bg-dark rounded-pill" role="progressbar" style={{ width: '30%' }}></div>
-                  <div className="progress-bar bg-warning rounded-pill" role="progressbar" style={{ width: '70%' }}></div>
+                <div
+                  className="progress progress-lg rounded-0 gap-1 overflow-visible mt-3 bg-light-subtle"
+                  style={{ height: 10 }}
+                >
+                  <div className="progress-bar bg-dark rounded-pill" role="progressbar" style={{ width: "30%" }}></div>
+                  <div
+                    className="progress-bar bg-warning rounded-pill"
+                    role="progressbar"
+                    style={{ width: "70%" }}
+                  ></div>
                 </div>
               </div>
             </Col>

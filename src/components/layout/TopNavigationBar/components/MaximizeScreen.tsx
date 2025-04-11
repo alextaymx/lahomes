@@ -1,16 +1,16 @@
-'use client'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import { useEffect } from 'react'
-import { Dropdown } from 'react-bootstrap'
+"use client"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import { useEffect } from "react"
+import { Dropdown } from "react-bootstrap"
 
 const MaximizeScreen = () => {
   useEffect(() => {
-    let elem = document.querySelector('.maximize-icon')
+    const elem = document.querySelector(".maximize-icon")
 
-    if (elem) elem.setAttribute('data-toggle', 'fullscreen')
+    if (elem) elem.setAttribute("data-toggle", "fullscreen")
 
     return () => {
-      if (elem) elem.removeAttribute('data-toggle')
+      if (elem) elem.removeAttribute("data-toggle")
     }
   }, [])
 
@@ -18,10 +18,14 @@ const MaximizeScreen = () => {
    * toggle full screen mode
    */
   const toggleFullscreen = () => {
-    let document: any = window.document
-    document.body.classList.add('fullscreen-enable')
+    const document: any = window.document
+    document.body.classList.add("fullscreen-enable")
 
-    if (!document.fullscreenElement && /* alternative standard method */ !document.mozFullScreenElement && !document.webkitFullscreenElement) {
+    if (
+      !document.fullscreenElement &&
+      /* alternative standard method */ !document.mozFullScreenElement &&
+      !document.webkitFullscreenElement
+    ) {
       // current working methods
       if (document.documentElement.requestFullscreen) {
         document.documentElement.requestFullscreen()
@@ -43,11 +47,11 @@ const MaximizeScreen = () => {
     // handle fullscreen exit
     const exitHandler = () => {
       if (!document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement)
-        document.body.classList.remove('fullscreen-enable')
+        document.body.classList.remove("fullscreen-enable")
     }
-    document.addEventListener('fullscreenchange', exitHandler)
-    document.addEventListener('webkitfullscreenchange', exitHandler)
-    document.addEventListener('mozfullscreenchange', exitHandler)
+    document.addEventListener("fullscreenchange", exitHandler)
+    document.addEventListener("webkitfullscreenchange", exitHandler)
+    document.addEventListener("mozfullscreenchange", exitHandler)
   }
 
   return (

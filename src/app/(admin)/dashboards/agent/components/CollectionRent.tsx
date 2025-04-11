@@ -1,11 +1,11 @@
-import avatar3 from '@/assets/images/users/avatar-3.jpg'
-import avatar4 from '@/assets/images/users/avatar-4.jpg'
-import avatar5 from '@/assets/images/users/avatar-5.jpg'
-import avatar6 from '@/assets/images/users/avatar-6.jpg'
-import avatar7 from '@/assets/images/users/avatar-7.jpg'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import { currency } from '@/context/constants'
-import Image from 'next/image'
+import avatar3 from "@/assets/images/users/avatar-3.jpg"
+import avatar4 from "@/assets/images/users/avatar-4.jpg"
+import avatar5 from "@/assets/images/users/avatar-5.jpg"
+import avatar6 from "@/assets/images/users/avatar-6.jpg"
+import avatar7 from "@/assets/images/users/avatar-7.jpg"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import { currency } from "@/context/constants"
+import Image from "next/image"
 import {
   Button,
   Card,
@@ -18,20 +18,21 @@ import {
   DropdownMenu,
   DropdownToggle,
   ProgressBar,
-} from 'react-bootstrap'
+} from "react-bootstrap"
 
 const CollectionRent = () => {
   return (
     <Col lg={5}>
       <Card>
         <CardHeader className="d-flex justify-content-between align-items-center border-0">
-          <CardTitle as={'h4'}>Collection of Rent</CardTitle>
+          <CardTitle as={"h4"}>Collection of Rent</CardTitle>
           <Dropdown>
             <DropdownToggle
-              as={'a'}
+              as={"a"}
               className="btn btn-sm btn-outline-light rounded content-none icons-center"
               data-bs-toggle="dropdown"
-              aria-expanded="false">
+              aria-expanded="false"
+            >
               This Month <IconifyIcon className="ms-1" width={16} height={16} icon="ri:arrow-down-s-line" />
             </DropdownToggle>
             <DropdownMenu className="dropdown-menu-end">
@@ -51,7 +52,15 @@ const CollectionRent = () => {
               <IconifyIcon icon="solar:hand-money-broken" width={32} height={32} className="fs-32 text-primary" />
             </div>
           </div>
-          <ProgressBar style={{ height: 15 }} now={50} striped animated variant="success" className="mt-3" role="progressbar"></ProgressBar>
+          <ProgressBar
+            style={{ height: 15 }}
+            now={50}
+            striped
+            animated
+            variant="success"
+            className="mt-3"
+            role="progressbar"
+          ></ProgressBar>
 
           <div className="d-flex align-items-center justify-content-between mt-3">
             <div>

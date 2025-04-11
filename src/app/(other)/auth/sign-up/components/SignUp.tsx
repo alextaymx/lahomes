@@ -1,28 +1,28 @@
-'use client'
-import logoDark from '@/assets/images/logo-dark.png'
-import LogoLight from '@/assets/images/logo-light.png'
-import TextFormInput from '@/components/from/TextFormInput'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import { yupResolver } from '@hookform/resolvers/yup'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useEffect } from 'react'
-import { Button, Card, CardBody, Col, Container, Row } from 'react-bootstrap'
-import { useForm } from 'react-hook-form'
-import * as yup from 'yup'
+"use client"
+import logoDark from "@/assets/images/logo-dark.png"
+import LogoLight from "@/assets/images/logo-light.png"
+import TextFormInput from "@/components/from/TextFormInput"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import { yupResolver } from "@hookform/resolvers/yup"
+import Image from "next/image"
+import Link from "next/link"
+import { useEffect } from "react"
+import { Button, Card, CardBody, Col, Container, Row } from "react-bootstrap"
+import { useForm } from "react-hook-form"
+import * as yup from "yup"
 
 const SignUp = () => {
   useEffect(() => {
-    document.body.classList.add('authentication-bg')
+    document.body.classList.add("authentication-bg")
     return () => {
-      document.body.classList.remove('authentication-bg')
+      document.body.classList.remove("authentication-bg")
     }
   }, [])
 
   const messageSchema = yup.object({
-    name: yup.string().required('Please enter Name'),
-    email: yup.string().email().required('Please enter Email'),
-    password: yup.string().required('Please enter password'),
+    name: yup.string().required("Please enter Name"),
+    email: yup.string().email().required("Please enter Email"),
+    password: yup.string().required("Please enter password"),
   })
 
   const { handleSubmit, control } = useForm({
@@ -45,7 +45,9 @@ const SignUp = () => {
                   </Link>
                 </div>
                 <h2 className="fw-bold text-uppercase text-center fs-18">Free Account</h2>
-                <p className="text-muted text-center mt-1 mb-4">New to our platform? Sign up now! It only takes a minute.</p>
+                <p className="text-muted text-center mt-1 mb-4">
+                  New to our platform? Sign up now! It only takes a minute.
+                </p>
                 <div className="px-4">
                   <form onSubmit={handleSubmit(() => {})} className="authentication-form">
                     <div className="mb-3">
@@ -107,7 +109,7 @@ const SignUp = () => {
               </CardBody>
             </Card>
             <p className="mb-0 text-center text-white">
-              I already have an account{' '}
+              I already have an account{" "}
               <Link href="/auth/sign-in" className="text-reset text-unline-dashed fw-bold ms-1">
                 Sign In
               </Link>

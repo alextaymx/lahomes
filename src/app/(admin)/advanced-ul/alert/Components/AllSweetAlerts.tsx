@@ -1,7 +1,7 @@
-'use client'
-import ComponentContainerCard from '@/components/ComponentContainerCard'
-import { Button } from 'react-bootstrap'
-import { withSwal } from 'react-sweetalert2'
+"use client"
+import ComponentContainerCard from "@/components/ComponentContainerCard"
+import { Button } from "react-bootstrap"
+import { withSwal } from "react-sweetalert2"
 
 const AllSweetAlerts = withSwal((props: any) => {
   const { swal } = props
@@ -14,12 +14,13 @@ const AllSweetAlerts = withSwal((props: any) => {
           type="button"
           onClick={() =>
             swal.fire({
-              title: 'Any fool can use a computer',
+              title: "Any fool can use a computer",
               customClass: {
                 confirmButton: `btn btn-primary w-xs mt-2`,
               },
             })
-          }>
+          }
+        >
           Click me
         </Button>
       </ComponentContainerCard>
@@ -30,14 +31,15 @@ const AllSweetAlerts = withSwal((props: any) => {
           type="button"
           onClick={() =>
             swal.fire({
-              title: 'The Internet?',
-              text: 'That thing is still around?',
-              icon: 'question',
+              title: "The Internet?",
+              text: "That thing is still around?",
+              icon: "question",
               customClass: {
                 confirmButton: `btn btn-primary w-xs mt-2`,
               },
             })
-          }>
+          }
+        >
           Click me
         </Button>
       </ComponentContainerCard>
@@ -48,28 +50,29 @@ const AllSweetAlerts = withSwal((props: any) => {
             variant="success"
             onClick={() =>
               swal.fire({
-                title: 'Good job!',
-                text: 'You clicked the button!',
-                icon: 'success',
+                title: "Good job!",
+                text: "You clicked the button!",
+                icon: "success",
                 showCancelButton: true,
                 customClass: {
                   confirmButton: `btn btn-primary w-xs mt-2`,
-                  cancelButton: 'btn btn-danger w-xs mt-2',
+                  cancelButton: "btn btn-danger w-xs mt-2",
                 },
 
                 buttonsStyling: false,
                 showCloseButton: false,
               })
-            }>
+            }
+          >
             Success
           </Button>
           <Button
             variant="warning"
             onClick={() =>
               swal.fire({
-                title: 'Oops...',
-                text: 'Something went wrong!',
-                icon: 'warning',
+                title: "Oops...",
+                text: "Something went wrong!",
+                icon: "warning",
                 customClass: {
                   confirmButton: `btn btn-primary w-xs mt-2`,
                 },
@@ -77,16 +80,17 @@ const AllSweetAlerts = withSwal((props: any) => {
                 footer: '<a href="">Why do I have this issue?</a>',
                 showCloseButton: false,
               })
-            }>
+            }
+          >
             Warning
           </Button>
           <Button
             variant="info"
             onClick={() =>
               swal.fire({
-                title: 'Oops...',
-                text: 'Something went wrong!',
-                icon: 'info',
+                title: "Oops...",
+                text: "Something went wrong!",
+                icon: "info",
                 customClass: {
                   confirmButton: `btn btn-primary w-xs mt-2`,
                 },
@@ -94,16 +98,17 @@ const AllSweetAlerts = withSwal((props: any) => {
                 footer: '<a href="">Why do I have this issue?</a>',
                 showCloseButton: false,
               })
-            }>
+            }
+          >
             Info
           </Button>
           <Button
             variant="danger"
             onClick={() =>
               swal.fire({
-                title: 'Oops...',
-                text: 'Something went wrong!',
-                icon: 'error',
+                title: "Oops...",
+                text: "Something went wrong!",
+                icon: "error",
                 customClass: {
                   confirmButton: `btn btn-primary w-xs mt-2`,
                 },
@@ -111,7 +116,8 @@ const AllSweetAlerts = withSwal((props: any) => {
                 footer: '<a href="">Why do I have this issue?</a>',
                 showCloseButton: false,
               })
-            }>
+            }
+          >
             Error
           </Button>
         </div>
@@ -122,16 +128,17 @@ const AllSweetAlerts = withSwal((props: any) => {
           variant="primary"
           onClick={() =>
             swal.fire({
-              imageUrl: 'https://placeholder.pics/svg/300x1500',
+              imageUrl: "https://placeholder.pics/svg/300x1500",
               imageHeight: 1500,
-              imageAlt: 'A tall image',
+              imageAlt: "A tall image",
               customClass: {
                 confirmButton: `btn btn-primary w-xs mt-2`,
               },
               buttonsStyling: false,
               showCloseButton: false,
             })
-          }>
+          }
+        >
           Click me
         </Button>
       </ComponentContainerCard>
@@ -143,15 +150,15 @@ const AllSweetAlerts = withSwal((props: any) => {
           onClick={() =>
             swal
               .fire({
-                title: 'Are you sure?',
+                title: "Are you sure?",
                 text: "You won't be able to revert this!",
-                icon: 'warning',
+                icon: "warning",
                 showCancelButton: true,
-                confirmButtonText: 'Yes, delete it!',
-                cancelButtonText: 'No, cancel!',
+                confirmButtonText: "Yes, delete it!",
+                cancelButtonText: "No, cancel!",
                 customClass: {
                   confirmButton: `btn btn-primary w-xs mt-2`,
-                  cancelButton: 'btn btn-danger w-xs mt-2',
+                  cancelButton: "btn btn-danger w-xs mt-2",
                 },
                 buttonsStyling: false,
                 showCloseButton: false,
@@ -159,9 +166,9 @@ const AllSweetAlerts = withSwal((props: any) => {
               .then(function (result: any) {
                 if (result.value) {
                   swal.fire({
-                    title: 'Deleted!',
-                    text: 'Your file has been deleted.',
-                    icon: 'success',
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success",
                     customClass: {
                       confirmButton: `btn btn-primary w-xs mt-2`,
                     },
@@ -172,9 +179,9 @@ const AllSweetAlerts = withSwal((props: any) => {
                   result.dismiss === swal.DismissReason.cancel
                 ) {
                   swal.fire({
-                    title: 'Cancelled',
-                    text: 'Your imaginary file is safe :)',
-                    icon: 'error',
+                    title: "Cancelled",
+                    text: "Your imaginary file is safe :)",
+                    icon: "error",
                     customClass: {
                       confirmButton: `btn btn-primary mt-2`,
                     },
@@ -182,7 +189,8 @@ const AllSweetAlerts = withSwal((props: any) => {
                   })
                 }
               })
-          }>
+          }
+        >
           Click me
         </Button>
       </ComponentContainerCard>

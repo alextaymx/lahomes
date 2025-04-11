@@ -1,5 +1,5 @@
-'use client'
-import { Icon, type IconProps } from '@iconify/react'
+"use client"
+import { Icon, type IconProps } from "@iconify/react"
 
 const IconifyIcon = (props: IconProps) => {
   return <Icon {...props} />

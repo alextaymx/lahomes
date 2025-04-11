@@ -1,11 +1,25 @@
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import { getAllProperty } from '@/helpers/data'
-import { PropertyType } from '@/types/data'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Card, CardBody, CardFooter, Col, Row } from 'react-bootstrap'
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import { getAllProperty } from "@/helpers/data"
+import { PropertyType } from "@/types/data"
+import Image from "next/image"
+import Link from "next/link"
+import { Card, CardBody, CardFooter, Col, Row } from "react-bootstrap"
 
-const PropertiesCard = ({ bath, beds, flor, size: ft, icon, id, location, name, price, type, variant, save, image }: PropertyType) => {
+const PropertiesCard = ({
+  bath,
+  beds,
+  flor,
+  size: ft,
+  icon,
+  id,
+  location,
+  name,
+  price,
+  type,
+  variant,
+  save,
+  image,
+}: PropertyType) => {
   return (
     <Card className="overflow-hidden">
       <div className="position-relative">
@@ -14,17 +28,19 @@ const PropertiesCard = ({ bath, beds, flor, size: ft, icon, id, location, name, 
           {save ? (
             <button
               type="button"
-              className="btn btn-warning avatar-sm d-inline-flex align-items-center justify-content-center fs-20 rounded text-light ">
-              {' '}
+              className="btn btn-warning avatar-sm d-inline-flex align-items-center justify-content-center fs-20 rounded text-light "
+            >
+              {" "}
               <span>
-                {' '}
+                {" "}
                 <IconifyIcon icon="solar:bookmark-broken" />
               </span>
             </button>
           ) : (
             <button
               type="button"
-              className="btn bg-warning-subtle avatar-sm d-inline-flex align-items-center justify-content-center fs-20 rounded text-warning">
+              className="btn bg-warning-subtle avatar-sm d-inline-flex align-items-center justify-content-center fs-20 rounded text-warning"
+            >
               <span>
                 <IconifyIcon icon="solar:bookmark-broken" />
               </span>
@@ -87,7 +103,7 @@ const PropertiesCard = ({ bath, beds, flor, size: ft, icon, id, location, name, 
         </Row>
       </CardBody>
       <CardFooter className="bg-light-subtle d-flex justify-content-between align-items-center border-top">
-        {type == 'Sold' ? (
+        {type == "Sold" ? (
           <p className="fw-medium text-muted text-decoration-line-through fs-16 mb-0">${price}.00 </p>
         ) : (
           <p className="fw-medium text-dark fs-16 mb-0">${price}.00 </p>

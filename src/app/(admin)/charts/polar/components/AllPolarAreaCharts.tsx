@@ -1,9 +1,9 @@
-'use client'
-import { useEffect, useState } from 'react'
-import ReactApexChart from 'react-apexcharts'
+"use client"
+import { useEffect, useState } from "react"
+import ReactApexChart from "react-apexcharts"
 
-import ComponentContainerCard from '@/components/ComponentContainerCard'
-import { basicPolarAreaOpts, monochromePolarAreaOpts } from '../data'
+import ComponentContainerCard from "@/components/ComponentContainerCard"
+import { basicPolarAreaOpts, monochromePolarAreaOpts } from "../data"
 
 const BasicChart = () => {
   return (
@@ -23,7 +23,12 @@ const MonochromeChart = () => {
   return (
     renderCount && (
       <ComponentContainerCard id="monochrome" title="Monochrome Polar Area">
-        <ReactApexChart height={380} options={monochromePolarAreaOpts} series={monochromePolarAreaOpts.series} type="polarArea" />
+        <ReactApexChart
+          height={380}
+          options={monochromePolarAreaOpts}
+          series={monochromePolarAreaOpts.series}
+          type="polarArea"
+        />
       </ComponentContainerCard>
     )
   )

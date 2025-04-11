@@ -1,7 +1,7 @@
-import { type ApexOptions } from 'apexcharts'
+import { type ApexOptions } from "apexcharts"
 
-import dribbble from '@/assets/images/brands/dribbble.svg'
-import github from '@/assets/images/brands/github.svg'
+import dribbble from "@/assets/images/brands/dribbble.svg"
+import github from "@/assets/images/brands/github.svg"
 
 function generateDayWiseTimeSeries(baseval: number, count: number, yrange: { max: number; min: number }): any[] {
   let i = 0
@@ -20,7 +20,7 @@ function generateDayWiseTimeSeries(baseval: number, count: number, yrange: { max
 export const scatterXYOpts: ApexOptions = {
   chart: {
     height: 380,
-    type: 'scatter',
+    type: "scatter",
     zoom: {
       enabled: false,
     },
@@ -31,7 +31,7 @@ export const scatterXYOpts: ApexOptions = {
 
   series: [
     {
-      name: 'Sample A',
+      name: "Sample A",
       data: [
         [16.4, 5.4],
         [21.7, 2],
@@ -67,7 +67,7 @@ export const scatterXYOpts: ApexOptions = {
       ],
     },
     {
-      name: 'Sample B',
+      name: "Sample B",
       data: [
         [6.4, 13.4],
         [1.7, 11],
@@ -103,7 +103,7 @@ export const scatterXYOpts: ApexOptions = {
       ],
     },
     {
-      name: 'Sample C',
+      name: "Sample C",
       data: [
         [21.7, 3],
         [23.6, 3.5],
@@ -145,9 +145,9 @@ export const scatterXYOpts: ApexOptions = {
   yaxis: {
     tickAmount: 7,
   },
-  colors: ['#4697ce', '#f8ac59', '#7dcc93'],
+  colors: ["#4697ce", "#f8ac59", "#7dcc93"],
   grid: {
-    borderColor: '#f1f3fa',
+    borderColor: "#f1f3fa",
     padding: {
       bottom: 5,
     },
@@ -175,9 +175,9 @@ export const scatterXYOpts: ApexOptions = {
 export const dateTimeOpts: ApexOptions = {
   chart: {
     height: 380,
-    type: 'scatter',
+    type: "scatter",
     zoom: {
-      type: 'xy',
+      type: "xy",
     },
     toolbar: {
       show: false,
@@ -185,36 +185,36 @@ export const dateTimeOpts: ApexOptions = {
   },
   series: [
     {
-      name: 'Team 1',
-      data: generateDayWiseTimeSeries(new Date('11 Feb 2017 GMT').getTime(), 20, {
+      name: "Team 1",
+      data: generateDayWiseTimeSeries(new Date("11 Feb 2017 GMT").getTime(), 20, {
         min: 10,
         max: 60,
       }),
     },
     {
-      name: 'Team 2',
-      data: generateDayWiseTimeSeries(new Date('11 Feb 2017 GMT').getTime(), 20, {
+      name: "Team 2",
+      data: generateDayWiseTimeSeries(new Date("11 Feb 2017 GMT").getTime(), 20, {
         min: 10,
         max: 60,
       }),
     },
     {
-      name: 'Team 3',
-      data: generateDayWiseTimeSeries(new Date('11 Feb 2017 GMT').getTime(), 30, {
+      name: "Team 3",
+      data: generateDayWiseTimeSeries(new Date("11 Feb 2017 GMT").getTime(), 30, {
         min: 10,
         max: 60,
       }),
     },
     {
-      name: 'Team 4',
-      data: generateDayWiseTimeSeries(new Date('11 Feb 2017 GMT').getTime(), 10, {
+      name: "Team 4",
+      data: generateDayWiseTimeSeries(new Date("11 Feb 2017 GMT").getTime(), 10, {
         min: 10,
         max: 60,
       }),
     },
     {
-      name: 'Team 5',
-      data: generateDayWiseTimeSeries(new Date('11 Feb 2017 GMT').getTime(), 30, {
+      name: "Team 5",
+      data: generateDayWiseTimeSeries(new Date("11 Feb 2017 GMT").getTime(), 30, {
         min: 10,
         max: 60,
       }),
@@ -223,9 +223,9 @@ export const dateTimeOpts: ApexOptions = {
   dataLabels: {
     enabled: false,
   },
-  colors: ['#4697ce', '#7f56da', '#ed5565', '#f8ac59', '#7dcc93'],
+  colors: ["#4697ce", "#7f56da", "#ed5565", "#f8ac59", "#7dcc93"],
   grid: {
-    borderColor: '#f1f3fa',
+    borderColor: "#f1f3fa",
     padding: {
       bottom: 5,
     },
@@ -240,7 +240,7 @@ export const dateTimeOpts: ApexOptions = {
     offsetY: 10,
   },
   xaxis: {
-    type: 'datetime',
+    type: "datetime",
   },
   yaxis: {
     max: 70,
@@ -265,7 +265,7 @@ export const dateTimeOpts: ApexOptions = {
 export const scatterWithImagesOpts: ApexOptions = {
   chart: {
     height: 380,
-    type: 'scatter',
+    type: "scatter",
     animations: {
       enabled: false,
     },
@@ -276,10 +276,10 @@ export const scatterWithImagesOpts: ApexOptions = {
       show: false,
     },
   },
-  colors: ['#1c84ee', '#7f56da', '#ef5f5f', '#f9b931', '#22c55e'],
+  colors: ["#1c84ee", "#7f56da", "#ef5f5f", "#f9b931", "#22c55e"],
   series: [
     {
-      name: 'Dribbble',
+      name: "Dribbble",
       data: [
         [16.4, 5.4],
         [21.7, 4],
@@ -309,7 +309,7 @@ export const scatterWithImagesOpts: ApexOptions = {
       ],
     },
     {
-      name: 'Github',
+      name: "Github",
       data: [
         [6.4, 5.4],
         [11.7, 4],
@@ -335,7 +335,7 @@ export const scatterWithImagesOpts: ApexOptions = {
     size: 20,
   },
   fill: {
-    type: 'image',
+    type: "image",
     opacity: 1,
     image: {
       src: [dribbble.src, github.src],

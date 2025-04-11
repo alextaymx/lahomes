@@ -1,14 +1,21 @@
-'use client'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import { findAllParent, findMenuItem, getMenuItemFromURL } from '@/helpers/Manu'
-import { MenuItemType, SubMenus } from '@/types/menu'
-import clsx from 'clsx'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { Fragment, MouseEvent, useCallback, useEffect, useState } from 'react'
-import { Collapse } from 'react-bootstrap'
+"use client"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import { findAllParent, findMenuItem, getMenuItemFromURL } from "@/helpers/Manu"
+import { MenuItemType, SubMenus } from "@/types/menu"
+import clsx from "clsx"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { Fragment, MouseEvent, useCallback, useEffect, useState } from "react"
+import { Collapse } from "react-bootstrap"
 
-const MenuItemWithChildren = ({ item, className, linkClassName, subMenuClassName, activeMenuItems, toggleMenu }: SubMenus) => {
+const MenuItemWithChildren = ({
+  item,
+  className,
+  linkClassName,
+  subMenuClassName,
+  activeMenuItems,
+  toggleMenu,
+}: SubMenus) => {
   const [open, setOpen] = useState<boolean>(activeMenuItems!.includes(item.key))
 
   useEffect(() => {
@@ -25,9 +32,9 @@ const MenuItemWithChildren = ({ item, className, linkClassName, subMenuClassName
 
   const getActiveClass = useCallback(
     (item: MenuItemType) => {
-      return activeMenuItems?.includes(item.key) ? 'active' : ''
+      return activeMenuItems?.includes(item.key) ? "active" : ""
     },
-    [activeMenuItems],
+    [activeMenuItems]
   )
 
   return (
@@ -35,8 +42,8 @@ const MenuItemWithChildren = ({ item, className, linkClassName, subMenuClassName
       <div onClick={toggleMenuItem} aria-expanded={open} role="button" className={clsx(linkClassName)}>
         {item.icon && (
           <span className="nav-icon">
-            {' '}
-            <IconifyIcon icon={item.icon} />{' '}
+            {" "}
+            <IconifyIcon icon={item.icon} />{" "}
           </span>
         )}
         <span className="nav-text">{item.label}</span>
@@ -55,14 +62,18 @@ const MenuItemWithChildren = ({ item, className, linkClassName, subMenuClassName
                   {child.children ? (
                     <MenuItemWithChildren
                       item={child}
-                      linkClassName={clsx('nav-link', getActiveClass(child))}
+                      linkClassName={clsx("nav-link", getActiveClass(child))}
                       activeMenuItems={activeMenuItems}
                       className="sub-nav-item"
                       subMenuClassName="nav sub-navbar-nav"
                       toggleMenu={toggleMenu}
                     />
                   ) : (
-                    <MenuItem item={child} className="sub-nav-item" linkClassName={clsx('sub-nav-link', getActiveClass(child))} />
+                    <MenuItem
+                      item={child}
+                      className="sub-nav-item"
+                      linkClassName={clsx("sub-nav-link", getActiveClass(child))}
+                    />
                   )}
                 </Fragment>
               )
@@ -84,7 +95,7 @@ const MenuItem = ({ item, className, linkClassName }: SubMenus) => {
 
 const MenuItemLink = ({ item, className }: SubMenus) => {
   return (
-    <Link href={item.url ?? ''} target={item.target} className={clsx(className, { disabled: item.isDisabled })}>
+    <Link href={item.url ?? ""} target={item.target} className={clsx(className, { disabled: item.isDisabled })}>
       {item.icon && (
         <span className="nav-icon">
           <IconifyIcon icon={item.icon} />
@@ -110,13 +121,13 @@ const AppMenu = ({ menuItems }: AppMenuProps) => {
 
   const getActiveClass = useCallback(
     (item: MenuItemType) => {
-      return activeMenuItems?.includes(item.key) ? 'active' : ''
+      return activeMenuItems?.includes(item.key) ? "active" : ""
     },
-    [activeMenuItems],
+    [activeMenuItems]
   )
 
   const activeMenu = useCallback(() => {
-    const trimmedURL = pathname?.replaceAll('', '')
+    const trimmedURL = pathname?.replaceAll("", "")
     const matchingMenuItem = getMenuItemFromURL(menuItems, trimmedURL)
 
     if (matchingMenuItem) {
@@ -126,9 +137,11 @@ const AppMenu = ({ menuItems }: AppMenuProps) => {
       }
 
       setTimeout(() => {
-        const activatedItem: HTMLAnchorElement | null = document.querySelector(`#leftside-menu-container .simplebar-content a[href="${trimmedURL}"]`)
+        const activatedItem: HTMLAnchorElement | null = document.querySelector(
+          `#leftside-menu-container .simplebar-content a[href="${trimmedURL}"]`
+        )
         if (activatedItem) {
-          const simplebarContent = document.querySelector('#leftside-menu-container .simplebar-content-wrapper')
+          const simplebarContent = document.querySelector("#leftside-menu-container .simplebar-content-wrapper")
           if (simplebarContent) {
             const offset = activatedItem.offsetTop - window.innerHeight * 0.4
             scrollTo(simplebarContent, offset, 600)
@@ -172,7 +185,7 @@ const AppMenu = ({ menuItems }: AppMenuProps) => {
         return (
           <Fragment key={item.key + idx}>
             {item.isTitle ? (
-              <li className={clsx('menu-title')}>{item.label}</li>
+              <li className={clsx("menu-title")}>{item.label}</li>
             ) : (
               <>
                 {item.children ? (
@@ -180,12 +193,12 @@ const AppMenu = ({ menuItems }: AppMenuProps) => {
                     item={item}
                     toggleMenu={toggleMenu}
                     className="nav-item"
-                    linkClassName={clsx('nav-link', getActiveClass(item))}
+                    linkClassName={clsx("nav-link", getActiveClass(item))}
                     subMenuClassName="nav sub-navbar-nav"
                     activeMenuItems={activeMenuItems}
                   />
                 ) : (
-                  <MenuItem item={item} linkClassName={clsx('nav-link', getActiveClass(item))} className="nav-item" />
+                  <MenuItem item={item} linkClassName={clsx("nav-link", getActiveClass(item))} className="nav-item" />
                 )}
               </>
             )}

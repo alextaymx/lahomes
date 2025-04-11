@@ -1,9 +1,9 @@
-'use client'
-import { Col } from 'react-bootstrap'
-import useCalendar from '../useCalendar'
-import AddEditEvent from './AddEditEvent'
-import Calendar from './Calendar'
-import SidePanel from './SidePanel'
+"use client"
+import { Col } from "react-bootstrap"
+import useCalendar from "../useCalendar"
+import AddEditEvent from "./AddEditEvent"
+import Calendar from "./Calendar"
+import SidePanel from "./SidePanel"
 
 const CalendarPage = () => {
   const {
@@ -29,7 +29,13 @@ const CalendarPage = () => {
       </Col>
 
       <Col xl={9}>
-        <Calendar events={events} onDateClick={onDateClick} onDrop={onDrop} onEventClick={onEventClick} onEventDrop={onEventDrop} />
+        <Calendar
+          events={events}
+          onDateClick={onDateClick}
+          onDrop={onDrop}
+          onEventClick={onEventClick}
+          onEventDrop={onEventDrop}
+        />
       </Col>
 
       <AddEditEvent

@@ -1,34 +1,34 @@
-import { Button } from 'react-bootstrap'
+import { Button } from "react-bootstrap"
 
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
 
 const SidePanel = ({ createNewEvent }: { createNewEvent: () => void }) => {
   // external events
   const externalEvents = [
     {
       id: 1,
-      variant: 'primary',
-      title: 'Team Building Retreat Meeting',
+      variant: "primary",
+      title: "Team Building Retreat Meeting",
     },
     {
       id: 2,
-      variant: 'info',
-      title: 'Product Launch Strategy Meeting',
+      variant: "info",
+      title: "Product Launch Strategy Meeting",
     },
     {
       id: 3,
-      variant: 'success',
-      title: 'Monthly Sales Review',
+      variant: "success",
+      title: "Monthly Sales Review",
     },
     {
       id: 4,
-      variant: 'danger',
-      title: 'Team Lunch Celebration',
+      variant: "danger",
+      title: "Team Lunch Celebration",
     },
     {
       id: 5,
-      variant: 'warning',
-      title: 'Marketing Campaign Kickoff',
+      variant: "warning",
+      title: "Marketing Campaign Kickoff",
     },
   ]
 
@@ -45,7 +45,12 @@ const SidePanel = ({ createNewEvent }: { createNewEvent: () => void }) => {
         <p className="text-muted">Drag and drop your event or click in the calendar</p>
 
         {externalEvents.map(({ id, variant, title }) => (
-          <div key={id} className={`external-event pb-1 bg-soft-${variant} text-${variant}`} title={title} data-class={`bg-${variant}`}>
+          <div
+            key={id}
+            className={`external-event pb-1 bg-soft-${variant} text-${variant}`}
+            title={title}
+            data-class={`bg-${variant}`}
+          >
             <span className="icons-center">
               <IconifyIcon icon="bxs:circle" className="me-2 vertical-middle" />
               {title}

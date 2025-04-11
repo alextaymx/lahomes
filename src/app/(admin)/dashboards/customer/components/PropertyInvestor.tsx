@@ -1,11 +1,11 @@
-'use client'
-import avatar2 from '@/assets/images/users/avatar-2.jpg'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import Image from 'next/image'
-import Link from 'next/link'
-import ReactApexChart from 'react-apexcharts'
-import { Button, Card, CardBody, CardFooter, CardHeader, CardTitle, Col } from 'react-bootstrap'
-import { propertyOptions } from '../data'
+"use client"
+import avatar2 from "@/assets/images/users/avatar-2.jpg"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import Image from "next/image"
+import Link from "next/link"
+import ReactApexChart from "react-apexcharts"
+import { Button, Card, CardBody, CardFooter, CardHeader, CardTitle, Col } from "react-bootstrap"
+import { propertyOptions } from "../data"
 
 const PropertyInvestor = () => {
   return (
@@ -28,7 +28,11 @@ const PropertyInvestor = () => {
               </Link>
               <ul className="list-inline d-flex flex-wrap gap-1 mb-0 align-items-center mt-2">
                 <li className="list-inline-item">
-                  <Button variant="soft-primary" href="" className="d-flex align-items-center justify-content-center avatar-sm">
+                  <Button
+                    variant="soft-primary"
+                    href=""
+                    className="d-flex align-items-center justify-content-center avatar-sm"
+                  >
                     <span>
                       <IconifyIcon width={20} height={20} icon="ri:facebook-fill" />
                     </span>
@@ -37,7 +41,7 @@ const PropertyInvestor = () => {
                 <li className="list-inline-item">
                   <Button variant="soft-danger" className="d-flex align-items-center justify-content-center avatar-sm">
                     <span>
-                      {' '}
+                      {" "}
                       <IconifyIcon width={20} height={20} icon="ri:instagram-fill" />
                     </span>
                   </Button>
@@ -45,7 +49,7 @@ const PropertyInvestor = () => {
                 <li className="list-inline-item">
                   <Button variant="soft-info" className="d-flex align-items-center justify-content-center avatar-sm ">
                     <span>
-                      {' '}
+                      {" "}
                       <IconifyIcon width={20} height={20} icon="ri:twitter-fill" />
                     </span>
                   </Button>
@@ -53,7 +57,7 @@ const PropertyInvestor = () => {
                 <li className="list-inline-item">
                   <Button variant="soft-success" className="d-flex align-items-center justify-content-center avatar-sm">
                     <span>
-                      {' '}
+                      {" "}
                       <IconifyIcon width={20} height={20} icon="ri:whatsapp-fill" />
                     </span>
                   </Button>
@@ -61,7 +65,7 @@ const PropertyInvestor = () => {
                 <li className="list-inline-item">
                   <Button variant="soft-warning" className="d-flex align-items-center justify-content-center avatar-sm">
                     <span>
-                      {' '}
+                      {" "}
                       <IconifyIcon width={20} height={20} icon="ri:mail-fill" />
                     </span>
                   </Button>
@@ -70,7 +74,13 @@ const PropertyInvestor = () => {
             </div>
           </div>
           <div>
-            <ReactApexChart options={propertyOptions} series={propertyOptions.series} height={182} type="bar" className="apex-charts mt-3" />
+            <ReactApexChart
+              options={propertyOptions}
+              series={propertyOptions.series}
+              height={182}
+              type="bar"
+              className="apex-charts mt-3"
+            />
           </div>
         </CardBody>
         <CardFooter className="border-top border-dashed gap-1 hstack">

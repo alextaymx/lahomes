@@ -1,9 +1,9 @@
-'use client'
-import 'jsvectormap'
-import 'jsvectormap/dist/maps/world.js'
+"use client"
+import "jsvectormap"
+import "jsvectormap/dist/maps/world.js"
 
 //components
-import BaseVectorMap from './BaseVectorMap'
+import BaseVectorMap from "./BaseVectorMap"
 
 interface WorldVectorMapProps {
   width?: string

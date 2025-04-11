@@ -1,28 +1,28 @@
-'use client'
-import logoDark from '@/assets/images/logo-dark.png'
-import LogoLight from '@/assets/images/logo-light.png'
-import avatar1 from '@/assets/images/users/avatar-1.jpg'
-import TextFormInput from '@/components/from/TextFormInput'
-import { yupResolver } from '@hookform/resolvers/yup'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useEffect } from 'react'
-import { Card, CardBody, Col, Container, Row } from 'react-bootstrap'
-import { useForm } from 'react-hook-form'
-import * as yup from 'yup'
+"use client"
+import logoDark from "@/assets/images/logo-dark.png"
+import LogoLight from "@/assets/images/logo-light.png"
+import avatar1 from "@/assets/images/users/avatar-1.jpg"
+import TextFormInput from "@/components/from/TextFormInput"
+import { yupResolver } from "@hookform/resolvers/yup"
+import Image from "next/image"
+import Link from "next/link"
+import { useEffect } from "react"
+import { Card, CardBody, Col, Container, Row } from "react-bootstrap"
+import { useForm } from "react-hook-form"
+import * as yup from "yup"
 
 const LockScreen = () => {
   useEffect(() => {
-    document.body.classList.add('authentication-bg')
+    document.body.classList.add("authentication-bg")
     return () => {
-      document.body.classList.remove('authentication-bg')
+      document.body.classList.remove("authentication-bg")
     }
   }, [])
 
   const messageSchema = yup.object({
-    name: yup.string().required('Please enter Name'),
-    email: yup.string().email().required('Please enter Email'),
-    password: yup.string().required('Please enter password'),
+    name: yup.string().required("Please enter Name"),
+    email: yup.string().email().required("Please enter Email"),
+    password: yup.string().required("Please enter password"),
   })
 
   const { handleSubmit, control } = useForm({
@@ -68,7 +68,7 @@ const LockScreen = () => {
               </CardBody>
             </Card>
             <p className="mb-0 text-center text-white">
-              Not you? return{' '}
+              Not you? return{" "}
               <Link href="/auth/sign-in" className="text-reset text-unline-dashed fw-bold ms-1">
                 Sign In
               </Link>

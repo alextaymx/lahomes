@@ -1,8 +1,8 @@
-import PageTitle from '@/components/PageTitle'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import { getAllCustomer } from '@/helpers/data'
-import Image from 'next/image'
-import Link from 'next/link'
+import PageTitle from "@/components/PageTitle"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import { getAllCustomer } from "@/helpers/data"
+import Image from "next/image"
+import Link from "next/link"
 import {
   Button,
   Card,
@@ -16,7 +16,7 @@ import {
   DropdownMenu,
   DropdownToggle,
   Row,
-} from 'react-bootstrap'
+} from "react-bootstrap"
 
 const CustomersListPage = async () => {
   const customerData = await getAllCustomer()
@@ -28,14 +28,15 @@ const CustomersListPage = async () => {
           <Card>
             <CardHeader className="d-flex justify-content-between align-items-center border-bottom">
               <div>
-                <CardTitle as={'h4'}>All Customer List</CardTitle>
+                <CardTitle as={"h4"}>All Customer List</CardTitle>
               </div>
               <Dropdown>
                 <DropdownToggle
-                  as={'a'}
+                  as={"a"}
                   className=" btn btn-sm btn-outline-light rounded content-none icons-center"
                   data-bs-toggle="dropdown"
-                  aria-expanded="false">
+                  aria-expanded="false"
+                >
                   This Month <IconifyIcon className="ms-1" width={16} height={16} icon="ri:arrow-down-s-line" />
                 </DropdownToggle>
                 <DropdownMenu className="dropdown-menu-end">
@@ -79,7 +80,11 @@ const CustomersListPage = async () => {
                         </td>
                         <td>
                           <div className="d-flex align-items-center gap-2">
-                            <div>{item.user?.avatar && <Image src={item.user.avatar} alt="avatar" className="avatar-sm rounded-circle" />}</div>
+                            <div>
+                              {item.user?.avatar && (
+                                <Image src={item.user.avatar} alt="avatar" className="avatar-sm rounded-circle" />
+                              )}
+                            </div>
                             <div>
                               <Link href="" className="text-dark fw-medium fs-15">
                                 {item.user?.name}
@@ -92,7 +97,9 @@ const CustomersListPage = async () => {
                         <td>{item.propertyType}</td>
                         <td>{item.interestedProperties}</td>
                         <td>{item.customerStatus}</td>
-                        <td>{item.date.toLocaleString('en-us', { day: 'numeric', month: 'numeric', year: 'numeric' })}</td>
+                        <td>
+                          {item.date.toLocaleString("en-us", { day: "numeric", month: "numeric", year: "numeric" })}
+                        </td>
                         <td>
                           <div className="d-flex gap-2">
                             <Button variant="light" size="sm">
@@ -102,7 +109,10 @@ const CustomersListPage = async () => {
                               <IconifyIcon icon="solar:pen-2-broken" className="align-middle fs-18" />
                             </Button>
                             <Button variant="soft-danger" size="sm">
-                              <IconifyIcon icon="solar:trash-bin-minimalistic-2-broken" className="align-middle fs-18" />
+                              <IconifyIcon
+                                icon="solar:trash-bin-minimalistic-2-broken"
+                                className="align-middle fs-18"
+                              />
                             </Button>
                           </div>
                         </td>

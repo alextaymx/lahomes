@@ -1,9 +1,9 @@
-import properties11 from '@/assets/images/properties/p-11.jpg'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import { currency } from '@/context/constants'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Button, Card, CardBody, Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Row } from 'react-bootstrap'
+import properties11 from "@/assets/images/properties/p-11.jpg"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import { currency } from "@/context/constants"
+import Image from "next/image"
+import Link from "next/link"
+import { Button, Card, CardBody, Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Row } from "react-bootstrap"
 
 const PropertyDetails = () => {
   return (
@@ -33,9 +33,10 @@ const PropertyDetails = () => {
                     variant="light"
                     className="avatar-sm d-flex align-items-center justify-content-center text-dark fs-20"
                     data-bs-toggle="modal"
-                    data-bs-target="#videocall">
+                    data-bs-target="#videocall"
+                  >
                     <span>
-                      {' '}
+                      {" "}
                       <IconifyIcon icon="solar:share-bold-duotone" />
                     </span>
                   </Button>
@@ -45,9 +46,10 @@ const PropertyDetails = () => {
                     variant="light"
                     className="avatar-sm d-flex align-items-center justify-content-center text-danger fs-20"
                     data-bs-toggle="modal"
-                    data-bs-target="#voicecall">
+                    data-bs-target="#voicecall"
+                  >
                     <span>
-                      {' '}
+                      {" "}
                       <IconifyIcon icon="solar:heart-angle-bold-duotone" />
                     </span>
                   </Button>
@@ -57,15 +59,21 @@ const PropertyDetails = () => {
                     variant="light"
                     data-bs-toggle="offcanvas"
                     href="#user-profile"
-                    className="avatar-sm icons-center d-flex align-items-center justify-content-center text-warning fs-20">
+                    className="avatar-sm icons-center d-flex align-items-center justify-content-center text-warning fs-20"
+                  >
                     <span>
-                      {' '}
+                      {" "}
                       <IconifyIcon icon="solar:star-bold-duotone" />
                     </span>
                   </Button>
                 </li>
-                <Dropdown as={'li'} className="list-inline-item fs-20 d-none d-md-flex">
-                  <DropdownToggle as={'a'} className="arrow-none text-dark" data-bs-toggle="dropdown" aria-expanded="false">
+                <Dropdown as={"li"} className="list-inline-item fs-20 d-none d-md-flex">
+                  <DropdownToggle
+                    as={"a"}
+                    className="arrow-none text-dark"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
                     <IconifyIcon icon="ri-more-2-fill" />
                   </DropdownToggle>
                   <DropdownMenu className="dropdown-menu-end">
@@ -96,7 +104,12 @@ const PropertyDetails = () => {
           </div>
           <div className="d-flex align-items-center gap-2">
             <div className="avatar-sm bg-success-subtle rounded flex-centered">
-              <IconifyIcon icon="solar:wallet-money-bold-duotone" width={24} height={24} className="fs-24 text-success" />
+              <IconifyIcon
+                icon="solar:wallet-money-bold-duotone"
+                width={24}
+                height={24}
+                className="fs-24 text-success"
+              />
             </div>
             <p className="fw-medium text-dark fs-18 mb-0">{currency}80,675.00 </p>
           </div>
@@ -126,7 +139,7 @@ const PropertyDetails = () => {
                 <p className="text-muted mb-0 fs-15 fw-medium d-flex align-items-center justify-content-center gap-1">
                   <span className="badge p-1 bg-light fs-12 text-dark">
                     <IconifyIcon icon="ri:star-fill" className="align-text-top fs-14 text-warning me-1" /> 4.4
-                  </span>{' '}
+                  </span>{" "}
                   Review
                 </p>
               </Col>
@@ -139,7 +152,9 @@ const PropertyDetails = () => {
           </div>
           <h5 className="text-dark fw-medium mt-3">Some Facility :</h5>
           <div className="d-flex flex-wrap align-items-center gap-2 mt-3">
-            <span className="badge bg-light-subtle text-muted border fw-medium fs-13 px-2 py-1">Big Swimming pool </span>
+            <span className="badge bg-light-subtle text-muted border fw-medium fs-13 px-2 py-1">
+              Big Swimming pool{" "}
+            </span>
             <span className="badge bg-light-subtle text-muted border fw-medium fs-13 px-2 py-1">Near Airport </span>
             <span className="badge bg-light-subtle text-muted border fw-medium fs-13 px-2 py-1">Big Size Garden </span>
             <span className="badge bg-light-subtle text-muted border fw-medium fs-13 px-2 py-1">4 Car Parking </span>
@@ -148,10 +163,11 @@ const PropertyDetails = () => {
           </div>
           <h5 className="text-dark fw-medium mt-3">Property Details :</h5>
           <p className="mt-2">
-            Property refers to any item that an individual or a business holds legal title to. This can include tangible items, such as houses, cars,
-            or appliances, as well as intangible items that hold potential future value, such as stock and bond certificates. Legally, property is
-            classified into two categories: personal property and real property. This distinction originates from English common law, and our
-            contemporary legal system continues to differentiate between these two types.
+            Property refers to any item that an individual or a business holds legal title to. This can include tangible
+            items, such as houses, cars, or appliances, as well as intangible items that hold potential future value,
+            such as stock and bond certificates. Legally, property is classified into two categories: personal property
+            and real property. This distinction originates from English common law, and our contemporary legal system
+            continues to differentiate between these two types.
           </p>
           <div className="d-flex align-items-center justify-content-between">
             <Link href="" className="link-primary fw-medium">

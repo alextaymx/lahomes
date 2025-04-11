@@ -1,12 +1,22 @@
-'use client'
-import useToggle from '@/hooks/useToggle'
-import Image from 'next/image'
-import { useState } from 'react'
-import { Button, Col, Form, Row, Toast, ToastBody, ToastContainer, ToastHeader, type ToastContainerProps } from 'react-bootstrap'
-import ReactSelect from 'react-select'
-import logoDark from '@/assets/images/logo-dark.png'
-import logoLight from '@/assets/images/logo-light.png'
-import ComponentContainerCard from '@/components/ComponentContainerCard'
+"use client"
+import useToggle from "@/hooks/useToggle"
+import Image from "next/image"
+import { useState } from "react"
+import {
+  Button,
+  Col,
+  Form,
+  Row,
+  Toast,
+  ToastBody,
+  ToastContainer,
+  ToastHeader,
+  type ToastContainerProps,
+} from "react-bootstrap"
+import ReactSelect from "react-select"
+import logoDark from "@/assets/images/logo-dark.png"
+import logoLight from "@/assets/images/logo-light.png"
+import ComponentContainerCard from "@/components/ComponentContainerCard"
 
 const BasicToast = () => {
   const { isTrue: isOpen, toggle: hide } = useToggle()
@@ -16,10 +26,11 @@ const BasicToast = () => {
       title="Basic Examples"
       description={
         <>
-          Toasts are as flexible as you need and have very little required markup. At a minimum, we require a single element to contain your “toasted”
-          content and strongly encourage a dismiss button.
+          Toasts are as flexible as you need and have very little required markup. At a minimum, we require a single
+          element to contain your “toasted” content and strongly encourage a dismiss button.
         </>
-      }>
+      }
+    >
       <Toast className="fade d-block opacity-100" role="alert" onClose={hide} show={!isOpen}>
         <ToastHeader closeButton>
           <div className="auth-logo d-inline-block me-auto">
@@ -43,13 +54,24 @@ const LiveExample = () => {
       id="live_example"
       title="Live example"
       description={
-        <>Click the button below to show a toast (positioned with our utilities in the lower right corner) that has been hidden by default.</>
-      }>
+        <>
+          Click the button below to show a toast (positioned with our utilities in the lower right corner) that has been
+          hidden by default.
+        </>
+      }
+    >
       <Button variant="primary" onClick={toggle} type="button" id="liveToastDefaultBtn">
         Show live toast
       </Button>
       <div className="toast-container position-fixed bottom-0 end-0 p-3">
-        <Toast show={isOpen} onClose={toggle} id="liveToastDefault" role="alert" aria-live="assertive" aria-atomic="true">
+        <Toast
+          show={isOpen}
+          onClose={toggle}
+          id="liveToastDefault"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
           <ToastHeader closeButton>
             <div className="auth-logo d-inline-block me-auto">
               <Image className="logo-dark" src={logoDark} alt="logo-dark" height={18} />
@@ -74,11 +96,12 @@ const StackingToast = () => {
       title="Default Buttons"
       description={
         <>
-          {' '}
-          Toasts are as flexible as you need and have very little required markup. At a minimum, we require a single element to contain your “toasted”
-          content and strongly encourage a dismiss button.
+          {" "}
+          Toasts are as flexible as you need and have very little required markup. At a minimum, we require a single
+          element to contain your “toasted” content and strongly encourage a dismiss button.
         </>
-      }>
+      }
+    >
       <Button type="button" className="me-1" variant="primary" onClick={toggleToast1}>
         Show live toast
       </Button>
@@ -86,7 +109,15 @@ const StackingToast = () => {
         Show live toast
       </Button>
       <ToastContainer className="position-fixed end-0 top-0 p-3">
-        <Toast autohide show={isOpenToast1} onClose={toggleToast1} id="liveToast" role="alert" aria-live="assertive" aria-atomic="true">
+        <Toast
+          autohide
+          show={isOpenToast1}
+          onClose={toggleToast1}
+          id="liveToast"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
           <ToastHeader closeButton>
             <div className="auth-logo me-auto">
               <Image className="logo-dark" src={logoDark} alt="logo-dark" height={18} />
@@ -96,7 +127,16 @@ const StackingToast = () => {
           </ToastHeader>
           <ToastBody className="toast-body">See? Just like this.</ToastBody>
         </Toast>
-        <Toast autohide delay={2000} show={isOpenToast2} onClose={toggleToast2} id="liveToast2" role="alert" aria-live="assertive" aria-atomic="true">
+        <Toast
+          autohide
+          delay={2000}
+          show={isOpenToast2}
+          onClose={toggleToast2}
+          id="liveToast2"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
           <ToastHeader closeButton>
             <div className="auth-logo me-auto">
               <Image className="logo-dark" src={logoDark} alt="logo-dark" height={18} />
@@ -120,10 +160,17 @@ const CustomToast = () => {
     <ComponentContainerCard
       id="custom_content"
       title="Custom Content"
-      description={<> Alternatively, you can also add additional controls and components to toasts.</>}>
+      description={<> Alternatively, you can also add additional controls and components to toasts.</>}
+    >
       <Row>
         <Col md={6}>
-          <Toast className="align-items-center mb-3 fade" show={isOpenCustom1} onClose={hideCustom1} delay={3000} autohide>
+          <Toast
+            className="align-items-center mb-3 fade"
+            show={isOpenCustom1}
+            onClose={hideCustom1}
+            delay={3000}
+            autohide
+          >
             <div className="d-flex">
               <ToastBody>Hello, world! This is a toast message.</ToastBody>
               <Button variant="" onClick={hideCustom1} className="btn-close me-2 m-auto" />
@@ -131,7 +178,13 @@ const CustomToast = () => {
           </Toast>
         </Col>
         <Col md={6}>
-          <Toast className="align-items-center text-white bg-primary mb-3" show={isOpenCustom2} onClose={hideCustom2} delay={6000} autohide>
+          <Toast
+            className="align-items-center text-white bg-primary mb-3"
+            show={isOpenCustom2}
+            onClose={hideCustom2}
+            delay={6000}
+            autohide
+          >
             <div className="d-flex">
               <ToastBody>Hello, world! This is a toast message.</ToastBody>
               <Button variant="" onClick={hideCustom2} className="btn-close btn-close-white me-2 m-auto" />
@@ -184,10 +237,11 @@ const TranslucentToast = () => {
       title="Transcluent"
       description={
         <>
-          Toasts are slightly translucent, too, so they blend over whatever they might appear over. For browsers that support the backdrop-filter CSS
-          property, we’ll also attempt to blur the elements under a toast.
+          Toasts are slightly translucent, too, so they blend over whatever they might appear over. For browsers that
+          support the backdrop-filter CSS property, we’ll also attempt to blur the elements under a toast.
         </>
-      }>
+      }
+    >
       <div className="p-3 bg-light">
         <Toast onClose={hideTranslucent} autohide delay={8000} show={isOpenTranslucent} className="fade" role="alert">
           <ToastHeader closeButton>
@@ -207,7 +261,7 @@ const TranslucentToast = () => {
 }
 
 const PlacementToast = () => {
-  const [position, setPosition] = useState<ToastContainerProps['position']>('top-start')
+  const [position, setPosition] = useState<ToastContainerProps["position"]>("top-start")
 
   return (
     <ComponentContainerCard
@@ -215,10 +269,12 @@ const PlacementToast = () => {
       title="Placement"
       description={
         <>
-          Place toasts with custom CSS as you need them. The top right is often used for notifications, as is the top middle. If you’re only ever
-          going to show one toast at a time, put the positioning styles right on the <code>.toast.</code>
+          Place toasts with custom CSS as you need them. The top right is often used for notifications, as is the top
+          middle. If you’re only ever going to show one toast at a time, put the positioning styles right on the{" "}
+          <code>.toast.</code>
         </>
-      }>
+      }
+    >
       <div aria-live="polite" aria-atomic="true" className="bg-light position-relative" style={{ minHeight: 350 }}>
         <ToastContainer position={position} className="position-absolute p-3" id="toastPlacement">
           <Toast className="mb-2">
@@ -242,18 +298,19 @@ const PlacementToast = () => {
           </label>
           <ReactSelect
             className="mt-2"
-            onChange={(e) => setPosition(e?.value as ToastContainerProps['position'])}
+            onChange={(e) => setPosition(e?.value as ToastContainerProps["position"])}
             options={[
-              { value: 'top-start', label: 'Top Start' },
-              { value: 'top-center', label: 'Top Center' },
-              { value: 'top-end', label: 'Top End' },
-              { value: 'middle-start', label: 'Middle Start' },
-              { value: 'middle-center', label: 'Middle Center' },
-              { value: 'middle-end', label: 'Middle End' },
-              { value: 'bottom-start', label: 'Bottom Start' },
-              { value: 'bottom-center', label: 'Bottom Center' },
-              { value: 'bottom-end', label: 'Bottom End' },
-            ]}></ReactSelect>
+              { value: "top-start", label: "Top Start" },
+              { value: "top-center", label: "Top Center" },
+              { value: "top-end", label: "Top End" },
+              { value: "middle-start", label: "Middle Start" },
+              { value: "middle-center", label: "Middle Center" },
+              { value: "middle-end", label: "Middle End" },
+              { value: "bottom-start", label: "Bottom Start" },
+              { value: "bottom-center", label: "Bottom Center" },
+              { value: "bottom-end", label: "Bottom End" },
+            ]}
+          ></ReactSelect>
         </div>
       </Form>
     </ComponentContainerCard>

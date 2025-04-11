@@ -1,9 +1,9 @@
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import SimplebarReactClient from '@/components/wrappers/SimplebarReactClient'
-import type { UserType } from '@/types/data'
-import { timeSince } from '@/utils/date'
-import Image from 'next/image'
-import Link from 'next/link'
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import SimplebarReactClient from "@/components/wrappers/SimplebarReactClient"
+import type { UserType } from "@/types/data"
+import { timeSince } from "@/utils/date"
+import Image from "next/image"
+import Link from "next/link"
 
 type ChatUsersProps = {
   onUserSelect: (value: UserType) => void
@@ -15,13 +15,14 @@ const Chat = ({ onUserSelect, users, selectedUser }: ChatUsersProps) => {
   return (
     <SimplebarReactClient className="px-2 mb-3 chat-setting-height">
       {users.map((user, idx) => (
-        <div className={`d-flex flex-column h-100 ${users.length - 1 != idx && 'border-bottom'}`} key={idx}>
+        <div className={`d-flex flex-column h-100 ${users.length - 1 != idx && "border-bottom"}`} key={idx}>
           <Link href="" className="d-block">
             <div
-              className={`d-flex align-items-center px-2 pb-2 mb-1 ${idx == 0 ? '' : 'p-2'} rounded`}
+              className={`d-flex align-items-center px-2 pb-2 mb-1 ${idx == 0 ? "" : "p-2"} rounded`}
               onClick={() => {
                 onUserSelect(user)
-              }}>
+              }}
+            >
               <div className="position-relative">
                 <Image src={user.avatar} alt="avatar" className="avatar rounded-circle flex-shrink-0" />
                 <span className="position-absolute bottom-0 end-0  p-1 bg-success border border-light border-2 rounded-circle">
@@ -36,12 +37,13 @@ const Chat = ({ onUserSelect, users, selectedUser }: ChatUsersProps) => {
                   </div>
                 </div>
                 <div className="d-flex justify-content-between align-items-center">
-                  {selectedUser.activityStatus === 'typing' && selectedUser.id === user.id ? (
+                  {selectedUser.activityStatus === "typing" && selectedUser.id === user.id ? (
                     <span className="w-75 text-primary">typing...</span>
                   ) : (
                     <>
                       <p className="mb-0 text-muted d-flex align-items-center gap-1 d-flex align-items-center gap-1">
-                        {user.chatIcon && <IconifyIcon icon={user.chatIcon} className="text-warning fs-18" />} {user.message}
+                        {user.chatIcon && <IconifyIcon icon={user.chatIcon} className="text-warning fs-18" />}{" "}
+                        {user.message}
                       </p>
                       <div>
                         <IconifyIcon icon="ri:check-double-line" className=" fs-18 text-primary" />

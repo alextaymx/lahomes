@@ -1,8 +1,8 @@
-import avatar2 from '@/assets/images/users/avatar-2.jpg'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Button, Card, CardBody, CardFooter, Col, Row } from 'react-bootstrap'
+import avatar2 from "@/assets/images/users/avatar-2.jpg"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import Image from "next/image"
+import Link from "next/link"
+import { Button, Card, CardBody, CardFooter, Col, Row } from "react-bootstrap"
 
 const AgentAddCard = () => {
   return (
@@ -30,9 +30,12 @@ const AgentAddCard = () => {
           <h5 className="my-3">Social Media :</h5>
           <ul className="list-inline d-flex gap-1 mb-0 align-items-center">
             <li className="list-inline-item">
-              <Link href="" className="btn btn-soft-primary  avatar-sm d-flex align-items-center justify-content-center">
+              <Link
+                href=""
+                className="btn btn-soft-primary  avatar-sm d-flex align-items-center justify-content-center"
+              >
                 <span>
-                  {' '}
+                  {" "}
                   <IconifyIcon width={20} height={20} icon="ri:facebook-fill" />
                 </span>
               </Link>
@@ -40,7 +43,7 @@ const AgentAddCard = () => {
             <li className="list-inline-item">
               <Button variant="soft-danger" className="avatar-sm d-flex align-items-center justify-content-center">
                 <span>
-                  {' '}
+                  {" "}
                   <IconifyIcon width={20} height={20} icon="ri:instagram-line" />
                 </span>
               </Button>
@@ -48,7 +51,7 @@ const AgentAddCard = () => {
             <li className="list-inline-item">
               <Button variant="soft-info" className="avatar-sm d-flex align-items-center justify-content-center ">
                 <span>
-                  {' '}
+                  {" "}
                   <IconifyIcon width={20} height={20} icon="ri:twitter-line" />
                 </span>
               </Button>
@@ -56,7 +59,7 @@ const AgentAddCard = () => {
             <li className="list-inline-item">
               <Button variant="soft-success" className="avatar-sm d-flex align-items-center justify-content-center">
                 <span>
-                  {' '}
+                  {" "}
                   <IconifyIcon width={20} height={20} icon="ri:whatsapp-line" />
                 </span>
               </Button>
@@ -64,7 +67,7 @@ const AgentAddCard = () => {
             <li className="list-inline-item">
               <Button variant="soft-warning" className="avatar-sm d-flex align-items-center justify-content-center">
                 <span>
-                  {' '}
+                  {" "}
                   <IconifyIcon width={20} height={20} icon="ri:mail-line" />
                 </span>
               </Button>

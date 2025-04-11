@@ -1,11 +1,11 @@
-import ComponentContainerCard from '@/components/ComponentContainerCard'
-import PageTitle from '@/components/PageTitle'
+import ComponentContainerCard from "@/components/ComponentContainerCard"
+import PageTitle from "@/components/PageTitle"
 
-import UIExamplesList from '@/components/UIExamplesList'
-import type { Metadata } from 'next'
-import { Accordion, AccordionBody, AccordionHeader, AccordionItem, Col, Row } from 'react-bootstrap'
+import UIExamplesList from "@/components/UIExamplesList"
+import type { Metadata } from "next"
+import { Accordion, AccordionBody, AccordionHeader, AccordionItem, Col, Row } from "react-bootstrap"
 
-const accordionData = ['first', 'second', 'third']
+const accordionData = ["first", "second", "third"]
 
 const BasicAccordion = () => {
   return (
@@ -14,12 +14,13 @@ const BasicAccordion = () => {
       title="Basic Example"
       description={
         <>
-          {' '}
-          Using the card component, you can extend the default collapse behavior to create an accordion. To properly achieve the accordion style, be
-          sure to use <code>.accordion</code> as a wrapper.
+          {" "}
+          Using the card component, you can extend the default collapse behavior to create an accordion. To properly
+          achieve the accordion style, be sure to use <code>.accordion</code> as a wrapper.
         </>
-      }>
-      <Accordion defaultActiveKey={'0'} id="accordionExample">
+      }
+    >
+      <Accordion defaultActiveKey={"0"} id="accordionExample">
         {accordionData.map((item, idx) => (
           <AccordionItem eventKey={`${idx}`} key={idx}>
             <AccordionHeader id="headingOne">
@@ -27,9 +28,10 @@ const BasicAccordion = () => {
             </AccordionHeader>
             <AccordionBody>
               <strong>This is the {item}&nbsp; item&apos;s accordion body.</strong>
-              It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding
-              our default variables. It&apos;s also worth noting that just about any HTML can go within the
+              It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each
+              element. These classes control the overall appearance, as well as the showing and hiding via CSS
+              transitions. You can modify any of this with custom CSS or overriding our default variables. It&apos;s
+              also worth noting that just about any HTML can go within the
               <code>.accordion-body</code>, though the transition does limit overflow.
             </AccordionBody>
           </AccordionItem>
@@ -46,11 +48,12 @@ const FlushAccordion = () => {
       title="Flush Accordion"
       description={
         <>
-          Add <code>.accordion-flush</code> to remove the default <code>background-color</code>, some borders, and some rounded corners to render
-          accordions edge-to-edge with their parent container.
+          Add <code>.accordion-flush</code> to remove the default <code>background-color</code>, some borders, and some
+          rounded corners to render accordions edge-to-edge with their parent container.
         </>
-      }>
-      <Accordion defaultActiveKey={'0'} flush id="accordionExample">
+      }
+    >
+      <Accordion defaultActiveKey={"0"} flush id="accordionExample">
         {accordionData.map((item, idx) => (
           <AccordionItem eventKey={`${idx}`} key={idx}>
             <AccordionHeader id="headingOne">
@@ -74,11 +77,12 @@ const AlwaysOpenAccordion = () => {
       title="Always Open Accordion"
       description={
         <>
-          Omit the <code>data-bs-parent</code> attribute on each <code>.accordion-collapse</code> to make accordion items stay open when another item
-          is opened.
+          Omit the <code>data-bs-parent</code> attribute on each <code>.accordion-collapse</code> to make accordion
+          items stay open when another item is opened.
         </>
-      }>
-      <Accordion defaultActiveKey={'0'} alwaysOpen id="accordionExample">
+      }
+    >
+      <Accordion defaultActiveKey={"0"} alwaysOpen id="accordionExample">
         {accordionData.map((item, idx) => (
           <AccordionItem eventKey={`${idx}`} key={idx}>
             <AccordionHeader id="headingOne">
@@ -86,9 +90,10 @@ const AlwaysOpenAccordion = () => {
             </AccordionHeader>
             <AccordionBody>
               <strong>This is the {item}&nbsp; item&apos;s accordion body.</strong>
-              It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding
-              our default variables. It&apos;s also worth noting that just about any HTML can go within the
+              It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each
+              element. These classes control the overall appearance, as well as the showing and hiding via CSS
+              transitions. You can modify any of this with custom CSS or overriding our default variables. It&apos;s
+              also worth noting that just about any HTML can go within the
               <code>.accordion-body</code>, though the transition does limit overflow.
             </AccordionBody>
           </AccordionItem>
@@ -98,7 +103,7 @@ const AlwaysOpenAccordion = () => {
   )
 }
 
-export const metadata: Metadata = { title: 'Accordions' }
+export const metadata: Metadata = { title: "Accordions" }
 
 const Accordions = () => {
   return (
@@ -113,9 +118,9 @@ const Accordions = () => {
         <Col xl={3}>
           <UIExamplesList
             examples={[
-              { label: 'Default Example', link: '#default' },
-              { label: 'Flush Accordion', link: '#flush' },
-              { label: 'Always Open', link: '#always-open' },
+              { label: "Default Example", link: "#default" },
+              { label: "Flush Accordion", link: "#flush" },
+              { label: "Always Open", link: "#always-open" },
             ]}
           />
         </Col>

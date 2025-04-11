@@ -1,7 +1,7 @@
-'use client'
-import ComponentContainerCard from '@/components/ComponentContainerCard'
-import ReactApexChart from 'react-apexcharts'
-import { basicHeatmapOpts, colorRangeHeatmapOpts, multipleHeatmapOpts, rangeWithoutShadeOpts } from '../data'
+"use client"
+import ComponentContainerCard from "@/components/ComponentContainerCard"
+import ReactApexChart from "react-apexcharts"
+import { basicHeatmapOpts, colorRangeHeatmapOpts, multipleHeatmapOpts, rangeWithoutShadeOpts } from "../data"
 
 const BasicChart = () => {
   return (
@@ -22,7 +22,12 @@ const MultipleHeatmapChart = () => {
 const ColorRangeChart = () => {
   return (
     <ComponentContainerCard id="color-range" title="Heatmap - Color Range">
-      <ReactApexChart height={380} options={colorRangeHeatmapOpts} series={colorRangeHeatmapOpts.series} type="heatmap" />
+      <ReactApexChart
+        height={380}
+        options={colorRangeHeatmapOpts}
+        series={colorRangeHeatmapOpts.series}
+        type="heatmap"
+      />
     </ComponentContainerCard>
   )
 }
@@ -30,7 +35,12 @@ const ColorRangeChart = () => {
 const RangeWithoutShades = () => {
   return (
     <ComponentContainerCard id="rounded" title="Heatmap - Range without Shades">
-      <ReactApexChart height={380} options={rangeWithoutShadeOpts} series={rangeWithoutShadeOpts.series} type="heatmap" />
+      <ReactApexChart
+        height={380}
+        options={rangeWithoutShadeOpts}
+        series={rangeWithoutShadeOpts.series}
+        type="heatmap"
+      />
     </ComponentContainerCard>
   )
 }

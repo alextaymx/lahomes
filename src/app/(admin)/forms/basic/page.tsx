@@ -1,11 +1,11 @@
-import ComponentContainerCard from '@/components/ComponentContainerCard'
-import PageTitle from '@/components/PageTitle'
-import UIExamplesList from '@/components/UIExamplesList'
-import type { Metadata } from 'next'
-import { Col, FormControl, FormLabel, FormSelect, Row } from 'react-bootstrap'
-import BasicExamples from './components/BasicExamples'
+import ComponentContainerCard from "@/components/ComponentContainerCard"
+import PageTitle from "@/components/PageTitle"
+import UIExamplesList from "@/components/UIExamplesList"
+import type { Metadata } from "next"
+import { Col, FormControl, FormLabel, FormSelect, Row } from "react-bootstrap"
+import BasicExamples from "./components/BasicExamples"
 
-export const metadata: Metadata = { title: 'Form Basics' }
+export const metadata: Metadata = { title: "Form Basics" }
 
 const InputSizing = () => {
   return (
@@ -16,7 +16,8 @@ const InputSizing = () => {
         <>
           Set heights using classes like <code>.form-control-lg</code> and <code>.form-control-sm</code>.
         </>
-      }>
+      }
+    >
       <Row>
         <Col lg={6}>
           <div className="d-flex flex-column gap-2">
@@ -37,14 +38,22 @@ const DisabledInput = () => {
       title="Disabled Input"
       description={
         <>
-          Add the <code>disabled</code> boolean attribute on an input to give it a grayed out appearance, remove pointer events, and prevent focusing.
+          Add the <code>disabled</code> boolean attribute on an input to give it a grayed out appearance, remove pointer
+          events, and prevent focusing.
         </>
-      }>
+      }
+    >
       <Row>
         <Col lg={6}>
           <div className="d-flex flex-column gap-2">
             <FormControl type="text" placeholder="Disabled input" aria-label="Disabled input example" disabled />
-            <FormControl type="text" defaultValue="Disabled readonly input" aria-label="Disabled input example" disabled readOnly />
+            <FormControl
+              type="text"
+              defaultValue="Disabled readonly input"
+              aria-label="Disabled input example"
+              disabled
+              readOnly
+            />
           </div>
         </Col>
       </Row>
@@ -59,20 +68,32 @@ const ReadonlyInput = () => {
       title="Readonly Input"
       description={
         <>
-          Add the <code>readonly</code> boolean attribute on an input to prevent modification of the input’s value. <code>readonly</code> inputs can
-          still be focused and selected, while <code>disabled</code> inputs cannot.
+          Add the <code>readonly</code> boolean attribute on an input to prevent modification of the input’s value.{" "}
+          <code>readonly</code> inputs can still be focused and selected, while <code>disabled</code> inputs cannot.
           <br />
           <br />
-          If you want to have <code>&lt;input readonly&gt;</code> elements in your form styled as plain text, replace <code>.form-control</code> with{' '}
-          <code>.form-control-plaintext</code> to remove the default form field styling and preserve the correct <code>margin</code> and{' '}
-          <code>padding</code>.
+          If you want to have <code>&lt;input readonly&gt;</code> elements in your form styled as plain text, replace{" "}
+          <code>.form-control</code> with <code>.form-control-plaintext</code> to remove the default form field styling
+          and preserve the correct <code>margin</code> and <code>padding</code>.
         </>
-      }>
+      }
+    >
       <Row>
         <Col lg={6}>
           <div className="d-flex flex-column gap-2">
-            <FormControl type="text" defaultValue="Readonly input here..." aria-label="readonly input example" readOnly />
-            <input type="text" readOnly className="form-control-plaintext" id="staticEmail" defaultValue="email@example.com" />
+            <FormControl
+              type="text"
+              defaultValue="Readonly input here..."
+              aria-label="readonly input example"
+              readOnly
+            />
+            <input
+              type="text"
+              readOnly
+              className="form-control-plaintext"
+              id="staticEmail"
+              defaultValue="email@example.com"
+            />
           </div>
         </Col>
       </Row>
@@ -87,18 +108,24 @@ const DataListsInput = () => {
       title="Datalists input"
       description={
         <>
-          If you want to have <code>&lt;input readonly&gt;</code> elements in your form styled as plain text, replace <code>.form-control</code> with{' '}
-          <code>.form-control-plaintext</code> to remove the default form field styling and preserve the correct <code>margin</code> and{' '}
-          <code>padding</code>.
+          If you want to have <code>&lt;input readonly&gt;</code> elements in your form styled as plain text, replace{" "}
+          <code>.form-control</code> with <code>.form-control-plaintext</code> to remove the default form field styling
+          and preserve the correct <code>margin</code> and <code>padding</code>.
         </>
-      }>
+      }
+    >
       <Row>
         <Col lg={6}>
           <div>
             <label htmlFor="exampleDataList" className="form-label">
               Datalist example
             </label>
-            <input className="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search..." />
+            <input
+              className="form-control"
+              list="datalistOptions"
+              id="exampleDataList"
+              placeholder="Type to search..."
+            />
             <datalist id="datalistOptions">
               <option value="San Francisco"></option>
               <option value="New York"></option>
@@ -120,11 +147,12 @@ const SelectInputs = () => {
       title="Select"
       description={
         <>
-          Custom <code>&lt;select&gt;</code> menus need only a custom class, <code>.form-select</code> to trigger the custom styles. Custom styles are
-          limited to the <code>&lt;select&gt;</code>’s initial appearance and cannot modify the <code>&lt;option&gt;</code>s due to browser
-          limitations.
+          Custom <code>&lt;select&gt;</code> menus need only a custom class, <code>.form-select</code> to trigger the
+          custom styles. Custom styles are limited to the <code>&lt;select&gt;</code>’s initial appearance and cannot
+          modify the <code>&lt;option&gt;</code>s due to browser limitations.
         </>
-      }>
+      }
+    >
       <Row>
         <Col lg={6}>
           <div className="mb-3">
@@ -184,12 +212,12 @@ const BasicElements = () => {
         <Col xl={3}>
           <UIExamplesList
             examples={[
-              { link: '#basic', label: 'Basic Example' },
-              { link: '#size', label: 'Input Sizing' },
-              { link: '#disabled', label: 'Disabled Input' },
-              { link: '#disabled', label: 'Readonly Input' },
-              { link: '#datalists', label: 'Datalists input' },
-              { link: '#select', label: 'Select input' },
+              { link: "#basic", label: "Basic Example" },
+              { link: "#size", label: "Input Sizing" },
+              { link: "#disabled", label: "Disabled Input" },
+              { link: "#disabled", label: "Readonly Input" },
+              { link: "#datalists", label: "Datalists input" },
+              { link: "#select", label: "Select input" },
             ]}
           />
         </Col>

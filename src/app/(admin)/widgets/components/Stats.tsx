@@ -1,7 +1,7 @@
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import { Card, CardBody, Col, Row } from 'react-bootstrap'
-import { stateData } from '../data'
-import { StatType } from '../type'
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import { Card, CardBody, Col, Row } from "react-bootstrap"
+import { stateData } from "../data"
+import { StatType } from "../type"
 
 const StatsCard = ({ stat }: { stat: StatType }) => {
   const { amount, change, changeColor, badgeIcon, icon, iconColor, title } = stat

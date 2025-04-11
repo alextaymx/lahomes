@@ -1,10 +1,10 @@
-import PageTitle from '@/components/PageTitle'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import { Card, CardHeader, Col, Row } from 'react-bootstrap'
-import AgentList from './components/AgentList'
-import { Metadata } from 'next'
+import PageTitle from "@/components/PageTitle"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import { Card, CardHeader, Col, Row } from "react-bootstrap"
+import AgentList from "./components/AgentList"
+import { Metadata } from "next"
 
-export const metadata: Metadata = { title: 'Agent List' }
+export const metadata: Metadata = { title: "Agent List" }
 
 const ListViewPage = () => {
   return (

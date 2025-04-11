@@ -1,7 +1,7 @@
-'use client'
-import ReactApexChart from 'react-apexcharts'
-import { lineAreaChartOpts, lineColumnAreaChartOpts, lineColumnChartOpts, multipleYAxisChartOpts } from '../data'
-import ComponentContainerCard from '@/components/ComponentContainerCard'
+"use client"
+import ReactApexChart from "react-apexcharts"
+import { lineAreaChartOpts, lineColumnAreaChartOpts, lineColumnChartOpts, multipleYAxisChartOpts } from "../data"
+import ComponentContainerCard from "@/components/ComponentContainerCard"
 
 const LineAndColumnChart = () => {
   return (
@@ -14,7 +14,12 @@ const LineAndColumnChart = () => {
 const MultipleYAxisChart = () => {
   return (
     <ComponentContainerCard id="multiple-yaxis" title="Multiple Y-Axis Chart">
-      <ReactApexChart height={380} options={multipleYAxisChartOpts} series={multipleYAxisChartOpts.series} type="line" />
+      <ReactApexChart
+        height={380}
+        options={multipleYAxisChartOpts}
+        series={multipleYAxisChartOpts.series}
+        type="line"
+      />
     </ComponentContainerCard>
   )
 }
@@ -30,7 +35,12 @@ const LineAreaChart = () => {
 const LineColumnAndAreaChart = () => {
   return (
     <ComponentContainerCard id="all" title="Line, Column & Area Chart">
-      <ReactApexChart height={380} options={lineColumnAreaChartOpts} series={lineColumnAreaChartOpts.series} type="line" />
+      <ReactApexChart
+        height={380}
+        options={lineColumnAreaChartOpts}
+        series={lineColumnAreaChartOpts.series}
+        type="line"
+      />
     </ComponentContainerCard>
   )
 }

@@ -1,8 +1,20 @@
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import { getAllTransaction } from '@/helpers/data'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Button, Card, CardBody, CardHeader, CardTitle, Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Row } from 'react-bootstrap'
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import { getAllTransaction } from "@/helpers/data"
+import Image from "next/image"
+import Link from "next/link"
+import {
+  Button,
+  Card,
+  CardBody,
+  CardHeader,
+  CardTitle,
+  Col,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  Row,
+} from "react-bootstrap"
 
 const Transaction = async () => {
   const transaction = await getAllTransaction()
@@ -13,14 +25,15 @@ const Transaction = async () => {
         <Card>
           <CardHeader className="d-flex justify-content-between align-items-center">
             <div>
-              <CardTitle as={'h4'}>Latest Transaction</CardTitle>
+              <CardTitle as={"h4"}>Latest Transaction</CardTitle>
             </div>
             <Dropdown>
               <DropdownToggle
-                as={'a'}
+                as={"a"}
                 className="btn btn-sm btn-outline-light rounded content-none icons-center"
                 data-bs-toggle="dropdown"
-                aria-expanded="false">
+                aria-expanded="false"
+              >
                 This Month <IconifyIcon className="ms-1" width={16} height={16} icon="ri:arrow-down-s-line" />
               </DropdownToggle>
               <DropdownMenu className="dropdown-menu-end">
@@ -65,22 +78,28 @@ const Transaction = async () => {
                       <td>
                         <Link href="" className="text-dark fw-medium">
                           #{item.id}
-                        </Link>{' '}
+                        </Link>{" "}
                       </td>
                       <td>
-                        {item.user?.avatar && <Image src={item.user.avatar} className="avatar-sm rounded-circle me-2" alt="..." />}
+                        {item.user?.avatar && (
+                          <Image src={item.user.avatar} className="avatar-sm rounded-circle me-2" alt="..." />
+                        )}
                         {item.user?.name}
                       </td>
                       <td>IN-4563</td>
-                      <td> {item.purchaseDate.toLocaleString('en-us', { day: 'numeric', month: 'short', year: 'numeric' })}</td>
+                      <td>
+                        {" "}
+                        {item.purchaseDate.toLocaleString("en-us", { day: "numeric", month: "short", year: "numeric" })}
+                      </td>
                       <td> ${item.amount}</td>
                       <td> {item.paymentType}</td>
                       <td>
-                        {' '}
+                        {" "}
                         <span
-                          className={`badge bg-${item.paymentStatus == 'Cancel' ? 'danger' : item.paymentStatus == 'Pending' ? 'warning' : 'success'}-subtle text-${item.paymentStatus == 'Cancel' ? 'danger' : item.paymentStatus == 'Pending' ? 'warning' : 'success'} py-1 px-2 fs-12`}>
+                          className={`badge bg-${item.paymentStatus == "Cancel" ? "danger" : item.paymentStatus == "Pending" ? "warning" : "success"}-subtle text-${item.paymentStatus == "Cancel" ? "danger" : item.paymentStatus == "Pending" ? "warning" : "success"} py-1 px-2 fs-12`}
+                        >
                           {item.paymentStatus}
-                        </span>{' '}
+                        </span>{" "}
                       </td>
                       <td>
                         <div className="d-flex gap-2">

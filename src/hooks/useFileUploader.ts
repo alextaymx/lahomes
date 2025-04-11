@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from "react"
 type FileType = File & {
   preview?: string
   formattedSize?: string
@@ -13,9 +13,9 @@ export default function useFileUploader(showPreview: boolean = true) {
     if (showPreview) {
       files.map((file) =>
         Object.assign(file, {
-          preview: file['type'].split('/')[0] === 'image' ? URL.createObjectURL(file) : null,
+          preview: file["type"].split("/")[0] === "image" ? URL.createObjectURL(file) : null,
           formattedSize: formatBytes(file.size),
-        }),
+        })
       )
       allFiles = [...selectedFiles, ...files]
       setSelectedFiles(allFiles)
@@ -26,12 +26,12 @@ export default function useFileUploader(showPreview: boolean = true) {
    * Formats the size
    */
   const formatBytes = (bytes: number, decimals: number = 2) => {
-    if (bytes === 0) return '0 Bytes'
+    if (bytes === 0) return "0 Bytes"
     const k = 1024
     const dm = decimals < 0 ? 0 : decimals
-    const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
+    const sizes = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"]
     const i = Math.floor(Math.log(bytes) / Math.log(k))
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i]
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i]
   }
   /*
    * Removes the selected file

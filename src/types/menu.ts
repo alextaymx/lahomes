@@ -1,4 +1,4 @@
-import { HTMLAttributeAnchorTarget, ReactNode } from 'react'
+import { HTMLAttributeAnchorTarget, ReactNode } from "react"
 
 export type MenuItemType = {
   key: string

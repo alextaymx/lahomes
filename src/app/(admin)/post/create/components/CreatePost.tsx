@@ -1,19 +1,19 @@
-'use client'
-import ChoicesFormInput from '@/components/from/ChoicesFormInput'
-import TextAreaFormInput from '@/components/from/TextAreaFormInput'
-import TextFormInput from '@/components/from/TextFormInput'
-import { yupResolver } from '@hookform/resolvers/yup'
-import { Button, Card, CardBody, CardHeader, CardTitle, Col, Row } from 'react-bootstrap'
-import { useForm } from 'react-hook-form'
-import * as yup from 'yup'
+"use client"
+import ChoicesFormInput from "@/components/from/ChoicesFormInput"
+import TextAreaFormInput from "@/components/from/TextAreaFormInput"
+import TextFormInput from "@/components/from/TextFormInput"
+import { yupResolver } from "@hookform/resolvers/yup"
+import { Button, Card, CardBody, CardHeader, CardTitle, Col, Row } from "react-bootstrap"
+import { useForm } from "react-hook-form"
+import * as yup from "yup"
 
 const CreatePost = () => {
   const messageSchema = yup.object({
-    name: yup.string().required('Please enter name'),
-    description: yup.string().required('Please enter description'),
-    userName: yup.string().required('Please enter user name'),
-    date: yup.string().email().required('Please enter date'),
-    userDetails: yup.string().required('Please enter description'),
+    name: yup.string().required("Please enter name"),
+    description: yup.string().required("Please enter description"),
+    userName: yup.string().required("Please enter user name"),
+    date: yup.string().email().required("Please enter date"),
+    userDetails: yup.string().required("Please enter description"),
   })
 
   const { handleSubmit, control } = useForm({
@@ -23,7 +23,7 @@ const CreatePost = () => {
     <form onSubmit={handleSubmit(() => {})}>
       <Card>
         <CardHeader>
-          <CardTitle as={'h4'}>Blog Information</CardTitle>
+          <CardTitle as={"h4"}>Blog Information</CardTitle>
         </CardHeader>
         <CardBody>
           <Row>
@@ -42,7 +42,8 @@ const CreatePost = () => {
                 id="choices-multiple-remove-button"
                 data-choices
                 data-choices-removeitem
-                multiple>
+                multiple
+              >
                 <option value="Blog">Blog</option>
                 <option value="Business">Business</option>
                 <option value="Health">Health</option>
@@ -70,7 +71,7 @@ const CreatePost = () => {
       </Card>
       <Card>
         <CardHeader>
-          <CardTitle as={'h4'}>Blog User Information</CardTitle>
+          <CardTitle as={"h4"}>Blog User Information</CardTitle>
         </CardHeader>
         <CardBody>
           <Row>

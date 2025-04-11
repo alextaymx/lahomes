@@ -1,7 +1,7 @@
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import Link from 'next/link'
-import { Card, CardBody, CardTitle, Col, Row } from 'react-bootstrap'
-import { PropertyStatType, propertyStatData } from '../data'
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import Link from "next/link"
+import { Card, CardBody, CardTitle, Col, Row } from "react-bootstrap"
+import { PropertyStatType, propertyStatData } from "../data"
 
 const PropertyStatCard = ({ amount, change, icon, title, variant }: PropertyStatType) => {
   return (
@@ -9,7 +9,7 @@ const PropertyStatCard = ({ amount, change, icon, title, variant }: PropertyStat
       <CardBody>
         <div className="d-flex align-items-center justify-content-between">
           <div>
-            <CardTitle as={'h4'} className="mb-2 ">
+            <CardTitle as={"h4"} className="mb-2 ">
               {title}
             </CardTitle>
             <p className="text-muted fw-medium fs-22 mb-0">{amount}</p>
@@ -23,9 +23,13 @@ const PropertyStatCard = ({ amount, change, icon, title, variant }: PropertyStat
         <div className="d-flex align-items-center justify-content-between mt-3">
           <p className="mb-0">
             <span className={`text-${variant} fw-medium mb-0`}>
-              {variant == 'success' ? <IconifyIcon icon="ri:arrow-up-line" /> : <IconifyIcon icon="ri:arrow-down-line" />}
+              {variant == "success" ? (
+                <IconifyIcon icon="ri:arrow-up-line" />
+              ) : (
+                <IconifyIcon icon="ri:arrow-down-line" />
+              )}
               {change}%
-            </span>{' '}
+            </span>{" "}
             vs last month
           </p>
           <div>

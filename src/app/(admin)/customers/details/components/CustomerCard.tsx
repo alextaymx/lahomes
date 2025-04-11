@@ -1,6 +1,6 @@
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import { ProgressBar } from 'react-bootstrap'
-import { CustomerType } from '../data'
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import { ProgressBar } from "react-bootstrap"
+import { CustomerType } from "../data"
 
 const CustomerCard = ({ customer }: { customer: CustomerType }) => {
   const { Property, count, icon, progress, title, variant } = customer
@@ -13,7 +13,7 @@ const CustomerCard = ({ customer }: { customer: CustomerType }) => {
         <div>
           <p className="text-dark fw-semibold fs-16 mb-0">{title}</p>
           <p className="mb-0">
-            {Property} Property {variant == 'warning' ? 'View' : variant == 'primary' ? 'Own' : 'Active'}
+            {Property} Property {variant == "warning" ? "View" : variant == "primary" ? "Own" : "Active"}
           </p>
         </div>
       </div>
@@ -23,7 +23,15 @@ const CustomerCard = ({ customer }: { customer: CustomerType }) => {
           <p className="mb-0 text-dark fw-semibold fs-15">{count}</p>
         </div>
       </div>
-      <ProgressBar style={{ height: 10 }} striped animated variant={variant} className="mt-2" role="progressbar" now={progress} />
+      <ProgressBar
+        style={{ height: 10 }}
+        striped
+        animated
+        variant={variant}
+        className="mt-2"
+        role="progressbar"
+        now={progress}
+      />
     </div>
   )
 }

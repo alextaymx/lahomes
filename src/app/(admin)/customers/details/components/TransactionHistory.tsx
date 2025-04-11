@@ -1,6 +1,6 @@
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import { getAllTransaction } from '@/helpers/data'
-import Link from 'next/link'
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import { getAllTransaction } from "@/helpers/data"
+import Link from "next/link"
 import {
   Button,
   Card,
@@ -14,7 +14,7 @@ import {
   DropdownMenu,
   DropdownToggle,
   Row,
-} from 'react-bootstrap'
+} from "react-bootstrap"
 
 const TransactionHistory = async () => {
   const transactionData = await getAllTransaction()
@@ -24,14 +24,15 @@ const TransactionHistory = async () => {
         <Card>
           <CardHeader className="d-flex justify-content-between align-items-center">
             <div>
-              <CardTitle as={'h4'}>Transaction History</CardTitle>
+              <CardTitle as={"h4"}>Transaction History</CardTitle>
             </div>
             <Dropdown>
               <DropdownToggle
-                as={'a'}
+                as={"a"}
                 className="btn btn-sm btn-outline-light rounded content-none icons-center"
                 data-bs-toggle="dropdown"
-                aria-expanded="false">
+                aria-expanded="false"
+              >
                 This Month <IconifyIcon className="ms-1" width={16} height={16} icon="ri:arrow-down-s-line" />
               </DropdownToggle>
               <DropdownMenu className="dropdown-menu-end">
@@ -74,7 +75,13 @@ const TransactionHistory = async () => {
                         </div>
                       </td>
                       <td>{item.orderId}</td>
-                      <td>{item.purchaseDate.toLocaleString('en-us', { day: '2-digit', month: '2-digit', year: 'numeric' })}</td>
+                      <td>
+                        {item.purchaseDate.toLocaleString("en-us", {
+                          day: "2-digit",
+                          month: "2-digit",
+                          year: "numeric",
+                        })}
+                      </td>
                       <td>{item.property?.propertyType}</td>
                       <td>{item.property?.location}</td>
                       <td>${item.amount}</td>

@@ -1,15 +1,15 @@
-import { StaticImageData } from 'next/image'
-import { BootstrapVariantType } from './component-props'
+import { StaticImageData } from "next/image"
+import { BootstrapVariantType } from "./component-props"
 
 export type IdType = string
 
-export type EmailLabelType = 'Primary' | 'Social' | 'Promotions' | 'Updates' | 'Forums'
+export type EmailLabelType = "Primary" | "Social" | "Promotions" | "Updates" | "Forums"
 
 export type EmailType = {
   id: IdType
-  fromId: UserType['id']
+  fromId: UserType["id"]
   from?: UserType
-  toId: UserType['id']
+  toId: UserType["id"]
   to?: UserType
   subject?: string
   content?: string
@@ -49,9 +49,9 @@ export type UserType = {
   email: string
   mutualCount: number
   contact: string
-  activityStatus: 'typing' | 'online' | 'offline'
+  activityStatus: "typing" | "online" | "offline"
   languages: string[]
-  status?: 'Active' | 'Inactive'
+  status?: "Active" | "Inactive"
   address?: string
   message?: string
   time: Date
@@ -64,7 +64,7 @@ export type UserType = {
 export type AgentType = {
   id: IdType
   address: string
-  userId: UserType['id']
+  userId: UserType["id"]
   user?: UserType
   experience: number
   properties: number
@@ -76,17 +76,17 @@ export type TransactionType = {
   invoiceNumber: string
   purchaseDate: Date
   description: string
-  status: 'Cr' | 'Dr'
-  userId: UserType['id']
+  status: "Cr" | "Dr"
+  userId: UserType["id"]
   user?: UserType
-  propertyId: PropertyType['id']
+  propertyId: PropertyType["id"]
   property?: PropertyType
   amount: string
-  paymentType: 'Mastercard' | 'Visa' | 'Paypal'
-  paymentStatus: 'Completed' | 'Cancel' | 'Pending'
+  paymentType: "Mastercard" | "Visa" | "Paypal"
+  paymentStatus: "Completed" | "Cancel" | "Pending"
   orderId: string
   agentName: string
-  amountStatus: 'Paid' | 'Unpaid' | 'Pending'
+  amountStatus: "Paid" | "Unpaid" | "Pending"
   investedProperty: string
   paymentMethod: {
     card: StaticImageData
@@ -107,7 +107,7 @@ export type PropertyType = {
   size: number
   price: string
   country: string
-  type: 'Rent' | 'Sold' | 'Sale'
+  type: "Rent" | "Sold" | "Sale"
   variant: string
   save?: boolean
 }
@@ -115,12 +115,12 @@ export type PropertyType = {
 export type CustomerType = {
   id: IdType
   propertyType: string
-  userId: UserType['id']
+  userId: UserType["id"]
   user?: UserType
   interestedProperties: string
-  customerStatus: 'Interested' | 'Under Review' | 'Follow-up'
+  customerStatus: "Interested" | "Under Review" | "Follow-up"
   date: Date
-  status: 'Available' | 'Unavailable'
+  status: "Available" | "Unavailable"
   propertyView: number
   propertyOwn: number
   invest: string
@@ -129,15 +129,15 @@ export type CustomerType = {
 export type CustomerReviewsType = {
   id: IdType
   rating: number
-  userId: UserType['id']
+  userId: UserType["id"]
   user?: UserType
-  propertyId: PropertyType['id']
+  propertyId: PropertyType["id"]
   property?: PropertyType
   review: {
     title: string
     description: string
   }
-  reviewStatus: 'Published' | 'Pending'
+  reviewStatus: "Published" | "Pending"
   date: Date
 }
 
@@ -166,7 +166,7 @@ export type ChatMessageType = {
   from: UserType
   to: UserType
   message: {
-    type: 'file' | 'text'
+    type: "file" | "text"
     value: FileType[] | string
   }
   sentOn?: Date
@@ -176,10 +176,10 @@ export type ActivityType = {
   title: string
   icon?: string
   variant?: BootstrapVariantType
-  status?: 'completed' | 'latest'
+  status?: "completed" | "latest"
   files?: FileType[]
   time: Date
-  type?: 'task' | 'design' | 'achievement'
+  type?: "task" | "design" | "achievement"
   content?: string
 }
 
@@ -187,7 +187,7 @@ export type SocialEventType = {
   id: IdType
   title: string
   venue: string
-  type: 'togetherness' | 'celebration' | 'professional'
+  type: "togetherness" | "celebration" | "professional"
   image: StaticImageData
   startsAt: Date
 }
@@ -243,9 +243,9 @@ export type TodoType = {
   task: string
   createdAt: Date
   dueDate: Date
-  status: 'Pending' | 'In-Progress' | 'Completed'
-  priority: 'High' | 'Medium' | 'Low'
-  employeeId: SellerType['id']
+  status: "Pending" | "In-Progress" | "Completed"
+  priority: "High" | "Medium" | "Low"
+  employeeId: SellerType["id"]
   employee?: SellerType
 }
 

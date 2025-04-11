@@ -1,5 +1,5 @@
-import { currency } from '@/context/constants'
-import { ApexOptions } from 'apexcharts'
+import { currency } from "@/context/constants"
+import { ApexOptions } from "apexcharts"
 
 export type StatType = {
   title: string
@@ -26,93 +26,93 @@ export type CountryType = {
 
 export const statData: StatType[] = [
   {
-    title: 'Earn of the Month',
+    title: "Earn of the Month",
     amount: `${currency}3548.09`,
-    icon: 'solar:calendar-date-broken',
-    variant: 'primary',
+    icon: "solar:calendar-date-broken",
+    variant: "primary",
   },
   {
-    title: 'Earn Growth',
+    title: "Earn Growth",
     amount: `${currency}67435`,
-    icon: 'solar:graph-new-broken',
+    icon: "solar:graph-new-broken",
     change: 44,
-    variant: 'success',
+    variant: "success",
   },
   {
-    title: 'Conversation Rate',
-    amount: '78.8%',
-    icon: 'solar:user-plus-broken',
-    variant: 'warning',
+    title: "Conversation Rate",
+    amount: "78.8%",
+    icon: "solar:user-plus-broken",
+    variant: "warning",
   },
   {
-    title: 'Gross Profit Margin',
-    amount: '34.00%',
-    icon: 'solar:chart-2-broken',
-    variant: 'info',
+    title: "Gross Profit Margin",
+    amount: "34.00%",
+    icon: "solar:chart-2-broken",
+    variant: "info",
   },
 ]
 
 export const revenueData: RevenueType[] = [
   {
-    title: 'Rent',
+    title: "Rent",
     amount: `${currency}12,223.78`,
     progress: 40,
-    variant: 'primary',
+    variant: "primary",
   },
   {
-    title: 'Sales',
+    title: "Sales",
     amount: `${currency}56,131`,
     progress: 30,
-    variant: 'warning',
+    variant: "warning",
   },
   {
-    title: 'Broker Deal',
+    title: "Broker Deal",
     amount: `${currency}1,340.15`,
     progress: 20,
-    variant: 'success',
+    variant: "success",
   },
   {
-    title: 'Market',
+    title: "Market",
     amount: `${currency}600.46`,
     progress: 20,
-    variant: 'info',
+    variant: "info",
   },
 ]
 
 export const countryData: CountryType[] = [
   {
-    country: 'United States',
+    country: "United States",
     progress: 82.05,
     view: 659,
-    icon: 'circle-flags:us',
-    variant: 'secondary',
+    icon: "circle-flags:us",
+    variant: "secondary",
   },
   {
-    country: 'Russia',
+    country: "Russia",
     progress: 70.5,
     view: 485,
-    icon: 'circle-flags:ru',
-    variant: 'info',
+    icon: "circle-flags:ru",
+    variant: "info",
   },
   {
-    country: 'China',
+    country: "China",
     progress: 65.8,
     view: 355,
-    icon: 'circle-flags:cn',
-    variant: 'warning',
+    icon: "circle-flags:cn",
+    variant: "warning",
   },
   {
-    country: 'Canada',
+    country: "Canada",
     progress: 55.8,
     view: 204,
-    icon: 'circle-flags:ca',
-    variant: 'success',
+    icon: "circle-flags:ca",
+    variant: "success",
   },
 ]
 
 export const salesFunnelOptions: ApexOptions = {
   chart: {
-    type: 'area',
+    type: "area",
     height: 165,
     sparkline: {
       enabled: true,
@@ -125,13 +125,13 @@ export const salesFunnelOptions: ApexOptions = {
   ],
   stroke: {
     width: 2,
-    curve: 'smooth',
+    curve: "smooth",
   },
   fill: {
-    type: 'gradient',
+    type: "gradient",
     gradient: {
-      shade: 'light',
-      type: 'vertical',
+      shade: "light",
+      type: "vertical",
       opacityFrom: 0.4,
       opacityTo: 0,
       stops: [0, 100],
@@ -141,7 +141,7 @@ export const salesFunnelOptions: ApexOptions = {
   markers: {
     size: 0,
   },
-  colors: ['#604ae3'],
+  colors: ["#604ae3"],
   tooltip: {
     fixed: {
       enabled: false,
@@ -152,7 +152,7 @@ export const salesFunnelOptions: ApexOptions = {
     y: {
       title: {
         formatter: function (seriesName) {
-          return ''
+          return ""
         },
       },
     },
@@ -165,25 +165,25 @@ export const salesFunnelOptions: ApexOptions = {
 export const agentOptions: ApexOptions = {
   series: [
     {
-      name: 'Property Sales',
-      type: 'bar',
+      name: "Property Sales",
+      type: "bar",
       data: [89.25, 98.58, 68.74, 108.87, 77.54, 84.03, 51.24, 28.57, 92.57, 42.36, 88.51, 36.57],
     },
     {
-      name: 'Profit Ratio',
-      type: 'line',
+      name: "Profit Ratio",
+      type: "line",
       data: [35, 35, 25, 25, 45, 45, 75, 75, 45, 45, 54, 54],
     },
   ],
   chart: {
     height: 330,
-    type: 'line',
+    type: "line",
     toolbar: {
       show: false,
     },
   },
   stroke: {
-    curve: 'straight',
+    curve: "straight",
     dashArray: [0, 8],
     width: [0, 2],
   },
@@ -198,7 +198,7 @@ export const agentOptions: ApexOptions = {
     },
   },
   xaxis: {
-    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
     axisTicks: {
       show: false,
     },
@@ -230,18 +230,18 @@ export const agentOptions: ApexOptions = {
   },
   plotOptions: {
     bar: {
-      columnWidth: '30%',
-      barHeight: '100%',
+      columnWidth: "30%",
+      barHeight: "100%",
       borderRadius: 8,
     },
   },
-  colors: ['#604ae3', '#f8ac59'],
+  colors: ["#604ae3", "#f8ac59"],
   tooltip: {
     shared: true,
     y: [
       {
         formatter: function (y) {
-          if (typeof y !== 'undefined') {
+          if (typeof y !== "undefined") {
             return y.toFixed(0)
           }
           return y
@@ -249,16 +249,16 @@ export const agentOptions: ApexOptions = {
       },
       {
         formatter: function (y) {
-          if (typeof y !== 'undefined') {
-            return '$' + y.toFixed(2) + 'k'
+          if (typeof y !== "undefined") {
+            return "$" + y.toFixed(2) + "k"
           }
           return y
         },
       },
       {
         formatter: function (y) {
-          if (typeof y !== 'undefined') {
-            return y.toFixed(0) + ' Sales'
+          if (typeof y !== "undefined") {
+            return y.toFixed(0) + " Sales"
           }
           return y
         },
@@ -270,7 +270,7 @@ export const agentOptions: ApexOptions = {
 export const goalsOptions: ApexOptions = {
   chart: {
     height: 300,
-    type: 'radialBar',
+    type: "radialBar",
   },
   plotOptions: {
     radialBar: {
@@ -278,28 +278,28 @@ export const goalsOptions: ApexOptions = {
       endAngle: 135,
       dataLabels: {
         name: {
-          fontSize: '16px',
+          fontSize: "16px",
           color: undefined,
           offsetY: 120,
         },
         value: {
           offsetY: 76,
-          fontSize: '22px',
+          fontSize: "22px",
           color: undefined,
           formatter: function (val) {
-            return val + '%'
+            return val + "%"
           },
         },
       },
       track: {
-        background: 'rgba(170,184,197, 0.4)',
+        background: "rgba(170,184,197, 0.4)",
         margin: 0,
       },
     },
   },
   fill: {
     gradient: {
-      shade: 'dark',
+      shade: "dark",
       shadeIntensity: 0.2,
       inverseColors: false,
       opacityFrom: 1,
@@ -310,9 +310,9 @@ export const goalsOptions: ApexOptions = {
   stroke: {
     dashArray: 4,
   },
-  colors: ['#604ae3'],
+  colors: ["#604ae3"],
   series: [75],
-  labels: ['Achieved'],
+  labels: ["Achieved"],
   responsive: [
     {
       breakpoint: 380,

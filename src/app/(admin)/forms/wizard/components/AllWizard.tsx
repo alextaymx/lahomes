@@ -1,5 +1,5 @@
-'use client'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
+"use client"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
 import {
   Button,
   Card,
@@ -16,39 +16,39 @@ import {
   TabContent,
   TabPane,
   Tabs,
-} from 'react-bootstrap'
-import Account from './Account'
-import Profile from './Profile'
-import SocialLinks from './SocialLinks'
-import Finish from './Finish'
-import type { TabMenuItem } from '@/types/menu'
-import { useState } from 'react'
-import clsx from 'clsx'
-import Link from 'next/link'
+} from "react-bootstrap"
+import Account from "./Account"
+import Profile from "./Profile"
+import SocialLinks from "./SocialLinks"
+import Finish from "./Finish"
+import type { TabMenuItem } from "@/types/menu"
+import { useState } from "react"
+import clsx from "clsx"
+import Link from "next/link"
 
 const wizardSteps: TabMenuItem[] = [
   {
     index: 1,
-    name: 'Account',
-    icon: 'iconamoon:profile-circle-duotone',
+    name: "Account",
+    icon: "iconamoon:profile-circle-duotone",
     tab: <Account />,
   },
   {
     index: 2,
-    name: 'Profile',
-    icon: 'iconamoon:profile-duotone',
+    name: "Profile",
+    icon: "iconamoon:profile-duotone",
     tab: <Profile />,
   },
   {
     index: 3,
-    name: 'Social Links',
-    icon: 'iconamoon:link-fill',
+    name: "Social Links",
+    icon: "iconamoon:link-fill",
     tab: <SocialLinks />,
   },
   {
     index: 4,
-    name: 'Finish',
-    icon: 'iconamoon:check-circle-1-duotone',
+    name: "Finish",
+    icon: "iconamoon:check-circle-1-duotone",
     tab: <Finish />,
   },
 ]
@@ -58,7 +58,7 @@ const HorizontalWizard = () => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle as={'h5'} className="anchor" id="basic-wizard">
+        <CardTitle as={"h5"} className="anchor" id="basic-wizard">
           Horizontal Wizard
           <Link className="anchor-link" href="#horizontal-wizard">
             #
@@ -74,11 +74,12 @@ const HorizontalWizard = () => {
                 activeKey={activeStep}
                 variant="pills"
                 justify
-                className="icon-wizard form-wizard-header bg-light p-1">
+                className="icon-wizard form-wizard-header bg-light p-1"
+              >
                 {wizardSteps.map((step) => (
                   <Tab
                     key={step.index}
-                    as={'span'}
+                    as={"span"}
                     className="rounded-0 py-2"
                     eventKey={step.index}
                     title={
@@ -86,7 +87,8 @@ const HorizontalWizard = () => {
                         <IconifyIcon icon={step.icon} className="fs-26" />
                         {step.name}
                       </>
-                    }>
+                    }
+                  >
                     <>{step.tab}</>
                   </Tab>
                 ))}
@@ -99,7 +101,11 @@ const HorizontalWizard = () => {
                 </div>
                 <div className="d-flex gap-2">
                   <div className="previous">
-                    <Button onClick={() => setActiveStep(() => activeStep - 1)} variant="primary" className={clsx({ disabled: activeStep === 1 })}>
+                    <Button
+                      onClick={() => setActiveStep(() => activeStep - 1)}
+                      variant="primary"
+                      className={clsx({ disabled: activeStep === 1 })}
+                    >
                       <IconifyIcon icon="bx:left-arrow-alt" className="me-2" />
                       Back To Previous
                     </Button>
@@ -108,7 +114,8 @@ const HorizontalWizard = () => {
                     <Button
                       variant="primary"
                       onClick={() => setActiveStep(() => activeStep + 1)}
-                      className={clsx({ disabled: wizardSteps.length === activeStep })}>
+                      className={clsx({ disabled: wizardSteps.length === activeStep })}
+                    >
                       Next Step
                       <IconifyIcon icon="bx:right-arrow-alt" className="ms-2" />
                     </Button>
@@ -134,7 +141,7 @@ const VerticalWizard = () => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle as={'h5'} className="anchor" id="basic-wizard">
+        <CardTitle as={"h5"} className="anchor" id="basic-wizard">
           Vertical Wizard
           <Link className="anchor-link" href="#vertical-wizard">
             #
@@ -147,12 +154,17 @@ const VerticalWizard = () => {
             <TabContainer activeKey={activeStep} onSelect={(e) => setActiveStep(Number(e))}>
               <Row>
                 <Col lg={3}>
-                  <Nav variant="pills" justify className="nav-justified flex-column icon-wizard form-wizard-header bg-light p-1" role="tablist">
+                  <Nav
+                    variant="pills"
+                    justify
+                    className="nav-justified flex-column icon-wizard form-wizard-header bg-light p-1"
+                    role="tablist"
+                  >
                     {wizardSteps.map((step) => (
                       <NavItem key={step.index}>
                         <NavLink eventKey={step.index} className="rounded-0 py-2" aria-selected="true" role="tab">
                           <IconifyIcon icon={step.icon} className="fs-26" />
-                          {step.name}{' '}
+                          {step.name}{" "}
                         </NavLink>
                       </NavItem>
                     ))}
@@ -176,7 +188,8 @@ const VerticalWizard = () => {
                           <Button
                             onClick={() => setActiveStep(() => activeStep - 1)}
                             variant="primary"
-                            className={clsx({ disabled: activeStep === 1 })}>
+                            className={clsx({ disabled: activeStep === 1 })}
+                          >
                             <IconifyIcon icon="bx:left-arrow-alt" className="me-2" />
                             Back To Previous
                           </Button>
@@ -185,7 +198,8 @@ const VerticalWizard = () => {
                           <Button
                             variant="primary"
                             onClick={() => setActiveStep(() => activeStep + 1)}
-                            className={clsx({ disabled: wizardSteps.length === activeStep })}>
+                            className={clsx({ disabled: wizardSteps.length === activeStep })}
+                          >
                             Next Step
                             <IconifyIcon icon="bx:right-arrow-alt" className="ms-2" />
                           </Button>

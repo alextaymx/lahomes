@@ -1,18 +1,18 @@
-'use client'
-import ChoicesFormInput from '@/components/from/ChoicesFormInput'
-import TextAreaFormInput from '@/components/from/TextAreaFormInput'
-import TextFormInput from '@/components/from/TextFormInput'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import { yupResolver } from '@hookform/resolvers/yup'
-import { Button, Card, CardBody, CardHeader, CardTitle, Col, Row } from 'react-bootstrap'
-import { useForm } from 'react-hook-form'
-import * as yup from 'yup'
+"use client"
+import ChoicesFormInput from "@/components/from/ChoicesFormInput"
+import TextAreaFormInput from "@/components/from/TextAreaFormInput"
+import TextFormInput from "@/components/from/TextFormInput"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import { yupResolver } from "@hookform/resolvers/yup"
+import { Button, Card, CardBody, CardHeader, CardTitle, Col, Row } from "react-bootstrap"
+import { useForm } from "react-hook-form"
+import * as yup from "yup"
 
 const PropertyAdd = () => {
   const messageSchema = yup.object({
-    name: yup.string().required('Please enter name'),
-    description: yup.string().required('Please enter description'),
-    zipCode: yup.string().required('Please enter Zip-Code'),
+    name: yup.string().required("Please enter name"),
+    description: yup.string().required("Please enter description"),
+    zipCode: yup.string().required("Please enter Zip-Code"),
   })
 
   const { handleSubmit, control } = useForm({
@@ -23,7 +23,7 @@ const PropertyAdd = () => {
       <form onSubmit={handleSubmit(() => {})}>
         <Card>
           <CardHeader>
-            <CardTitle as={'h4'}>Property Information</CardTitle>
+            <CardTitle as={"h4"}>Property Information</CardTitle>
           </CardHeader>
           <CardBody>
             <Row>
@@ -41,7 +41,8 @@ const PropertyAdd = () => {
                   id="property-categories"
                   data-choices
                   data-choices-groups
-                  data-placeholder="Select Categories">
+                  data-placeholder="Select Categories"
+                >
                   <option value="Villas">Villas</option>
                   <option value="Residences">Residences</option>
                   <option value="Bungalow">Bungalow</option>
@@ -57,14 +58,20 @@ const PropertyAdd = () => {
                   <span className="input-group-text fs-20 px-2 py-0">
                     <IconifyIcon icon="ri:money-dollar-circle-line" />
                   </span>
-                  <input type="number" id="property-price" className="form-control" placeholder={'000'} />
+                  <input type="number" id="property-price" className="form-control" placeholder={"000"} />
                 </div>
               </Col>
               <Col lg={4}>
                 <label htmlFor="property-for" className="form-label">
                   Property For
                 </label>
-                <ChoicesFormInput className="form-control" id="property-for" data-choices data-choices-groups data-placeholder="Select Categories">
+                <ChoicesFormInput
+                  className="form-control"
+                  id="property-for"
+                  data-choices
+                  data-choices-groups
+                  data-placeholder="Select Categories"
+                >
                   <option value="Sale">Sale</option>
                   <option value="Rent">Rent</option>
                   <option value="Other">Other</option>
@@ -130,14 +137,26 @@ const PropertyAdd = () => {
               </Col>
               <Col lg={4}>
                 <div className="mb-3">
-                  <TextFormInput control={control} name="zipCode" type="number" placeholder="zip-code" label="Zip-Code" />
+                  <TextFormInput
+                    control={control}
+                    name="zipCode"
+                    type="number"
+                    placeholder="zip-code"
+                    label="Zip-Code"
+                  />
                 </div>
               </Col>
               <Col lg={4}>
                 <label htmlFor="choices-city" className="form-label">
                   City
                 </label>
-                <ChoicesFormInput className="form-control" id="choices-city" data-choices data-choices-groups data-placeholder="Select City">
+                <ChoicesFormInput
+                  className="form-control"
+                  id="choices-city"
+                  data-choices
+                  data-choices-groups
+                  data-placeholder="Select City"
+                >
                   <option>Choose a city</option>
                   <optgroup label="UK">
                     <option value="London">London</option>
@@ -177,7 +196,13 @@ const PropertyAdd = () => {
                 <label htmlFor="choices-country" className="form-label">
                   Country
                 </label>
-                <ChoicesFormInput className="form-control" id="choices-country" data-choices data-choices-groups data-placeholder="Select Country">
+                <ChoicesFormInput
+                  className="form-control"
+                  id="choices-country"
+                  data-choices
+                  data-choices-groups
+                  data-placeholder="Select Country"
+                >
                   <option>Choose a country</option>
                   <optgroup>
                     <option>United Kingdom</option>

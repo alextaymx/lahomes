@@ -1,15 +1,26 @@
-import { ReactNode } from 'react'
-import { Control, FieldPath, FieldValues } from 'react-hook-form'
-import { type IconProps } from '@iconify/react'
-import { EventClickArg, EventDropArg, EventInput } from '@fullcalendar/core/index.js'
-import { OffcanvasControlType } from './context'
-import { DateClickArg, DropArg } from '@fullcalendar/interaction/index.js'
+import { ReactNode } from "react"
+import { Control, FieldPath, FieldValues } from "react-hook-form"
+import { type IconProps } from "@iconify/react"
+import { EventClickArg, EventDropArg, EventInput } from "@fullcalendar/core/index.js"
+import { OffcanvasControlType } from "./context"
+import { DateClickArg, DropArg } from "@fullcalendar/interaction/index.js"
 
 export type ChildrenType = Readonly<{ children: ReactNode }>
 
-export type BootstrapVariantType = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light'
+export type BootstrapVariantType =
+  | "primary"
+  | "secondary"
+  | "success"
+  | "danger"
+  | "warning"
+  | "info"
+  | "dark"
+  | "light"
 
-export type FormInputProps<TFieldValues extends FieldValues = FieldValues, TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>> = {
+export type FormInputProps<
+  TFieldValues extends FieldValues = FieldValues,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+> = {
   control: Control<TFieldValues>
   name: TName
   id?: string

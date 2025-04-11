@@ -1,15 +1,15 @@
-'use client'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import { currency } from '@/context/constants'
-import { ApexOptions } from 'apexcharts'
-import ReactApexChart from 'react-apexcharts'
-import { Card, CardBody, CardHeader, CardTitle } from 'react-bootstrap'
+"use client"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import { currency } from "@/context/constants"
+import { ApexOptions } from "apexcharts"
+import ReactApexChart from "react-apexcharts"
+import { Card, CardBody, CardHeader, CardTitle } from "react-bootstrap"
 
 const OwnProperty = () => {
   const OwnPropertyOptions: ApexOptions = {
     chart: {
       height: 343,
-      type: 'radialBar',
+      type: "radialBar",
       toolbar: {
         show: false,
       },
@@ -20,12 +20,12 @@ const OwnProperty = () => {
         endAngle: 225,
         hollow: {
           margin: 0,
-          size: '70%',
-          background: 'transparent',
+          size: "70%",
+          background: "transparent",
           image: undefined,
           imageOffsetX: 0,
           imageOffsetY: 0,
-          position: 'front',
+          position: "front",
           dropShadow: {
             enabled: true,
             top: 3,
@@ -35,8 +35,8 @@ const OwnProperty = () => {
           },
         },
         track: {
-          background: 'rgba(170,184,197, 0.4)',
-          strokeWidth: '67%',
+          background: "rgba(170,184,197, 0.4)",
+          strokeWidth: "67%",
           margin: 0,
         },
 
@@ -44,24 +44,24 @@ const OwnProperty = () => {
           name: {
             offsetY: -10,
             show: true,
-            color: '#888',
-            fontSize: '17px',
+            color: "#888",
+            fontSize: "17px",
           },
           value: {
-            color: '#111',
-            fontSize: '36px',
+            color: "#111",
+            fontSize: "36px",
             show: true,
           },
         },
       },
     },
     fill: {
-      type: 'gradient',
+      type: "gradient",
       gradient: {
-        shade: 'dark',
-        type: 'horizontal',
+        shade: "dark",
+        type: "horizontal",
         shadeIntensity: 0.5,
-        gradientToColors: ['#7f56da', '#4697ce'],
+        gradientToColors: ["#7f56da", "#4697ce"],
         inverseColors: true,
         opacityFrom: 1,
         opacityTo: 1,
@@ -70,18 +70,24 @@ const OwnProperty = () => {
     },
     series: [27],
     stroke: {
-      lineCap: 'round',
+      lineCap: "round",
     },
-    labels: ['Own'],
+    labels: ["Own"],
   }
 
   return (
     <Card>
       <CardHeader>
-        <CardTitle as={'h4'}>Own Property</CardTitle>
+        <CardTitle as={"h4"}>Own Property</CardTitle>
       </CardHeader>
       <CardBody>
-        <ReactApexChart options={OwnPropertyOptions} series={OwnPropertyOptions.series} height={343} type="radialBar" className="apex-charts" />
+        <ReactApexChart
+          options={OwnPropertyOptions}
+          series={OwnPropertyOptions.series}
+          height={343}
+          type="radialBar"
+          className="apex-charts"
+        />
         <div className="d-flex justify-content-between align-content-center">
           <div className="d-flex align-items-center gap-3">
             <div className="avatar flex-shrink-0">

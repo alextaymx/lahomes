@@ -1,10 +1,10 @@
-import moneyImg from '@/assets/images/money.png'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import { currency } from '@/context/constants'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Button, Card, CardBody, CardFooter, CardTitle, Col, ProgressBar, Row } from 'react-bootstrap'
-import { propertyData } from '../data'
+import moneyImg from "@/assets/images/money.png"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import { currency } from "@/context/constants"
+import Image from "next/image"
+import Link from "next/link"
+import { Button, Card, CardBody, CardFooter, CardTitle, Col, ProgressBar, Row } from "react-bootstrap"
+import { propertyData } from "../data"
 
 const BalanceCard = () => {
   return (
@@ -68,7 +68,7 @@ const BalanceCard = () => {
             {propertyData.map((item, idx) => (
               <Col xl={6} md={6} key={idx}>
                 <div className="text-center p-3 border-end">
-                  <CardTitle as={'h5'} className="mb-0 text-dark fw-medium">
+                  <CardTitle as={"h5"} className="mb-0 text-dark fw-medium">
                     {item.title}
                   </CardTitle>
                   <div className="avatar-md bg-light bg-opacity-50 rounded mx-auto my-3 flex-centered">

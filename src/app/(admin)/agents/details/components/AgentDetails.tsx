@@ -1,34 +1,34 @@
-'use client'
-import properties1 from '@/assets/images/properties/p-1.jpg'
-import properties2 from '@/assets/images/properties/p-2.jpg'
-import properties3 from '@/assets/images/properties/p-3.jpg'
-import properties4 from '@/assets/images/properties/p-4.jpg'
-import properties5 from '@/assets/images/properties/p-5.jpg'
-import trophyImg from '@/assets/images/trophy.png'
-import avatar2 from '@/assets/images/users/avatar-2.jpg'
-import { WorldVectorMap } from '@/components/VectorMap'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Card, CardBody, CardHeader, CardTitle, Carousel, CarouselItem, Col, Row } from 'react-bootstrap'
-import AgentDetailsCard from './AgentDetailsCard'
+"use client"
+import properties1 from "@/assets/images/properties/p-1.jpg"
+import properties2 from "@/assets/images/properties/p-2.jpg"
+import properties3 from "@/assets/images/properties/p-3.jpg"
+import properties4 from "@/assets/images/properties/p-4.jpg"
+import properties5 from "@/assets/images/properties/p-5.jpg"
+import trophyImg from "@/assets/images/trophy.png"
+import avatar2 from "@/assets/images/users/avatar-2.jpg"
+import { WorldVectorMap } from "@/components/VectorMap"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import Image from "next/image"
+import Link from "next/link"
+import { Card, CardBody, CardHeader, CardTitle, Carousel, CarouselItem, Col, Row } from "react-bootstrap"
+import AgentDetailsCard from "./AgentDetailsCard"
 
 const AgentDetails = () => {
   const salesLocationOptions = {
-    map: 'world',
+    map: "world",
     zoomOnScroll: true,
     zoomButtons: false,
     markersSelectable: true,
     markers: [
-      { name: 'Canada', coords: [56.1304, -106.3468] },
-      { name: 'Brazil', coords: [-14.235, -51.9253] },
-      { name: 'Russia', coords: [61, 105] },
-      { name: 'China', coords: [35.8617, 104.1954] },
-      { name: 'United States', coords: [37.0902, -95.7129] },
+      { name: "Canada", coords: [56.1304, -106.3468] },
+      { name: "Brazil", coords: [-14.235, -51.9253] },
+      { name: "Russia", coords: [61, 105] },
+      { name: "China", coords: [35.8617, 104.1954] },
+      { name: "United States", coords: [37.0902, -95.7129] },
     ],
     markerStyle: {
-      initial: { fill: '#7f56da' },
-      selected: { fill: '#1bb394' },
+      initial: { fill: "#7f56da" },
+      selected: { fill: "#1bb394" },
     },
     labels: {
       markers: {
@@ -37,7 +37,7 @@ const AgentDetails = () => {
     },
     regionStyle: {
       initial: {
-        fill: 'rgba(169,183,197, 0.3)',
+        fill: "rgba(169,183,197, 0.3)",
         fillOpacity: 1,
       },
     },
@@ -73,7 +73,8 @@ const AgentDetails = () => {
                   xmlnsXlink="http://www.w3.org/1999/xlink"
                   viewBox="0 0 800 800"
                   width={400}
-                  height={400}>
+                  height={400}
+                >
                   <defs>
                     <filter id="bbburst-blur-1" x="-100%" y="-100%" width="400%" height="400%">
                       <feGaussianBlur in="SourceGraphic" stdDeviation={1} />
@@ -1020,7 +1021,8 @@ const AgentDetails = () => {
             </div>
             <div className="mt-4">
               <h5 className="text-dark mb-0">
-                <IconifyIcon icon="ri:coins-fill" className="fs-24 text-primary align-middle" /> 19,343 Collected In This Month
+                <IconifyIcon icon="ri:coins-fill" className="fs-24 text-primary align-middle" /> 19,343 Collected In
+                This Month
               </h5>
             </div>
           </CardBody>
@@ -1084,7 +1086,12 @@ const AgentDetails = () => {
                 <div className="carousel-caption d-none d-md-block bg-light rounded p-2 text-start">
                   <div className="d-flex align-items-center gap-2">
                     <div className="avatar bg-primary rounded flex-centered">
-                      <IconifyIcon icon="solar:buildings-3-bold-duotone" width={24} height={24} className="fs-24 text-white" />
+                      <IconifyIcon
+                        icon="solar:buildings-3-bold-duotone"
+                        width={24}
+                        height={24}
+                        className="fs-24 text-white"
+                      />
                     </div>
                     <div>
                       <Link href="" className="text-dark fw-medium fs-16">
@@ -1116,10 +1123,10 @@ const AgentDetails = () => {
         </Card>
         <Card>
           <CardHeader>
-            <CardTitle as={'h4'}>Location</CardTitle>
+            <CardTitle as={"h4"}>Location</CardTitle>
           </CardHeader>
           <CardBody>
-            <div className="my-4" style={{ height: '228px' }}>
+            <div className="my-4" style={{ height: "228px" }}>
               <WorldVectorMap width="100%" options={salesLocationOptions} />
             </div>
             <div className="d-flex align-items-center bg-light justify-content-between p-3 rounded">
@@ -1151,7 +1158,12 @@ const AgentDetails = () => {
               </div>
               <div>
                 <div className="avatar bg-dark rounded flex-centered">
-                  <IconifyIcon icon="solar:point-on-map-perspective-bold" width={30} height={30} className="fs-30 text-light" />
+                  <IconifyIcon
+                    icon="solar:point-on-map-perspective-bold"
+                    width={30}
+                    height={30}
+                    className="fs-30 text-light"
+                  />
                 </div>
               </div>
             </div>

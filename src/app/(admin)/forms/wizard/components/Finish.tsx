@@ -1,5 +1,5 @@
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import { Col, Row } from 'react-bootstrap'
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import { Col, Row } from "react-bootstrap"
 
 const Finish = () => {
   return (

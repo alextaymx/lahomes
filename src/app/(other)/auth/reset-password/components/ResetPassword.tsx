@@ -1,25 +1,25 @@
-'use client'
-import logoDark from '@/assets/images/logo-dark.png'
-import LogoLight from '@/assets/images/logo-light.png'
-import TextFormInput from '@/components/from/TextFormInput'
-import { yupResolver } from '@hookform/resolvers/yup'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useEffect } from 'react'
-import { Card, CardBody, Col, Container, Row } from 'react-bootstrap'
-import { useForm } from 'react-hook-form'
-import * as yup from 'yup'
+"use client"
+import logoDark from "@/assets/images/logo-dark.png"
+import LogoLight from "@/assets/images/logo-light.png"
+import TextFormInput from "@/components/from/TextFormInput"
+import { yupResolver } from "@hookform/resolvers/yup"
+import Image from "next/image"
+import Link from "next/link"
+import { useEffect } from "react"
+import { Card, CardBody, Col, Container, Row } from "react-bootstrap"
+import { useForm } from "react-hook-form"
+import * as yup from "yup"
 
 const ResetPassword = () => {
   useEffect(() => {
-    document.body.classList.add('authentication-bg')
+    document.body.classList.add("authentication-bg")
     return () => {
-      document.body.classList.remove('authentication-bg')
+      document.body.classList.remove("authentication-bg")
     }
   }, [])
 
   const messageSchema = yup.object({
-    email: yup.string().email().required('Please enter Email'),
+    email: yup.string().email().required("Please enter Email"),
   })
 
   const { handleSubmit, control } = useForm({
@@ -42,7 +42,8 @@ const ResetPassword = () => {
                 </div>
                 <h2 className="fw-bold text-uppercase text-center fs-18">Reset Password</h2>
                 <p className="text-muted text-center mt-1 mb-4">
-                  Enter your email address and we&apos;ll send you an email with instructions <br /> to reset your password.
+                  Enter your email address and we&apos;ll send you an email with instructions <br /> to reset your
+                  password.
                 </p>
                 <div className="px-4">
                   <form onSubmit={handleSubmit(() => {})} className="authentication-form">
@@ -65,7 +66,7 @@ const ResetPassword = () => {
               </CardBody>
             </Card>
             <p className="mb-0 text-center text-white">
-              Back to{' '}
+              Back to{" "}
               <Link href="/auth/sign-in" className="text-reset text-unline-dashed fw-bold ms-1">
                 Sign In
               </Link>

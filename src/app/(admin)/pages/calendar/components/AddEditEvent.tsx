@@ -1,19 +1,27 @@
-'use client'
-import { useEffect } from 'react'
-import { yupResolver } from '@hookform/resolvers/yup'
-import { Button, Col, Modal, ModalBody, ModalHeader, ModalTitle, Row } from 'react-bootstrap'
-import { useForm } from 'react-hook-form'
-import * as yup from 'yup'
+"use client"
+import { useEffect } from "react"
+import { yupResolver } from "@hookform/resolvers/yup"
+import { Button, Col, Modal, ModalBody, ModalHeader, ModalTitle, Row } from "react-bootstrap"
+import { useForm } from "react-hook-form"
+import * as yup from "yup"
 
-import type { CalendarFormType } from '@/types/component-props'
-import type { SubmitEventType } from '../useCalendar'
-import SelectFormInput from '@/components/from/SelectFormInput'
-import TextFormInput from '@/components/from/TextFormInput'
+import type { CalendarFormType } from "@/types/component-props"
+import type { SubmitEventType } from "../useCalendar"
+import SelectFormInput from "@/components/from/SelectFormInput"
+import TextFormInput from "@/components/from/TextFormInput"
 
-const AddEditEvent = ({ eventData, isEditable, onAddEvent, onRemoveEvent, onUpdateEvent, open, toggle }: CalendarFormType) => {
+const AddEditEvent = ({
+  eventData,
+  isEditable,
+  onAddEvent,
+  onRemoveEvent,
+  onUpdateEvent,
+  open,
+  toggle,
+}: CalendarFormType) => {
   const eventFormSchema = yup.object({
-    title: yup.string().required('Please enter event title'),
-    category: yup.string().required('Please select event category'),
+    title: yup.string().required("Please enter event title"),
+    category: yup.string().required("Please select event category"),
   })
 
   type FormValues = yup.InferType<typeof eventFormSchema>
@@ -21,24 +29,30 @@ const AddEditEvent = ({ eventData, isEditable, onAddEvent, onRemoveEvent, onUpda
   const { handleSubmit, control, setValue, reset } = useForm<FormValues>({
     resolver: yupResolver(eventFormSchema),
     defaultValues: {
-      title: eventData?.title ?? '',
-      category: eventData?.className ? String(eventData.className) : 'bg-danger',
+      title: eventData?.title ?? "",
+      category: eventData?.className ? String(eventData.className) : "bg-danger",
     },
   })
 
   useEffect(() => {
     if (eventData?.title) {
-      setValue('title', String(eventData?.title))
-      setValue('category', String(eventData?.className))
+      setValue("title", eventData.title)
+      setValue("category", String(eventData?.className || ""))
     }
-  }, [eventData])
+  }, [eventData, setValue])
 
   useEffect(() => {
-    if (!open) reset()
-  }, [open])
+    if (!open) {
+      reset()
+    }
+  }, [open, reset])
 
   const onSubmitEvent = (data: SubmitEventType) => {
-    isEditable ? onUpdateEvent(data) : onAddEvent(data)
+    if (isEditable) {
+      onUpdateEvent(data)
+    } else {
+      onAddEvent(data)
+    }
   }
 
   return (
@@ -53,7 +67,13 @@ const AddEditEvent = ({ eventData, isEditable, onAddEvent, onRemoveEvent, onUpda
           <ModalBody className="px-3 pb-3 pt-0">
             <Row>
               <Col xs={12}>
-                <TextFormInput control={control} name="title" containerClassName="mb-3" label="Event Name" placeholder="Insert Event Name" />
+                <TextFormInput
+                  control={control}
+                  name="title"
+                  containerClassName="mb-3"
+                  label="Event Name"
+                  placeholder="Insert Event Name"
+                />
               </Col>
               <Col xs={12}>
                 <SelectFormInput
@@ -62,13 +82,13 @@ const AddEditEvent = ({ eventData, isEditable, onAddEvent, onRemoveEvent, onUpda
                   label="Category"
                   containerClassName="mb-3"
                   options={[
-                    { value: 'bg-primary', label: 'Blue' },
-                    { value: 'bg-secondary', label: 'Gray Dark' },
-                    { value: 'bg-success', label: 'Green' },
-                    { value: 'bg-info', label: 'Cyan' },
-                    { value: 'bg-warning', label: 'Yellow' },
-                    { value: 'bg-danger', label: 'Red' },
-                    { value: 'bg-dark', label: 'Dark' },
+                    { value: "bg-primary", label: "Blue" },
+                    { value: "bg-secondary", label: "Gray Dark" },
+                    { value: "bg-success", label: "Green" },
+                    { value: "bg-info", label: "Cyan" },
+                    { value: "bg-warning", label: "Yellow" },
+                    { value: "bg-danger", label: "Red" },
+                    { value: "bg-dark", label: "Dark" },
                   ]}
                 />
               </Col>

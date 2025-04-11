@@ -1,9 +1,9 @@
-import PageTitle from '@/components/PageTitle'
-import IconifyIcon from '@/components/wrappers/IconifyIcon'
-import { getAllReview } from '@/helpers/data'
-import { Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
+import PageTitle from "@/components/PageTitle"
+import IconifyIcon from "@/components/wrappers/IconifyIcon"
+import { getAllReview } from "@/helpers/data"
+import { Metadata } from "next"
+import Image from "next/image"
+import Link from "next/link"
 import {
   Button,
   Card,
@@ -17,9 +17,9 @@ import {
   DropdownMenu,
   DropdownToggle,
   Row,
-} from 'react-bootstrap'
+} from "react-bootstrap"
 
-export const metadata: Metadata = { title: 'Reviews' }
+export const metadata: Metadata = { title: "Reviews" }
 
 const ReviewsPage = async () => {
   const reviewData = await getAllReview()
@@ -31,14 +31,15 @@ const ReviewsPage = async () => {
           <Card>
             <CardHeader className="d-flex justify-content-between align-items-center border-bottom">
               <div>
-                <CardTitle as={'h4'}>All Reviews</CardTitle>
+                <CardTitle as={"h4"}>All Reviews</CardTitle>
               </div>
               <Dropdown>
                 <DropdownToggle
-                  as={'a'}
+                  as={"a"}
                   className=" btn btn-sm btn-outline-light rounded content-none icons-center"
                   data-bs-toggle="dropdown"
-                  aria-expanded="false">
+                  aria-expanded="false"
+                >
                   This Month <IconifyIcon className="ms-1" width={16} height={16} icon="ri:arrow-down-s-line" />
                 </DropdownToggle>
                 <DropdownMenu className="dropdown-menu-end">
@@ -84,7 +85,11 @@ const ReviewsPage = async () => {
                           <div className="d-flex align-items-center gap-2">
                             <div>
                               {item.property?.image && (
-                                <Image src={item.property.image} alt="Property" className="avatar-md rounded border border-light border-3" />
+                                <Image
+                                  src={item.property.image}
+                                  alt="Property"
+                                  className="avatar-md rounded border border-light border-3"
+                                />
                               )}
                             </div>
                             <div>
@@ -94,7 +99,9 @@ const ReviewsPage = async () => {
                             </div>
                           </div>
                         </td>
-                        <td>{item.date.toLocaleString('en-us', { day: '2-digit', month: '2-digit', year: 'numeric' })}</td>
+                        <td>
+                          {item.date.toLocaleString("en-us", { day: "2-digit", month: "2-digit", year: "numeric" })}
+                        </td>
                         <td>{item.user?.name}</td>
                         <td>{item.property?.location}</td>
                         <td>{item.rating}/5</td>
@@ -109,7 +116,7 @@ const ReviewsPage = async () => {
                               ))}
                             {!Number.isInteger(item.rating) && (
                               <li className="icons-center">
-                                <IconifyIcon icon="ri:star-half-fill" />{' '}
+                                <IconifyIcon icon="ri:star-half-fill" />{" "}
                               </li>
                             )}
                             {item.rating < 5 &&
@@ -126,7 +133,8 @@ const ReviewsPage = async () => {
                         </td>
                         <td>
                           <span
-                            className={`badge bg-${item.reviewStatus == 'Pending' ? 'warning' : 'success'}-subtle text-${item.reviewStatus == 'Pending' ? 'warning' : 'success'} py-1 px-2 fs-12`}>
+                            className={`badge bg-${item.reviewStatus == "Pending" ? "warning" : "success"}-subtle text-${item.reviewStatus == "Pending" ? "warning" : "success"} py-1 px-2 fs-12`}
+                          >
                             {item.reviewStatus}
                           </span>
                         </td>
@@ -139,7 +147,10 @@ const ReviewsPage = async () => {
                               <IconifyIcon icon="solar:pen-2-broken" className="align-middle fs-18" />
                             </Button>
                             <Button variant="soft-danger" size="sm">
-                              <IconifyIcon icon="solar:trash-bin-minimalistic-2-broken" className="align-middle fs-18" />
+                              <IconifyIcon
+                                icon="solar:trash-bin-minimalistic-2-broken"
+                                className="align-middle fs-18"
+                              />
                             </Button>
                           </div>
                         </td>
