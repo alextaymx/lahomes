@@ -15,7 +15,7 @@ const figtree = Figtree({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Lahomes - Property Management Admin",
+    template: "%s | Lahomes - Property Management Admin Dashboard",
     default: DEFAULT_PAGE_TITLE,
   },
   description:
